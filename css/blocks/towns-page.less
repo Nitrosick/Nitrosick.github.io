@@ -549,9 +549,22 @@
     &-img {
         width: 75%;
         margin-left: 15px;
+        display: flex;
+        align-items: flex-start;
 
-        #mosaic-img {
-            width: 100%;
+        img {
+            width: 50%;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    @media screen and (max-width:1000px) {
+        .town-mosaic-img {
+            flex-wrap: wrap;
+
+            img {
+                width: 100%;
+            }
         }
     }
     @media screen and (max-width:850px) {

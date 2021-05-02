@@ -119,7 +119,8 @@ const clearChain = () => {
 };
 
 const changeTownMosaic = (town) => {
-    document.querySelector('#mosaic-img').src = `images/towns/${town}/${town}-mosaic.jpg`;
+    document.querySelector('#mosaic-img-1').src = `images/towns/${town}/${town}-mosaic-1.jpg`;
+    document.querySelector('#mosaic-img-2').src = `images/towns/${town}/${town}-mosaic-2.jpg`;
     document.querySelector('#town-grail').src = `images/towns/${town}/grail.jpg`;
 };
 
