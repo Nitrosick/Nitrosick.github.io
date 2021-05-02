@@ -1,0 +1,612 @@
+.town-filter {
+    box-sizing: border-box;
+    position: relative;
+    height: 60px;
+    margin: 30px auto;
+    padding: 0 10px;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .town-icon {
+        height: 40px;
+        border-left: 5px solid @dark-grey;
+    }
+    #town {
+        color: @light-grey;
+        width: 230px;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 12px;
+        font-family: 'OpenSans';
+        font-weight: bold;
+        border: none;
+        background-color: @dark-grey;
+
+        option {
+            background-color: black;
+            font-size: 12px;
+            font-family: 'OpenSans';
+            font-weight: bold;
+        }
+    }
+}
+
+.town-background {
+    position: relative;
+    margin-bottom: 30px;
+    background-color: black;
+
+    .town-picture {
+        position: absolute;
+        top: 0; left: 0;
+        transition: 0.5s;
+        filter: hue-rotate(-5deg) brightness(0.95) saturate(110%);
+    }
+    @media screen and (max-width:1560px) {
+        .town-picture {
+            height: auto;
+            width: 100%;
+            min-width: 700px;
+        }
+    }
+    .view-switcher {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 20px; right: 20px;
+        width: 45px;
+        height: 135px;
+        background-color: rgba(0,0,0,0.6);
+
+        button {
+            flex-grow: 1;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            background-size: 30px 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.active {
+                background-color: @mid-grey;
+            }
+            &:hover {
+                background-color: @mid-grey;
+                transition: 0.3s;
+            }
+        }
+        #switcher-full {
+            background-image: url(../images/icons/castle.png);
+        }
+        #switcher-empty {
+            background-image: url(../images/icons/house.png);
+        }
+        #switcher-marks {
+            background-image: url(../images/icons/castle-marks.png);
+        }
+    }
+    .town-info-button {
+        position: absolute;
+        top: 20px; left: 20px;
+        height: 45px;
+        width: 45px;
+        background-color: rgba(0,0,0,0.6);
+        cursor: pointer;
+        background-image: url(../images/icons/info.png);
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: @mid-grey;
+            transition: 0.3s;
+        }
+    }
+    .town-info {
+        box-sizing: border-box;
+        position: absolute;
+        left: 0; top: 0;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.7);
+        height: 100%;
+        width: 700px;
+        opacity: 0;
+        transition: 0.5s;
+        overflow-y: auto;
+
+        &-title {
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: normal;
+            text-align: center;
+            cursor: default;
+        }
+        &-text {
+            font-family: 'OpenSans';
+            font-weight: bold;
+            font-size: 14px;
+            margin: 10px 0;
+            text-align: justify;
+            cursor: default;
+
+            b {
+                color: white;
+                font-weight: bold;
+                text-shadow: 1px 0 1px @light-grey;
+                cursor: default;
+            }
+        }
+    }
+    .town-info-opened {
+        opacity: 1;
+    }
+    @media screen and (max-width:700px) {
+        .town-info {
+            width: 100%;
+        }
+    }
+}
+
+.town-details-tabs {
+    box-sizing: border-box;
+    display: flex;
+    padding: 0 20px;
+
+    .town-details-tab {
+        height: 40px;
+        font-family: 'RussoOne-Regular';
+        font-size: 16px;
+        color: @light-grey;
+        margin-left: -1px;
+        padding: 0 5px;
+        border-radius: 7px 7px 0 0;
+        background-color: @black;
+        flex-grow: 1;
+        z-index: 1;
+        filter: brightness(0.7);
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1);
+        }
+    }
+    .active {
+        border-bottom: none;
+        background-color: black;
+        filter: brightness(1);
+    }
+}
+
+.tab-block {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid @dark-grey;
+    border-bottom: 1px solid @dark-grey;
+    padding: 10px 30px;
+    margin-top: -1px;
+    margin-bottom: 30px;
+    background-color: black;
+    border-radius: 7px;
+
+    p {
+        font-family: 'OpenSans';
+        font-weight: bold;
+        font-size: 0.9em;
+        text-align: justify;
+
+        b {
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 0 1px @light-grey;
+        }
+    }
+    a {
+        display: block;
+        text-align: center;
+        padding: 5px;
+
+        &:hover {
+            background-color: @dark-grey;
+            transition: 0.3s;
+        }
+    }
+}
+
+.town-structures {
+    .tab-block();
+
+    .total-cost {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 40px;
+        padding: 0 20px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: @black;
+
+        span {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &-item {
+        position: relative;
+        margin: 10px;
+        width: 220px;
+        filter: brightness(0.9);
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+        .name-box {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid @dark-grey;
+            background-color: @black;
+
+            h3 {
+                text-align: center;
+                font-size: 16px;
+                font-weight: normal;
+                margin: 0;
+            }
+        }
+        &:hover {
+            filter: brightness(1);
+            transition: 0.3s ease-out;
+
+            .droped-info {
+                transform: scaleY(1);
+                transition: 0.3s ease-out;
+            }
+        }
+        .droped-info {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0; top: 145px;
+            width: 220px;
+            background-color: @dark-grey;
+            font-family: 'OpenSans';
+            font-weight: bold;
+            font-size: 14px;
+            transform-origin: 0 0;
+            transform: scaleY(0);
+
+            .about, .requirements {
+                padding: 5px;
+                border-top: 2px solid black;
+
+                a {
+                    display: inline;
+                    padding: 0;
+                    color: @main-gold;
+                }
+            }
+            .cost {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 5px;
+                border-top: 2px solid black;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+.town-tree {
+    .tab-block();
+    flex-wrap: nowrap;
+    padding: 30px;
+
+    .footnote {
+        width: 25%;
+        padding-right: 15px;
+
+        span {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: @black;
+        }
+        p {
+            margin: 5px 0 7px 0;
+            font-size: 14px;
+        }
+    }
+    &-columns {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        margin-left: 15px;
+
+        .tree-column {
+            margin-right: 5px;
+            width: 137px;
+            max-height: 525px;
+            background-image: url(../images/other/town-tree-plug.png);
+            background-size: 100% auto;
+
+            &-item {
+                box-sizing: border-box;
+                position: relative;
+                width: 137px;
+                height: 66px;
+                padding: 10px;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+
+                img {
+                    position: absolute;
+                    top: 0; left: 0;
+                    filter: brightness(0.6);
+                }
+                span {
+                    text-shadow: 1px 1px 3px black;
+                    text-align: center;
+                    z-index: 1;
+                }
+            }
+            &-item-on {
+                transform: scale(1.05);
+            }
+            &-item-off {
+                filter: brightness(0.4);
+            }
+        }
+        .last-tree-column {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 50px; width: 50px;
+                right: 0; bottom: 0;
+                background: url(../images/icons/click.png) no-repeat center;
+                background-size: 50px auto;
+            }
+        }
+    }
+    .tree-common {
+        border: 1px solid #326fcb;
+    }
+    .tree-unique {
+        border: 1px solid #c0793a;
+    }
+    .tree-generator {
+        border: 1px solid #43b596;
+    }
+    .tree-grail {
+        border: 1px solid #eeca24;
+    }
+    @media screen and (max-width:1360px) {
+        .footnote {
+            display: none;
+        }
+        .town-tree-columns {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.town-mobs {
+    .tab-block();
+    flex-wrap: nowrap;
+    padding: 20px 30px 30px 30px;
+
+    &-info {
+        width: 30%;
+        margin-top: 10px;
+        padding-right: 15px;
+
+        .fort-background {
+            background-image: url(../images/back.jpg);
+            text-align: center;
+
+            #town-fort {
+                margin-bottom: -3px;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    &-block {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 15px;
+
+        .mob-item {
+            margin: 10px;
+            width: 120px;
+
+            .name-box {
+                height: 50px;
+                margin-top: -3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 3px solid @dark-grey;
+                background-color: @black;
+
+                span {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:850px) {
+        .town-mobs-info {
+            display: none;
+        }
+        .town-mobs-block {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}
+
+.town-heroes {
+    .tab-block();
+    flex-wrap: nowrap;
+    padding: 20px 30px 30px 30px;
+
+    &-info {
+        width: 30%;
+        padding-right: 15px;
+        margin-top: 10px;
+
+        .tavern-background {
+            background-image: url(../images/back.jpg);
+            text-align: center;
+
+            #town-tavern {
+                margin-bottom: -3px;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    &-block {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 15px;
+
+        .hero-item {
+            margin: 10px;
+            width: 120px;
+
+            .name-box {
+                height: 50px;
+                margin-top: -3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 3px solid @dark-grey;
+                background-color: @black;
+
+                span {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:850px) {
+        .town-heroes-info {
+            display: none;
+        }
+        .town-heroes-block {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}
+
+.town-mosaic {
+    .tab-block();
+    flex-wrap: nowrap;
+    padding: 30px;
+
+    &-info {
+        width: 25%;
+        padding-right: 15px;
+
+        .grail-background {
+            background-image: url(../images/back.jpg);
+            text-align: center;
+
+            #town-grail {
+                margin-bottom: -3px;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    &-img {
+        width: 75%;
+        margin-left: 15px;
+
+        #mosaic-img {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width:850px) {
+        .town-mosaic-info {
+            display: none;
+        }
+        .town-mosaic-img {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.hidden-block {
+    display: none;
+}
+
+.town-appearance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+
+    &-item {
+        width: 300px;
+        margin: 0 5px;
+
+        #town-appearance-1,
+        #town-appearance-2,
+        #town-appearance-3,
+        #town-appearance-4 {
+            width: 100%;
+            background: radial-gradient(@dark-grey, transparent 70%, transparent);
+        }
+        span {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+    .next-appearance {
+        height: 40px;
+        margin: -15px 0;
+        transform: rotate(90deg);
+        filter: brightness(0.6);
+    }
+    @media screen and (max-width:1390px) {
+        .next-appearance {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width:995px) {
+    .town-appearance {
+        flex-wrap: wrap;
+    }
+}

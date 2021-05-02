@@ -1,0 +1,77 @@
+@light-grey: #cfcfcf;
+@dark-grey: #303030;
+@mid-grey: #5b5b5b;
+@black: #0d0d0d;
+@main-gold: #eeca24;
+@dark-gold: #af9001;
+
+.split-line {
+    content: '';
+    position: absolute;
+    height: 1px; width: 80%;
+    left: 10%; top: 0;
+    background: url(../images/other/slider-line.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+body {
+	color: @light-grey;
+	background-color: black;
+	font-family: 'RussoOne-Regular', 'Calibri', sans-serif;
+	margin: 0; padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main, .main-plug {
+	flex-grow: 1;
+}
+
+:active, :focus {
+	outline:none;
+}
+
+a:active, a:focus {
+	filter: brightness(1.2);
+}
+
+input:active, textarea:active {
+    outline: 1px solid @dark-gold;
+}
+
+b {
+	font-weight: normal;
+	color: white;
+}
+
+hr {
+	color: @light-grey;
+}
+
+mark {
+	background: none;
+	font-weight: bold;
+	color: @dark-gold;
+
+    &.one {
+        font-weight: normal;
+	    color: @main-gold;
+    }
+    &.tab {
+        margin-left: 2em;
+    }
+}
+
+strong {
+	font-weight: bold;
+	color: black;
+}
+
+.center {
+	text-align: center;
+}
+
+.plug {
+	flex-grow: 1;
+}

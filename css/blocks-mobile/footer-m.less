@@ -1,0 +1,59 @@
+/* Подвал сайта */
+
+footer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	background: linear-gradient(black, @dark-grey);
+
+	a {
+		display: flex;
+		align-items: center;
+	}
+	&::after {
+		.split-line();
+	}
+	.return {
+		position: fixed;
+		right: 2vw;
+		width: 80px; height: 40px;
+		background: black url(../images/icons/arrow-up.png) center no-repeat;
+		background-size: 40px 40px;
+		border: 1px solid @dark-grey;
+		transform: translateY(0);
+		transition: all 0.4s ease-in-out;
+	}
+}
+
+@media screen and (orientation:portrait) {
+	footer {
+		height: 8vh;
+
+		img {
+			width: 5vh;
+		}
+		.return {
+			bottom: 8vh;
+		}
+		.hidden {
+			transform: translateY(25vh);
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	footer {
+		height: 8vw;
+
+		img {
+			width: 5vw;
+		}
+		.return {
+			bottom: 8vw;
+		}
+		.hidden {
+			transform: translateY(25vw);
+		}
+	}
+}

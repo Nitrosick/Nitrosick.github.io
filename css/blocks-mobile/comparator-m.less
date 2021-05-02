@@ -1,0 +1,142 @@
+/* Страница для сравнения мобов */
+
+.comparator-page {
+	box-sizing: border-box;
+	height: 100vh; width: 100vw;
+	padding: 4vh 1vw 2vh 1vw;
+	display: flex;
+	font-size: 13px;
+
+	.l-portrait, .r-portrait {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px; height: 100%;
+		position: relative;
+		background-image: url(../images/back.jpg);
+		border-top: 1px solid @dark-grey;
+		border-bottom: 1px solid @dark-grey;
+
+		img {
+			height: 128px; width: 98px;
+			outline: 1px solid black;
+		}
+		[name=filter] {
+			position: absolute;
+			top: 0; left: 0;
+			max-width: 100px;
+			height: 100%;
+			opacity: 0;
+			z-index: 1;
+		}
+	}
+	button, .to-main-link {
+		display: block;
+		background-color: rgba(0,0,0,0.6);
+		border-radius: 0;
+		font-size: 12px;
+		color: @light-grey;
+		position: absolute;
+		top: 0; left: 0;
+		height: 10vh; width: 100%;
+		line-height: 10vh;
+		text-align: center;
+		z-index: 2;
+	}
+	.comp-stats {
+		display: grid;
+		height: 100%;
+		flex-grow: 1;
+		border: 1px solid @dark-grey;
+		margin: 0 10px;
+		grid-template-rows: 10vh repeat(14, 4.5vh) auto;
+		grid-template-columns: 4fr 3fr 4fr;
+
+		div {
+			border-bottom: 1px solid @dark-grey;
+			line-height: 4.5vh;
+			white-space: nowrap;
+			overflow: visible;
+			padding: 0 5px;
+		}
+		.left {
+			text-align: left;
+			border-right: 1px dotted @dark-grey;
+		}
+		.right {
+			text-align: right;
+			border-left: 1px dotted @dark-grey;
+		}
+		.stat-name, .name-title {
+			line-height: 10vh;
+		}
+		.no-bord {
+			text-align: center;
+			font-size: 12px;
+		}
+		.stat-ability {
+			white-space: normal;
+			line-height: normal;
+			overflow-y: scroll;
+			font-family: 'Calibri';
+			text-align: left;
+		}
+		.stat-ability.right {
+			text-align: right;
+		}
+		.stat-cost {
+			display: flex;
+			align-items: center;
+		}
+		.stat-cost.right {
+			justify-content: flex-end;
+		}
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.comparator-page {
+		font-size: 11px;
+
+		button {
+			font-size: 10px;
+		}
+		.comp-stats {
+
+			.no-bord {
+				font-size: 10px;
+			}
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	.lockscreen {
+		display: none;
+	}
+}
+@media screen and (orientation:portrait) {
+	.lockscreen {
+		position: fixed;
+		top: 0; left: 0;
+		box-sizing: border-box;
+		height: 100vh; width: 100vw;
+		background: black;
+		display: grid;
+		grid-template-rows: 8vh 75px 1fr 12vh 1fr 75px 12vh;
+		z-index: 3;
+
+		.lockback {
+			border: 1px solid @dark-grey;
+			background-image: url(../images/back.jpg);
+		}
+		.locktext {
+			text-align: center;
+			line-height: 5vh;
+
+			a {
+				color: @mid-grey;
+			}
+		}
+	}
+}

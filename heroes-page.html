@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 герои, герои 3 персонажи, герои 3 чары, герои 3 параметры героев, герои 3 статы героев, heroes 3, heroes 3 heroes, heroes 3 heroes stats, HotA, HotA heroes, HotA heroes stats, герои, характеристики, параметры, навыки">
+	<meta name="description" content="База знаний по героям Heroes of Might and Magic III (HotA). Характеристики, параметры и навыки героев.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="databases/heroes-db.js" as="script">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/heroes-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-heroes.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База героев | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "heroes-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Герои являются основными персонажами под контролем игрока. Они передвигаются по карте приключений, захватывают объекты и ведут за собой армию. Герои разных городов имеют предрасположенность к изучению тех или иных навыков. Кроме того каждый герой либо склонен к магии, либо к воинскому делу, что определяет его дальнейшее развитие.<br><br>
+					<mark class="tab"></mark>Слева располагается панель фильтров. При наведении на каждое окошко появляется подсказка о назначении каждого фильтра. Поле поиска можно использовать не только для поиска по имени персонажа, но и по его отдельным характеристикам, например, введя слово "Некромантия", Вы увидите всех героев, обладающих этим навыком. Кнопка отмены сбрасывает все фильтры на значение по умолчанию и отменяет выбранного героя, это же действие происходит при нажатии клавиши Del.<br><br>
+					<mark class="tab"></mark>Нажмите на интересующего Вас героя и на панели справа отобразятся все его характеристики, либо Вы можете переключаться между карточками героев с помощью стрелок на клавиатуре. При наведении на пункты "Первичные навыки" и "Стартовая армия" появится детальная информация о них.<br><br>
+					<mark class="tab"></mark>Герои разделены на группы по замкам, к которым они относятся, при нажатии на знак "-" можно свернуть лишнюю группу. Нажимая Ctrl + ЛКМ, можно свернуть сразу все группы, а развернуть обратно клавишей Del.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="#">Герои &#9668;</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="main-plug">
+		<main class="objects-page wrapper">
+			<div class="common-background"></div>
+
+			<div class="filter">
+				<div class="flex-row">
+					<img class="sing" src="images/icons/castle.png" alt="Иконка" width="30">
+					<select name="filter" id="heroCastle" title="Фильтр по городу">
+						<option value="all">Все</option>
+						<option>Замок</option>
+						<option>Оплот</option>
+						<option>Башня</option>
+						<option>Инферно</option>
+						<option>Некрополис</option>
+						<option>Темница</option>
+						<option>Крепость</option>
+						<option>Цитадель</option>
+						<option>Сопряжение</option>
+						<option>Причал</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/sex.png" alt="Иконка" width="30">
+					<select name="filter" id="heroSex" title="Фильтр по полу героя">
+						<option value="all">Все</option>
+						<option value="Мужской">Мужской</option>
+						<option value="Женский">Женский</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/rank.png" alt="Иконка" width="30">
+					<select name="filter" id="heroRank" title="Фильтр по классу героя (Воины склонны к изучению боевых навыков и прокачке Атаки и Защиты, в то время как маги - к изучению колдовских навыков и прокачке Силы магии и Знания. Маги всегда со старта имеют Книгу магии и одно заклинание в арсенале)">
+						<option value="all">Все</option>
+						<option value="0">Воин</option>
+						<option value="1">Маг</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/search.png" alt="Иконка" width="30">
+					<input type="text" name="filter" placeholder="Ключевое слово" id="heroName" list="heroesList" title="Поиск по имени героя или по параметру, например: 'человек', 'некромантия', 'молитва' и т.д.">
+					<datalist id="heroesList"></datalist>
+					<img class="sing cancel" src="images/icons/cancel.png" alt="Иконка" width="30" title="Сброс всех фильтров (клавиша Del)">
+				</div>
+			</div>
+
+			<div class="stats-substrate"></div>
+
+			<div class="objects-column"></div>
+
+			<div class="stats-column stats-hero">
+				<span class="title center">Характеристики</span>
+				<span class="stat-name capitalize title"></span>
+				<img class="icon" src="images/icons/stat.png" alt="Иконка">			<span style="border-top: none">Раса</span>			<span style="border-top: none" class="stat-race"></span>
+				<img class="icon" src="images/icons/sex.png" alt="Иконка">			<span>Пол</span>									<span class="stat-sex"></span>
+				<img class="icon" src="images/icons/rank.png" alt="Иконка">			<span>Класс</span>									<span class="stat-rank"></span>
+				<img class="icon" src="images/icons/ability.png" alt="Иконка">		<span>Заклинание</span>								<span class="stat-spell"></span>
+				<img class="icon" src="images/icons/primary.png" alt="Иконка">		<span title="Через слэш (/) перечислены 4 основных навыка, &#10;которые герой получает на 1 уровне: &#10; 1. Атака; &#10; 2. Защита; &#10; 3. Сила магии; &#10; 4. Знания.">Первичные навыки</span> <span class="stat-primary"></span>
+				<img class="icon" src="images/icons/secondary.png" alt="Иконка">	<span style="border: none">Вторичные навыки</span>	<span style="border: none"></span>
+				<span class="stat-secondary1" style="border-top: 1px solid #303030"></span>
+				<span class="stat-secondary2"></span>
+				<img class="icon" src="images/icons/army.png" alt="Иконка">			<span title="Стартовое количество войск героя может колебаться в зависимости от генерации сценария." style="border: none">Стартовая армия</span> <span style="border: none"></span>
+				<span class="stat-army" style="line-height: 2.65vh"></span>
+				<img class="icon" src="images/icons/specialty.png" alt="Иконка">	<span class="back-spec" style="border: none">Специализация</span>
+				<span class="stat-spec"></span>
+				<img class="icon" src="images/icons/biography.png" alt="Иконка">	<span style="border: none">Биография</span>			<span style="border: none"></span>
+				<span class="stat-bio"></span>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="databases/heroes-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/heroes-script.js"></script>
+</body>
+</html>

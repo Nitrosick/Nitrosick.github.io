@@ -1,0 +1,115 @@
+/*	Общие правила	*/
+
+.wrapper {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.block {
+	border: 1px solid @dark-grey;
+}
+
+a {
+	text-decoration: none;
+	color: @light-grey;
+
+    &:hover {
+        filter: brightness(1.075);
+    }
+}
+
+.common-background {
+	position: fixed;
+	top: 0;	right: 0;
+	width: 100vw; height: 100vh;
+	background: linear-gradient(@dark-grey, transparent 18%, transparent),
+				url(../images/other/left-side.png) top left no-repeat,
+				url(../images/other/right-side.png) top right no-repeat;
+	background-size: auto 100%;
+	z-index: -1;
+}
+
+.sing {
+	margin: 0 5px;
+
+	&.cancel {
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width:1560px) {
+	.wrapper {
+		padding: 0 30px;
+	}
+	.common-background {
+		filter: brightness(0.6);
+	}
+}
+
+/* Заголовки страниц */
+
+.page-title {
+	box-sizing: border-box;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 15px;
+    background-color: rgba(0,0,0,0.6);
+
+    h1 {
+		margin: 0;
+		font-size: 25px;
+		font-weight: normal;
+    }
+    .homm-3 {
+        color: @mid-grey;
+		font-size: 20px;
+		margin-left: 15px;
+    }
+}
+
+@media screen and (max-width:600px) {
+	.page-title .homm-3 {
+        display: none;
+    }
+}
+
+/* Иконки ресурсов */
+
+b.resources {
+	width: 30px; height:30px;
+	background: url(../images/icons/resources.png) no-repeat;
+	background-size: auto 30px;
+	margin: 0 3px;
+}
+b.wood {
+	background-position: 0 0;
+}
+b.mercury {
+	background-position: -30px 0;
+}
+b.ore {
+	background-position: -60px 0;
+}
+b.sulfur {
+	background-position: -90px 0;
+}
+b.crystal {
+	background-position: -120px 0;
+}
+b.jewel {
+	background-position: -150px 0;
+}
+b.money {
+	background-position: -180px 0;
+}
+b.gold {
+	background-position: -210px 0;
+}
+b.cheap {
+	background-position: -240px 0;
+}
+b.expensive {
+	background-position: -270px 0;
+}

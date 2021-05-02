@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 артефакты, heroes 3, heroes 3 artifacts, HotA, HotA artifacts, артефакты">
+	<meta name="description" content="База знаний по артефактам Heroes of Might and Magic III (HotA). Параметры артефактов, комплекты, бонусы и стоимость.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="databases/artifacts-db.js" as="script">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/artifact-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-artifacts.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База артефактов | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "artifact-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Артефакты - это предметы, которые игрок может найти на карте приключений, отыскать в сокровищницах, получить за выполнение заданий или купить на специализированных рынках. Артефакты дают различные бонусы героям, которые их экипируют, от прироста первичных навыков до запрета колдовства или снятия всех сопротивлений существ.<br><br>
+					<mark class="tab"></mark>Слева располагается панель фильтров. При наведении на каждое окошко появляется подсказка о назначении каждого фильтра. Кнопка отмены сбрасывает все фильтры на значение по умолчанию и отменяет выбранный артефакт, это же действие происходит при нажатии клавиши Del.<br><br>
+					<mark class="tab"></mark>Нажмите на интересующий Вас артефакт и на панели справа отобразятся все его параметры, либо Вы можете переключаться между объектами с помощью стрелок на клавиатуре.<br><br>
+					<mark class="tab"></mark>При наведении на пункты "Стоимость" и "Продажа" появится детальная информация о них. При нажатии на пункт "Ценность" Вы перейдете в раздел Механик игры к соответствующей статье.<br><br>
+					<mark class="tab"></mark>Если артефакт является сетовым, то в пункте "Комплект" появятся все элементы этого сета и их можно вывести на экран.<br><br>
+					<mark class="tab"></mark>Артефакты разделены на группы по слотам, в которые они кладутся, при нажатии на знак "-" можно свернуть лишнюю группу. Нажимая Ctrl + ЛКМ, можно свернуть сразу все группы, а развернуть обратно клавишей Del.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="#">Артефакты &#9668;</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+	</div>
+	</header>
+	<div class="main-plug">
+		<main class="objects-page wrapper">
+			<div class="common-background"></div>
+
+				<div class="filter">
+					<div class="flex-row">
+						<img class="sing" src="images/icons/ability.png" alt="Иконка" width="30">
+						<select name="filter" id="artBonus" title="Фильтр по бонусу артефакта">
+							<option value="all">Все</option>
+							<option value="Первичные навыки">Первичные навыки</option>
+							<option value="Вторичные навыки">Вторичные навыки</option>
+							<option value="Скорость">Скорость</option>
+							<option value="Здоровье">Здоровье</option>
+							<option value="Мораль и удача">Мораль и удача</option>
+							<option value="Заклинания">Заклинания</option>
+							<option value="Сопротивление магии">Сопротивление магии</option>
+							<option value="Ресурсы">Ресурсы</option>
+							<option value="Мореплавание">Мореплавание</option>
+							<option value="Полет">Полет</option>
+							<option value="Особый">Особый</option>
+						</select>
+					</div>
+					<div class="flex-row">
+						<img class="sing" src="images/icons/class.png" alt="Иконка" width="30">
+						<select name="filter" id="artLevel" title="Фильтр по классу артефакта">
+							<option value="all">Все</option>
+							<option value="Специальный">Специальный</option>
+							<option value="Сокровище">Сокровище</option>
+							<option value="Малый">Малый</option>
+							<option value="Великий">Великий</option>
+							<option value="Реликт">Реликт</option>
+							<option value="Сборный">Сборный</option>
+						</select>
+					</div>
+					<div class="flex-row">
+						<img class="sing" src="images/icons/slot.png" alt="Иконка" width="30">
+						<select name="filter" id="artSlot" title="Фильтр по слоту для артефакта">
+							<option value="all">Все</option>
+							<option>Голова</option>
+							<option>Шея</option>
+							<option>Нагрудник</option>
+							<option>Ноги</option>
+							<option>Плащ</option>
+							<option>Правая рука</option>
+							<option>Левая рука</option>
+							<option>Кольцо</option>
+							<option>Разное</option>
+						</select>
+					</div>
+					<div class="flex-row">
+						<img class="sing" src="images/icons/search.png" alt="Иконка" width="30">
+						<input type="text" name="filter" placeholder="Название артефакта" id="artName" list="artifactsList">
+						<datalist id="artifactsList"></datalist>
+						<img class="sing cancel" src="images/icons/cancel.png" alt="Иконка" width="30" title="Сброс всех фильтров (клавиша Del)">
+					</div>
+				</div>
+
+				<div class="stats-substrate"></div>
+
+				<div class="objects-column"></div>
+
+			<div class="stats-column stats-art">
+				<span class="title center">Параметры</span>
+				<span class="stat-name title" style="line-height: 3vh; padding-left: 7px"></span>
+				<img class="icon" src="images/icons/class.png" alt="Иконка">	<span>Класс</span>																																																	<span class="stat-level"></span>
+				<img class="icon" src="images/icons/slot.png" alt="Иконка">		<span>Слот</span>																																																	<span class="stat-slot"></span>
+				<img class="icon" src="images/icons/cost.png" alt="Иконка">		<span title="Стоимость артефакта на Черном рынке. &#10;Указана в трех видах ресурсов: &#10; 1. Золото; &#10; 2. Дешевый ресурс (дерево и руда); &#10; 3. Дорогой ресурс (все остальные)">Стоимость</span>			<span class="stat-cost"></span>
+				<img class="icon" src="images/icons/sale.png" alt="Иконка">		<span title="Цена продажи артефакта в Лавке старьевщика. &#10;Указана в трех видах ресурсов: &#10; 1. Золото; &#10; 2. Дешевый ресурс (дерево и руда); &#10; 3. Дорогой ресурс (все остальные)">Продажа</span>		<span class="stat-sale"></span>
+				<img class="icon" src="images/icons/value.png" alt="Иконка">	<span title="Ценность артефакта для ИИ. Компьютерный игрок наденет артефакт с наибольшим значением этого параметра."><a href="mechanics-page-2.html#ai.3" target="_blank">Ценность</a></span>						<span class="stat-value"></span>
+				<img class="icon" src="images/icons/ability.png" alt="Иконка">	<span style="border: none">Бонус</span>																																												<span style="border: none"></span>
+				<span class="stat-bonus"></span>
+				<img class="icon" src="images/icons/set.png" alt="Иконка">		<span style="border: none">Комплект</span>																																											<span style="border: none"></span>
+				<span class="stat-set"></span>
+				<span class="look-set title center">Посмотреть комплект</span>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="databases/artifacts-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/artifacts-script.js"></script>
+</body>
+</html>

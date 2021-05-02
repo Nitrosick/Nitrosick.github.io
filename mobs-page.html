@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 мобы, герои 3 существа, герои 3 монстры, герои 3 характеристики мобов, герои 3 статы мобов, heroes 3, heroes 3 mobs, heroes 3 mobs stats, HotA, HotA mobs, HotA mobs stats, мобы, монстры, существа, юниты, характеристики, способности">
+	<meta name="description" content="База знаний по существам Heroes of Might and Magic III (HotA). Все характеристики, стоимость, ценность и способности существ.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="databases/mobs-db.js" as="script">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/mobs-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-mobs.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База существ | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "mobs-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Существа в игре являются основной боевой силой, их количество и уровень зачастую определяют успех героев в сражениях. Каждый город предоставляет уникальный пул из существ 7 уровней и их улучшенных версий со своими особенностями и характеристиками. Кроме них в игре присутствуют существа, не относящиеся к какому либо городу или фракции, так называемые нейтралы, и боевые машины, обеспечивающие поддержку армии.<br><br>
+					<mark class="tab"></mark>Слева располагается панель фильтров. При наведении на каждое окошко появляется подсказка о назначении каждого фильтра. Сортировка выставляет все блоки с существами в заданном порядке. Кнопка отмены сбрасывает все фильтры на значение по умолчанию и отменяет выбранного юнита, это же действие происходит при нажатии клавиши Del.<br><br>
+					<mark class="tab"></mark>Нажмите на интересующее Вас существо и на панели справа отобразятся все его характеристики, либо Вы можете переключаться между объектами с помощью стрелок на клавиатуре.<br><br>
+					<mark class="tab"></mark>Нажимая на каждый из параметров, Вы перейдете в соответствующие разделы Механик игры, чтобы узнать о них подробнее. Есть существа, у которых несколько способностей. Каждая из них является ссылкой на статью, если на странице не умещается вся подробная информация.<br><br>
+					<mark class="tab"></mark>Существа разделены на группы по замкам, к которым они относятся, при нажатии на знак "-" можно свернуть лишнюю группу. Нажимая Ctrl + ЛКМ, можно свернуть сразу все группы, а развернуть обратно клавишей Del.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="#">Существа &#9668;</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="main-plug">
+		<main class="objects-page wrapper">
+			<div class="common-background"></div>
+
+			<div class="filter">
+				<div class="flex-row">
+					<img class="sing" src="images/icons/sorter.png" alt="Иконка" width="30">
+					<select name="filter" id="sorter" title="Сортировка">
+						<option value="standard">По умолчанию</option>
+						<option>Атака ↑</option>
+						<option>Атака ↓</option>
+						<option>Урон ↑</option>
+						<option>Урон ↓</option>
+						<option>Защита ↑</option>
+						<option>Защита ↓</option>
+						<option>Здоровье ↑</option>
+						<option>Здоровье ↓</option>
+						<option>Скорость ↑</option>
+						<option>Скорость ↓</option>
+						<option>Ценность ↑</option>
+						<option>Ценность ↓</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/castle.png" alt="Иконка" width="30">
+					<select name="filter" id="mobCastle" title="Фильтр по городу">
+						<option value="all">Все</option>
+						<option>Замок</option>
+						<option>Оплот</option>
+						<option>Башня</option>
+						<option>Инферно</option>
+						<option>Некрополис</option>
+						<option>Темница</option>
+						<option>Цитадель</option>
+						<option>Крепость</option>
+						<option>Сопряжение</option>
+						<option>Причал</option>
+						<option>Нет города</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/level.png" alt="Иконка" width="30">
+					<select name="filter" id="mobLevel" title="Фильтр по уровню существа">
+						<option value="all">Все</option>
+						<option value="0">0 уровень</option>
+						<option value="1">1 уровень</option>
+						<option value="2">2 уровень</option>
+						<option value="3">3 уровень</option>
+						<option value="4">4 уровень</option>
+						<option value="5">5 уровень</option>
+						<option value="6">6 уровень</option>
+						<option value="7">7 уровень</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/search.png" alt="Иконка" width="30">
+					<input type="text" name="filter" placeholder="Ключевое слово" id="mobName" list="mobsList" title="Поиск по названию существа или по параметру, например: 'стреляет', 'летает' и т.д.">
+					<datalist id="mobsList"></datalist>
+					<img class="sing cancel" src="images/icons/cancel.png" alt="Иконка" width="30" title="Сброс всех фильтров (клавиша Del)">
+				</div>
+			</div>
+
+			<div class="stats-substrate"></div>
+
+			<div class="objects-column"></div>
+
+			<div class="stats-column">
+				<span class="title center" title="Нажмите на любой из параметров, чтобы увидеть подробное описание">Характеристики</span>
+				<span class="stat-name title"></span>
+				<img class="icon" src="images/icons/attack.png" alt="Иконка">	<span style="border-top: none"><a href="mechanics-page.html#atk_dfs_dmg" target="_blank">Атака</a></span>	<span style="border-top: none" class="stat-attack"></span>
+				<img class="icon" src="images/icons/defense.png" alt="Иконка">	<span><a href="mechanics-page.html#atk_dfs_dmg" target="_blank">Защита</a></span>							<span class="stat-defense"></span>
+				<img class="icon" src="images/icons/damage.png" alt="Иконка">	<span><a href="mechanics-page.html#atk_dfs_dmg" target="_blank">Урон</a></span>							<span class="stat-damage"></span>
+				<img class="icon" src="images/icons/shoots.png" alt="Иконка">	<span><a href="mechanics-page.html#archery" target="_blank">Кол-во выстрелов</a></span>				<span class="stat-shoots"></span>
+				<img class="icon" src="images/icons/health.png" alt="Иконка">	<span><a href="mechanics-page.html#health" target="_blank">Здоровье</a></span>						<span class="stat-health"></span>
+				<img class="icon" src="images/icons/speed.png" alt="Иконка">	<span><a href="mechanics-page.html#move_speed" target="_blank">Скорость</a></span>						<span class="stat-speed"></span>
+				<img class="icon" src="images/icons/move.png" alt="Иконка">		<span><a href="mechanics-page.html#move_speed" target="_blank">Передвижение</a></span>					<span class="stat-move"></span>
+				<img class="icon" src="images/icons/value.png" alt="Иконка">	<span><a href="mechanics-page-2.html#ai.4" target="_blank">Ценность</a></span>					<span class="stat-value"></span>
+				<img class="icon" src="images/icons/cost.png" alt="Иконка">		<span>Стоимость</span>																			<span class="stat-cost"></span>
+				<img class="icon" src="images/icons/growth.png" alt="Иконка">	<span><a href="mechanics-page-3.html#growth.1" target="_blank">Базовый прирост</a></span>			<span class="stat-growth"></span>
+				<img class="icon" src="images/icons/stat.png" alt="Иконка">		<span><a href="mechanics-page-3.html#status" target="_blank">Статус</a></span>						<span class="stat-stat"></span>
+				<img class="icon" src="images/icons/land.png" alt="Иконка">		<span><a href="mechanics-page-3.html#land" target="_blank">Родная земля</a></span>					<span class="stat-land"></span>
+				<img class="icon" src="images/icons/ability.png" alt="Иконка">	<span style="border: none" title="Нажмите на конкретную способность существа, чтобы прочитать о ней подробнее">Способности</span> <span style="border: none"></span>
+				<span class="stat-ability"></span>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="databases/mobs-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/mobs-script.js"></script>
+</body>
+</html>

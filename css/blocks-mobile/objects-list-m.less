@@ -1,0 +1,108 @@
+/* Страница мобов, артефактов, героев и заклинаний */
+
+.object-card-basic {
+	display: grid;
+	grid-template-rows: 130px 40px;
+	width: 100px; height: 170px;
+	border-bottom: 3px solid @dark-grey;
+	margin: 0 3px 15px 3px;
+	overflow: hidden;
+	transition: all 0.3s ease-out;
+}
+
+.objects-column {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	.name-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+		font-size: 14px;
+		background-color: @black;
+    }
+	.mob {
+		.object-card-basic();
+
+		.name-box {
+			line-height: 20px;
+		}
+		img {
+			width: 100%; height: 130px;
+		}
+	}
+	.artifact, .object {
+		.object-card-basic();
+		grid-template-rows: 100px 45px;
+		height: 145px;
+
+		.name-box {
+			line-height: 15px;
+		}
+		img {
+			width: 100%; height: 100px;
+		}
+	}
+	.hero {
+		.object-card-basic();
+		grid-template-rows: 110px 40px;
+		height: 150px;
+
+		img {
+			width: 100%; height: 110px;
+		}
+		.name-box {
+			text-transform: capitalize;
+		}
+	}
+	.spell {
+		.object-card-basic();
+		grid-template-rows: 75px 40px;
+		height: 115px;
+
+		img {
+			width: 100%; height: 75px;
+		}
+	}
+	span.compress10per {
+        font-size: 0.9em;
+    }
+	span.compress20per {
+        font-size: 0.8em;
+    }
+	span.compress30per {
+        font-size: 0.7em;
+    }
+	.group {
+		display: block;
+		background: transparent;
+		width: 100%; height: 30px;
+		line-height: 30px;
+		margin: 0 0 15px 15px;
+		overflow: visible;
+
+		&-opened::before {
+			content: '- ';
+			font-size: 1.7em;
+			position: relative;
+			top: 3px;
+			z-index: -1;
+		}
+		&-closed::before {
+			content: '+ ';
+			font-size: 1.55em;
+			position: relative;
+			top: 3px;
+			z-index: -1;
+		}
+	}
+	.selected {
+		transform: scale(1.1);
+		filter: brightness(1.1);
+	}
+	.hidden {
+		display: none;
+	}
+}

@@ -1,0 +1,71 @@
+/*	Подвал сайта	*/
+
+footer {
+	background-color: rgba(0,0,0,0.6);
+    position: relative;
+    font-size: 14px;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        height: 55px;
+    }
+
+    &::after {
+        .split-line();
+        opacity: 0.6;
+    }
+
+    .footer-left {
+        line-height: 22.5px;
+    }
+
+    .footer-right {
+        text-align: right;
+        color: @mid-grey;
+    }
+
+    .footer-icons {
+        .mail, .community {
+            width: 22.5px; height: 22.5px;
+            margin-right: 10px;
+        }
+        .mail {
+            background-image: url(../images/icons/message.png);
+            background-size: 22.5px auto;
+            background-repeat: no-repeat;
+        }
+        .community {
+            background-image: url(../images/icons/planet.png);
+            background-size: 22.5px auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    // Кнопка возврата в начало
+    .return {
+        position: fixed;
+        z-index: 2;
+        right: 30px; bottom: 30px;
+        width: 50px; height: 50px;
+        background: rgba(0,0,0,0.6) url(../images/icons/arrow-up.png) no-repeat;
+        background-size: 50px 50px;
+        border: 1px solid @dark-grey;
+        transform: translateY(0);
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+
+        &:hover {
+            border-right: 1px solid @main-gold;
+            border-left: 1px solid @main-gold;
+            box-shadow: 0 0 20px -5px @main-gold;
+            transition: all 0.3s ease-out;
+        }
+    }
+    .hidden {
+        transform: translateY(100px);
+        transition: all 0.3s ease-out;
+    }
+}

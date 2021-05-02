@@ -1,0 +1,245 @@
+/*	Страница механик	*/
+
+.story-list {
+	position: fixed;
+	top: -100vh; left: 0;
+	width: 100vw; height: 100vh;
+	box-sizing: border-box;
+	padding: 30px 15px;
+	background: linear-gradient(@dark-grey, black 10%, black);
+	z-index: 5;
+	opacity: 0;
+	transition: all 0.5s ease-out;
+	overflow: hidden;
+
+	.story-list-close {
+		position: absolute;
+		top: 5px; right: 5px;
+		width: 40px; height: 40px;
+		background: url(../images/icons/cancel.png) no-repeat;
+		background-size: 40px auto;
+	}
+	.story-list-scroll {
+		max-height: 85vh;
+		overflow-y: scroll;
+
+		&::after {
+			.split-line();
+			top: auto; bottom: 0;
+		}
+		.story-list-part {
+			margin-bottom: 20px;
+
+			&[open] summary {
+				color: @mid-grey;
+			}
+			ul {
+				padding: 0 15px;
+			}
+			.story-link {
+				list-style-type: none;
+				font-family: 'Calibri', sans-serif;
+				margin: 10px 0;
+			}
+		}
+		.separate-link {
+			display: block;
+			padding-left: 15px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+
+	.prev-page, .next-page {
+		display: block;
+		border: 1px solid @dark-grey;
+		width: 30px; height: 30px;
+		background: rgba(0,0,0,0.6) url(../images/icons/arrow-up.png) no-repeat center;
+		background-size: cover;
+	}
+	.prev-page {
+		transform: rotate(-90deg);
+	}
+	.next-page {
+		transform: rotate(90deg);
+	}
+	.disable-button {
+		filter: brightness(0.5);
+	}
+	.pages-links {
+		border: 1px solid @dark-grey;
+		display: flex;
+		margin: 0 15px;
+
+		a {
+			display: block;
+			height: 28px;
+			line-height: 30px;
+			margin: 0 15px;
+		}
+		&-active {
+			color: @main-gold;
+		}
+	}
+}
+.end-of-page {
+	margin-bottom: 50px;
+}
+
+.story {
+	margin: 15px 2vw;
+	overflow-x: hidden;
+
+	a {
+		font-size: inherit;
+	}
+	h1 {
+		position: relative;
+		font-size: 16px;
+		font-weight: normal;
+		min-height: 25px;
+		background: linear-gradient(@dark-grey 40%, black);
+		text-align: center;
+		margin: 0; padding: 5px;
+	}
+	h2 {
+		font-size: 15px;
+		font-weight: bold;
+		font-family: 'Calibri', sans-serif;
+		background: @dark-grey;
+		text-align: center;
+		margin: 0; padding: 5px;
+	}
+	p {
+		font-size: 14px;
+		font-family: 'Calibri', sans-serif;
+		margin: 5px; padding: 5px;
+		background: @light-grey;
+		text-align: justify;
+		border: 1px solid @dark-grey;
+		color: @dark-grey;
+	}
+	table {
+		font-size: 14px;
+		font-family: 'Calibri', sans-serif;
+		background: @light-grey;
+		text-align: center;
+		border-spacing: 0;
+		line-height: normal;
+		border: 1px solid @dark-grey;
+		color: @dark-grey;
+
+		&.left {
+			text-align: left;
+		}
+		&.left-align {
+			text-align: left;
+
+			th {
+				text-align: center;
+			}
+		}
+		.td-picture {
+			padding: 0;
+			background-image: url(../images/back.jpg);
+		}
+		&.split {
+			text-align: left;
+
+			td {
+				border: none;
+				border-left: 1px solid @mid-grey;
+			}
+		}
+	}
+	.minimized {
+		overflow-y: hidden;
+		height: 40px;
+		line-height: 40px;
+		background: @mid-grey;
+		color: white;
+		font-family: 'Calibri';
+		text-align: center;
+	}
+	.minimized-o {
+		height: auto;
+		color: @light-grey;
+	}
+	.picture {
+		width: 100%; height: inherit;
+		background: url(../images/back.jpg);
+		text-align: center;
+		padding-top: 3px;
+		border-top: 1px solid @dark-grey;
+		border-bottom: 1px solid @dark-grey;
+		overflow-x: scroll;
+		position: relative;
+	}
+	.slider::before {
+		content: '';
+		position: absolute;
+		width: 20px; height: 20px;
+		top: 45%; left: -4px;
+		background: url(../images/icons/arrow-up.png) no-repeat center;
+		background-size: 20px 20px;
+		transform: rotate(-90deg);
+	}
+	.story-img {
+		display: inline;
+		margin: 5px;
+	}
+	.img-triple-screen {
+		width: 300%;
+	}
+	.img-double-screen {
+		width: 200%;
+	}
+	.img-full-screen {
+		width: 100%;
+	}
+	.img-half-screen {
+		width: 50%;
+	}
+	.img-in-text-l {
+		float: left;
+	}
+	.img-in-text-r {
+		float: right;
+	}
+	.in-progress {
+		position: absolute;
+		top: 5px; left: 5px;
+		height: 20px; width: 20px;
+		font-size: 18px;
+		line-height: 20px;
+		text-align: center;
+		border: 1px solid @light-grey;
+	}
+}
+
+@media screen and (orientation:portrait) {
+	.story table {
+		width: 100%;
+
+		th, td {
+			border: 1px solid @mid-grey;
+			padding: 3px;
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	.story table {
+		margin: 5px 0.5%;
+		width: 99%;
+
+		th, td {
+			border: 1px solid @mid-grey;
+			padding: 1px;
+		}
+	}
+}

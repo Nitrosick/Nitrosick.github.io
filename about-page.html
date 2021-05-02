@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, heroes 3, HotA, о проекте hommbase, hommbase">
+	<meta name="description" content="Информация о проекте Hommbase, идея создания, контакты.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/about-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-about.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>О проекте | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "about-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help no-help">?
+				<div class="help-bar block">
+					<span>Для этого раздела нет дополнительной информации.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="#">О проекте &#9668;</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="common-background"></div>
+
+		<div class="about-block block wrapper">
+			<section class="about-content">
+				<h1>О ПРОЕКТЕ HOMMBASE</h1>
+				<p>
+					<mark class="tab"></mark>В далеком 1999 году мало кто мог себе представить, что вышедшая тогда игра <mark>Heroes&nbsp;of&nbsp;Might&nbsp;and&nbsp;Magic&nbsp;III</mark> станет своего рода легендой, которая будет актуальна и востребована даже спустя десятилетия, однако именно так и вышло, и теперь трудно найти человека, который не знал бы о ней.<br>
+					<mark class="tab"></mark>За все это время фанаты серии создали бесчисленное множество различных ресурсов в интернете: форумы с обсуждениями, базы знаний по каждому игровому объекту, фанатские арты, хранилища с огромным количеством дополнительного контента и так далее, всего не перечесть.<br>
+					<mark class="tab"></mark>Мы задумали данный проект с целью собрать актуальную информацию из различных источников, максимально ее систематизировать, отфильтровать и преподнести в удобном виде. Основная идея - сделать базу существ, артефактов, героев, заклинаний и многих других игровых объектов, так, чтобы можно было сразу видеть всю важную информацию в одном месте, при необходимости отсортировать ее и отфильтровать, сравнить одно с другим. Порой приходится посещать 2-3 интернет ресурса, чтобы сложилась полная картина, мы постараемся уместить все это в рамках одного ресурса насколько это возможно.<br>
+					<mark class="tab"></mark>Помимо основных параметров и характеристик тех или иных игровых объектов, на нашем сайте есть раздел <a href="mechanics-page.html">Механики&nbsp;игры</a>, где собраны различные тонкости геймплея, описания способностей и формулы расчета для разных аспектов игры. Наполнение для данного раздела по большей части взято из крупного справочника под названием <a href="https://vk.com/fizmig" target="_blank">FizMiG</a>, в котором можно найти практически любую проверенную информацию о Heroes&nbsp;III.<br>
+					<mark class="tab"></mark>Поскольку сейчас большинство игроков, хоть и не все, используют дополнение <a href="https://vk.com/h3hota" target="_blank">Horn&nbsp;of&nbsp;the&nbsp;Abyss</a>, то все данные на нашем сайте заточены именно под него, но это не значит, что они будут бесполезны для других версий игры.<br>
+					<mark class="tab"></mark>Сайт, в первую очередь, это база знаний, но в добавок к этому, мы создали раздел с ссылками на полезный <a href="soft-page.html">Софт</a>, который поможет в создании своих сценариев и в изменении внутриигровых файлов, а также раздел, где будут выложены созданные нами <a href="maps-page.html">Карты</a>, там же можно будет прочитать о них и при желании скачать.<br>
+					<mark class="tab"></mark>Мы надеемся, что фанатам Heroes III будет полезен наш ресурс и они найдут здесь что-то новое для себя. Если Вы хотите оставить комментарий, отзыв или задать нам вопрос, то можете написать на адрес электронной почты, указанный внизу страницы.
+				</p>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="databases/search-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 мобы, герои 3 существа, герои 3 монстры, герои 3 характеристики мобов, герои 3 статы мобов, герои 3 сравнить существ, heroes 3, heroes 3 mobs, heroes 3 mobs stats, heroes 3 mob compare, HotA, HotA mobs, HotA mobs stats, HotA mob compare, мобы, монстры, существа, юниты, характеристики, способности">
+	<meta name="description" content="База знаний по существам Heroes of Might and Magic III (HotA). Сравнить характеристики существ.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="databases/mobs-db.js" as="script">
+	<link rel="stylesheet" href="css/style-m.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/comparator-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-mobs.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>Сравнить существ | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: Calibri;
+		src: url(fonts/calibri.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.device.type != 'Mobile') {window.location = "comparator-page.html";}
+	</script>
+</head>
+<body>
+	<div class="lockscreen">
+		<header>
+			<a class="icon" href="index-m.html"></a>
+			<a class="name" href="index-m.html">HOMMBASE</a>
+			<div></div>
+			<div class="burger"></div>
+			<div class="bar">
+				<a href="mobs-page-m.html">Существа</a>
+				<a href="#">Сравнить существ</a>
+				<a href="artifact-page-m.html">Артефакты</a>
+				<a href="heroes-page-m.html">Герои</a>
+				<a href="spells-page-m.html">Заклинания</a>
+				<a href="objects-page-m.html">Игровые объекты</a>
+				<a href="maps-page-m.html">Карты</a>
+				<a href="soft-page-m.html">Софт</a>
+				<a href="mechanics-page-m.html">Механики игры</a>
+				<a href="about-page-m.html">О проекте</a>
+			</div>
+		</header>
+		<div class="lockback"></div>
+		<div></div>
+		<div class="locktext">Переверните устройство в<br>горизонтальное положение</div>
+		<div></div>
+		<div class="lockback" style="grid-row: 6/8"></div>
+	</div>
+	<div class="container">
+		<main class="comparator-page">
+
+			<div class="l-portrait">
+				<a class="to-main-link" href="index-m.html">На главную</a>
+				<select name="filter" id="lMobName"></select>
+				<img src="images/mobs/empty.png" alt="Изображение моба">
+			</div>
+
+			<div class="comp-stats">
+				<div class="stat-name left"></div>				<div class="no-bord name-title">Название</div>															<div class="stat-name right"></div>
+				<div class="stat-level left"></div>				<div class="no-bord">Уровень</div>																		<div class="stat-level right"></div>
+				<div class="stat-castle left"></div>			<div class="no-bord">Город</div>																		<div class="stat-castle right"></div>
+				<div class="stat-attack left"></div>			<div class="no-bord"><a href="mechanics-page-m.html#atk_dfs_dmg" target="_blank">Атака</a></div>		<div class="stat-attack right"></div>
+				<div class="stat-defense left"></div>			<div class="no-bord"><a href="mechanics-page-m.html#atk_dfs_dmg" target="_blank">Защита</a></div>		<div class="stat-defense right"></div>
+				<div class="stat-damage left"></div>			<div class="no-bord"><a href="mechanics-page-m.html#atk_dfs_dmg" target="_blank">Урон</a></div>			<div class="stat-damage right"></div>
+				<div class="stat-shoots left"></div>			<div class="no-bord"><a href="mechanics-page-m.html#archery" target="_blank">Кол-во выстрелов</a></div>	<div class="stat-shoots right"></div>
+				<div class="stat-health left"></div>			<div class="no-bord"><a href="mechanics-page-m.html#health" target="_blank">Здоровье</a></div>			<div class="stat-health right"></div>
+				<div class="stat-speed left"></div>				<div class="no-bord"><a href="mechanics-page-m.html#move_speed" target="_blank">Скорость</a></div>		<div class="stat-speed right"></div>
+				<div class="stat-move left"></div>				<div class="no-bord"><a href="mechanics-page-m.html#move_speed" target="_blank">Передвижение</a></div>	<div class="stat-move right"></div>
+				<div class="stat-value left"></div>				<div class="no-bord"><a href="mechanics-page-m-2.html#ai.2" target="_blank">Ценность</a></div>			<div class="stat-value right"></div>
+				<div class="stat-cost left"></div>				<div class="no-bord">Стоимость</div>																	<div class="stat-cost right"></div>
+				<div class="stat-growth left"></div>			<div class="no-bord"><a href="mechanics-page-m-3.html#growth" target="_blank">Базовый прирост</a></div>	<div class="stat-growth right"></div>
+				<div class="stat-stat left"></div>				<div class="no-bord"><a href="mechanics-page-m-3.html#status" target="_blank">Статус</a></div>			<div class="stat-stat right"></div>
+				<div class="stat-land left"></div>				<div class="no-bord"><a href="mechanics-page-m-3.html#land" target="_blank">Родная земля</a></div>		<div class="stat-land right"></div>
+				<div class="stat-ability left"></div>			<div class="no-bord">Способности</div>																	<div class="stat-ability right"></div>
+			</div>
+
+			<div class="r-portrait">
+				<button class="refresh">Сброс</button>
+				<select name="filter" id="rMobName"></select>
+				<img src="images/mobs/empty.png" alt="Изображение моба" style="transform: scale(-1, 1)">
+			</div>
+		</main>
+	</div>
+	<script src="databases/mobs-db.js"></script>
+	<script src="scripts/common-actions-m.js"></script>
+	<script src="scripts/comparator-script-m.js"></script>
+</body>
+</html>

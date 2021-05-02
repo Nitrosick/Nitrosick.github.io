@@ -1,0 +1,50 @@
+/*	Страница о проекте	*/
+
+.about-page {
+	position: relative;
+	text-align: center;
+	width: 92vw;
+	background-color: @black;
+	padding: 1vw;
+	margin: 2vw auto;
+	z-index: -1;
+
+	.about-cont {
+		text-align: justify;
+		font-style: normal;
+		font-family: 'Calibri';
+		font-size: 14px;
+		margin: 20px 15px;
+
+		mark, a {
+			color: @main-gold;
+			font-weight: bold;
+			font-family: 'Calibri', sans-serif;
+			line-height: normal;
+		}
+	}
+	.comm {
+		text-align: center;
+
+		.comm-title {
+			position: relative;
+			font-weight: normal;
+			font-size: 16px;
+			font-family: 'RussoOne-Regular', sans-serif;
+			line-height: normal;
+			margin: 0;
+			padding-bottom: 10px;
+
+			&::after {
+				.split-line();
+				top: auto;
+				bottom: 0;
+			}
+		}
+		a {
+			color: @light-grey;
+			font-weight: normal;
+			line-height: 40px;
+		}
+	}
+}

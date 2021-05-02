@@ -1,0 +1,77 @@
+/*	Страница карт	*/
+
+.maps-help {
+	position: relative;
+	height: 40px;
+	background: black;
+	line-height: 40px;
+	text-align: center;
+	z-index: 0;
+
+	&::after {
+		.split-line();
+		top: auto; bottom: 0;
+	}
+}
+
+.map-block {
+	margin: 15px 2vw;
+	display: grid;
+	grid-template-rows: 150px repeat(8, 25px) auto 150px 40px;
+	grid-template-columns: auto auto;
+	height: 150px;
+	font-size: 13px;
+	overflow: hidden;
+
+	.double {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.minimap {
+		background-image: url(../images/back.jpg);
+		display: flex;
+		justify-content: center;
+		padding: 5px 0;
+
+		img {
+			margin: 0 5px;
+		}
+	}
+	span {
+		border-bottom: 1px solid @dark-grey;
+		line-height: 25px;
+		padding: 0 5px;
+	}
+	.name {
+		line-height: 150px;
+		text-align: right;
+		padding-right: 4vw;
+		text-shadow: 1px 1px 10px black;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	.values {
+		font-family: 'Calibri';
+		border-left: 1px dotted @dark-grey;
+	}
+	.desc {
+		font-family: 'Calibri';
+		line-height: normal;
+		padding: 5px;
+	}
+	.download-button {
+		text-align: center;
+		line-height: 40px;
+		border: 1px solid @dark-grey;
+	}
+}
+.opened {
+	height: auto;
+}
+
+@media screen and (max-width:370px) {
+	.map-block span.name {
+		background-size: auto 100%;
+	}
+}

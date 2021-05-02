@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 города, герои 3 замки, герои 3 постройки, heroes 3, heroes 3 towns, heroes 3 castles, HotA, HotA towns, HotA castles, города, замки, замок, оплот, башня, инферно, некрополис, темница, цитадель, крепость, сопряжение, причал">
+	<meta name="description" content="База знаний по городам Heroes of Might and Magic III (HotA). Вся информация по городам, постройки и их цены, схемы последовательности отстройки, карты грааля.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="databases/towns-db.js" as="script">
+	<link rel="preload" href="databases/mobs-db.js" as="script">
+	<link rel="preload" href="databases/heroes-db.js" as="script">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/towns-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-towns.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База городов | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "towns-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Города в Heroes of Might and Magic III являются ключевыми объектами и главной целью для захвата игроками. В городах игроки могут нанимать новых героев, армию, покупать боевые машины, получать некоторые бонусы, а также города являются основным источником денежных доходов.<br><br>
+					<mark class="tab"></mark>Выберите интересующий Вас город из выпадающего списка и все данные на странице актуализируются, подтянув информацию по выбранному замку.<br><br>
+					<mark class="tab"></mark>На самом видном месте располагается изображение с внешним видом города, причем есть три режима просмотра: Город без построек; Полностью отстроенный город; Изображение с названиями всех построек. Эти режимы переключаются клавишами в правой части картинки.<br><br>
+					<mark class="tab"></mark>В левой части Вы увидите кнопку со знаком "i", она открывает общую информацию по замку, его принадлежность к фракции, сильные и слабые стороны.<br><br>
+					<mark class="tab"></mark>Ниже расположена подробная информация о городе, разбитая по вкладкам. Наводите курсор на постройки и увидите их описание, цену и требования. Во вкладке "Дерево построек" можно кликать на тайлы и будет отображаться цепочка развития города до выбранной постройки. В правом столбце расположены постройки, которые можно возвести с самого начала, и чем правее перемещаемся по таблице, тем более требовательные постройки там расположены. Остальные три вкладки отображают Существ, Героев и Карту загадки для поиска Грааля, которые относятся к выбранному городу.<br><br>
+					<mark class="tab"></mark>Для быстрого переключения можно использовать горячие клавиши: Клавиша Tab поочередно переключает вкладки, а стрелки клавиатуры с зажатой клавишей Ctrl переключают выбранный город.<br><br>
+					<mark class="tab"></mark>Для "Геройской" атмосферы Вы можете включить музыкальную тему выбранного города в верхней правой части экрана.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="#">Города &#9668;</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="common-background"></div>
+
+		<div class="town-filter wrapper">
+			<img src="images/towns/castle/castle-icon.jpg" alt="Иконка города" class="town-icon">
+			<select name="filter" id="town" title="Выбор города">
+				<option value="castle">Замок</option>
+				<option value="rampart">Оплот</option>
+				<option value="tower">Башня</option>
+				<option value="inferno">Инферно</option>
+				<option value="necropolis">Некрополис</option>
+				<option value="dungeon">Темница</option>
+				<option value="stronghold">Цитадель</option>
+				<option value="fortress">Крепость</option>
+				<option value="conflux">Сопряжение</option>
+				<option value="cove">Причал</option>
+			</select>
+			<div class="plug"></div>
+			<audio controls title="Музыкальная тема города" id="town-audio">
+				Воспроизведение не поддерживается браузером.
+			</audio>
+		</div>
+
+		<div class="town-background wrapper">
+			<img class="town-picture" id="marks-town" src="images/svg-icon.svg" alt="Фон города" width="1500">
+			<img class="town-picture" id="empty-town" src="images/svg-icon.svg" alt="Фон города" width="1500">
+			<img class="town-picture" id="full-town" src="images/svg-icon.svg" alt="Фон города" width="1500">
+
+			<div class="view-switcher block">
+				<button class="active" id="switcher-full" title="Полностью отстроенный город"></button>
+				<button id="switcher-empty" title="Город без построек"></button>
+				<button id="switcher-marks" title="Отображение названий построек"></button>
+			</div>
+
+			<div class="town-info">
+				<h2 class="town-info-title"></h2>
+				<p class="town-info-text"></p>
+			</div>
+			<button class="town-info-button block" title="Информация о городе"></button>
+		</div>
+
+		<nav class="town-details-tabs wrapper">
+			<button class="town-details-tab block active" id="structures-tab">Постройки</button>
+			<button class="town-details-tab block" id="tree-tab">Дерево построек</button>
+			<button class="town-details-tab block" id="mobs-tab">Существа</button>
+			<button class="town-details-tab block" id="heroes-tab">Герои</button>
+			<button class="town-details-tab block" id="mosaic-tab">Карта загадки</button>
+		</nav>
+		<div class="town-structures wrapper"></div>
+		<div class="town-tree wrapper hidden-block">
+			<div class="footnote">
+				<span class="tree-common">Общие постройки</span>
+				<p>
+					<mark class='tab'></mark>Эти постройки присущи любому городу и выполняют ровно одни и те же функции. Разница заключается только во внешнем виде строений.
+				</p>
+				<span class="tree-unique">Уникальные постройки</span>
+				<p>
+					<mark class='tab'></mark>Эти постройки могут быть воздвигнуты только в этом городе, однако в других городах могут встречаться аналогичные постройки с похожими характеристиками.
+				</p>
+				<span class="tree-generator">Генераторы существ</span>
+				<p>
+					<mark class='tab'></mark>В каждом городе игрок может построить генераторы существ с 1 по 7 уровень, а также их улучшенные версии. Генераторы также уникальны для каждого города.
+				</p>
+				<span class="tree-grail">Храм Грааля</span>
+				<p>
+					<mark class='tab'></mark>Уникальная постройка не только для каждого города, но и для сценария в целом. Храм Грааля обладает особыми свойствами в зависимости от города, где его расположили. Грааль находится в единственном месте карты и может быть только выкопан. Храм Грааля нельзя построить за деньги или ресурсы.
+				</p>
+			</div>
+
+			<div class="town-tree-columns">
+				<div class="tree-column"></div>
+				<div class="tree-column"></div>
+				<div class="tree-column"></div>
+				<div class="tree-column"></div>
+				<div class="tree-column"></div>
+				<div class="tree-column"></div>
+				<div class="tree-column last-tree-column"></div>
+			</div>
+		</div>
+		<div class="town-mobs wrapper hidden-block">
+			<div class="town-mobs-info">
+				<div class="fort-background">
+					<img id="town-fort" src="images/svg-icon.svg" alt="Картинка форта">
+				</div>
+				<p>
+					<mark class='tab'></mark>В правой части отображаются <b>Существа</b>, относящиеся к данному городу. Построив соответствующее <b>Жилище</b>, Вы сможете нанимать этих существ в армию героя. В начале каждой недели происходит прирост существ во всех построенных игроком жилищах, если эта неделя не пришла под знаком <b>Чумы</b>.<br><br>
+					<mark class='tab'></mark>У каждого юнита есть <b>Улучшенная</b> версия, которая становится доступна для покупки после улучшения его жилища. Также игрок может улучшать обычных существ за деньги и ресурсы, цена улучшения составляет разницу в цене между обычной и улучшенной версией существа.<br><br>
+					<mark class='tab'></mark>Посетив <b>Форт</b> / <b>Цитадель</b> / <b>Замок</b> (в зависимости от того, что построено), Вы увидите, сколько в данный момент доступно для покупки тех или иных существ в городе, а также цены на них.
+				</p>
+				<a class="block" href="mobs-page.html">На страницу Существ</a>
+			</div>
+			 <div class="town-mobs-block"> </div>
+		</div>
+		<div class="town-heroes wrapper hidden-block">
+			<div class="town-heroes-info">
+				<div class="tavern-background">
+					<img id="town-tavern" src="images/svg-icon.svg" alt="Картинка таверны">
+				</div>
+				<p>
+					<mark class='tab'></mark>Справа представлены <b>Герои</b>, для которых данный город является родным. Посетив <b>Таверну</b>, Вы сможете нанимать героев по <b>2500 золотых</b>.<br><br>
+					<mark class='tab'></mark>Таверна не всегда представляет на выбор героев соответствующего замка, здесь можно нанять персонажей других городов и фракций. Однако в начале каждой недели игроку гарантированно предлагается к покупке один герой из родного замка, за исключением случаев, когда уже наняты все герои города, так как на карте не может быть два одинаковых героя.<br><br>
+					<mark class='tab'></mark>Когда герой сбегает с поля боя, игрок может снова нанять его в таверне со всеми изученными <b>Навыками</b> и найденными <b>Артефактами</b>, а при откупе у героя также сохранится и оставшаяся <b>Армия</b>. Если же этого не сделать, то героя позже смогут выкупить другие игроки.<br><br>
+					<mark class='tab'></mark>Независимо от города, герои всегда делятся на <b>4 класса</b>, <b>2</b> из них <b>маги</b> и <b>2</b> - <b>воины</b>. Класс определяет предрасположенность к прокачке тех или иных навыков и параметров героя. Кроме того герои-маги всегда на старте игры имеют <b>Книгу магии</b> и одно заклинание в арсенале.
+				</p>
+				<a class="block" href="heroes-page.html">На страницу Героев</a>
+			</div>
+			 <div class="town-heroes-block"></div>
+		</div>
+		<div class="town-mosaic wrapper hidden-block">
+			<div class="town-mosaic-info">
+				<div class="grail-background">
+					<img id="town-grail" src="images/svg-icon.svg" alt="Картинка храма Грааля">
+				</div>
+				<p>
+					<mark class='tab'></mark>При старте игры игрок получает <b>Карту загадки</b>, которая выбирается по родному городу. Справа Вы видите карту для данного города.<br><br>
+					<mark class='tab'></mark>Для каждого города существует уникальная карта загадки, но все они разделены на <b>48 частей</b>. Посещая на карте приключений <b>Обелиски</b>, игрок будет постепенно открывать свою карту загадки и в конечном счете увидит точку, где закопан <b>Грааль</b>.<br><br>
+					<mark class='tab'></mark>Карта будет открываться пропорционально количеству обелисков, то есть, если на карте всего один обелиск, то он откроет карту полностью, а если 48 (максимальное кол-во), то каждый обелиск будет открывать один кусочек паззла.<br><br>
+					<mark class='tab'></mark>Последовательность открытия карты загадки строго определена и на правой картинке <b>Числами</b> отмечена эта последовательность. Кусочки открываются от меньшего числа к большему.
+				</p>
+				<a class="block" href="mechanics-page-4.html#grail">К статье про Грааль</a>
+			</div>
+			<div class="town-mosaic-img">
+				<img id="mosaic-img" src="images/svg-icon.svg" alt="Мозаика">
+			</div>
+		</div>
+		<div class="town-appearance wrapper">
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-1" alt="Внешний вид города">
+				<span>БЕЗ ФОРТА</span>
+			</div>
+			<img src="images/icons/arrow-up.png" alt="Следующий вид" class="next-appearance">
+
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-2" alt="Внешний вид города">
+				<span>С ФОРТОМ</span>
+			</div>
+			<img src="images/icons/arrow-up.png" alt="Следующий вид" class="next-appearance">
+
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-3" alt="Внешний вид города">
+				<span>С ЦИТАДЕЛЬЮ</span>
+			</div>
+			<img src="images/icons/arrow-up.png" alt="Следующий вид" class="next-appearance">
+
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-4" alt="Внешний вид города">
+				<span>С ЗАМКОМ</span>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="databases/towns-db.js"></script>
+	<script src="databases/mobs-db.js"></script>
+	<script src="databases/heroes-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/towns-script.js"></script>
+</body>
+</html>

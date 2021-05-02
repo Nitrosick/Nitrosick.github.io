@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 мобы, герои 3 существа, герои 3 монстры, герои 3 характеристики мобов, герои 3 статы мобов, heroes 3, heroes 3 mobs, heroes 3 mobs stats, HotA, HotA mobs, HotA mobs stats, мобы, монстры, существа, юниты, характеристики, способности">
+	<meta name="description" content="База знаний по существам Heroes of Might and Magic III (HotA). Все характеристики, стоимость, ценность и способности существ.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="databases/mobs-db.js" as="script">
+	<link rel="stylesheet" href="css/style-m.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/mobs-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-mobs.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>База существ | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: Calibri;
+		src: url(fonts/calibri.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.device.type != 'Mobile') {window.location = "mobs-page.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<a class="icon" href="index-m.html"></a>
+		<a class="name" href="index-m.html">HOMMBASE</a>
+		<div></div>
+		<div class="burger"></div>
+		<div class="bar">
+			<a>Существа</a>
+			<a href="comparator-page-m.html">Сравнить существ</a>
+			<a href="artifact-page-m.html">Артефакты</a>
+			<a href="heroes-page-m.html">Герои</a>
+			<a href="spells-page-m.html">Заклинания</a>
+			<a href="objects-page-m.html">Игровые объекты</a>
+			<a href="maps-page-m.html">Карты</a>
+			<a href="soft-page-m.html">Софт</a>
+			<a href="mechanics-page-m.html">Механики игры</a>
+			<a href="about-page-m.html">О проекте</a>
+		</div>
+	</header>
+	<main>
+		<div class="filter">
+
+			<div class="sing"><img src="images/icons/sorter.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Сортировка</span>
+				<select name="filter" id="sorter">
+					<option value="standard">По умолчанию</option>
+					<option>Атака ↑</option>
+					<option>Атака ↓</option>
+					<option>Урон ↑</option>
+					<option>Урон ↓</option>
+					<option>Защита ↑</option>
+					<option>Защита ↓</option>
+					<option>Здоровье ↑</option>
+					<option>Здоровье ↓</option>
+					<option>Скорость ↑</option>
+					<option>Скорость ↓</option>
+					<option>Ценность ↑</option>
+					<option>Ценность ↓</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/castle.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Фильтр по городу</span>
+				<select name="filter" id="mobCastle">
+					<option value="all">Все</option>
+					<option>Замок</option>
+					<option>Оплот</option>
+					<option>Башня</option>
+					<option>Инферно</option>
+					<option>Некрополис</option>
+					<option>Темница</option>
+					<option>Цитадель</option>
+					<option>Крепость</option>
+					<option>Сопряжение</option>
+					<option>Причал</option>
+					<option>Нет города</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/level.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Фильтр по уровню</span>
+				<select name="filter" id="mobLevel">
+					<option value="all">Все</option>
+					<option value="0">0 уровень</option>
+					<option value="1">1 уровень</option>
+					<option value="2">2 уровень</option>
+					<option value="3">3 уровень</option>
+					<option value="4">4 уровень</option>
+					<option value="5">5 уровень</option>
+					<option value="6">6 уровень</option>
+					<option value="7">7 уровень</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/search.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Поиск</span>
+				<input type="text" name="filter" placeholder="Название или параметр" id="mobName" list="mobsList">
+				<datalist id="mobsList"></datalist>
+			</div>
+
+			<div class="sing"><img src="images/icons/caption.png" alt="Иконка" height="30"></div>
+			<span class="filter-text">Названия</span>
+			<button class="name-on">Отобразить</button>	<button class="name-off">Скрыть</button>
+
+			<div class="sing"><img src="images/icons/cancel.png" alt="Иконка" height="30"></div>
+			<span class="cancel-button filter-text">Сбросить все фильтры</span>
+
+		</div>
+		<div class="objects-column"></div>
+	</main>
+	<footer>
+		<a href="mailto:hommbase@gmail.com"><img src="images/icons/message.png" alt="Иконка"></a>
+		<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a>
+		<div class="plug"></div>
+		<a href="community-page-m.html"><img src="images/icons/planet.png" alt="Иконка"></a>
+		<a class="return hidden" href="#top"></a>
+	</footer>
+	<div class="stats">
+		<div class="sideplug">
+			<img class="portrait" src="" alt="Изображение моба">
+			<div class="close">
+				<span class="sideplug-text">Закрыть</span>
+				<div class="cancel-icon"></div>
+			</div>
+			<a href="comparator-page-m.html" class="compare">
+				<span class="sideplug-text">Сравнить</span>
+				<div class="versus-icon"></div>
+			</a>
+		</div>
+		<span class="full-width stat-name"></span>
+		<span>Город</span>					<span class="values stat-city"></span>
+		<span>Уровень</span>				<span class="values stat-level"></span>
+		<span>Стоимость</span>				<span class="values stat-cost"></span>
+		<span>Атака</span>					<span class="values stat-attack"></span>
+		<span>Защита</span>					<span class="values stat-defense"></span>
+		<span>Урон</span>					<span class="values stat-damage"></span>
+		<span>Кол-во выстрелов</span>		<span class="values stat-shoots"></span>
+		<span>Здоровье</span>				<span class="values stat-health"></span>
+		<span>Скорость</span>				<span class="values stat-speed"></span>
+		<span>Передвижение</span>			<span class="values stat-move"></span>
+		<span>Ценность</span>				<span class="values stat-value"></span>
+		<span>Базовый прирост</span>		<span class="values stat-growth"></span>
+		<span>Статус</span>					<span class="values stat-stat"></span>
+		<span>Родная земля</span>			<span class="values stat-land"></span>
+		<span class="full-width stat-ability"></span>
+		<div class="sideplug"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/mobs-db.js"></script>
+	<script src="scripts/common-actions-m.js"></script>
+	<script src="scripts/mobs-script-m.js"></script>
+</body>
+</html>

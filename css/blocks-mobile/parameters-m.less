@@ -1,0 +1,370 @@
+/* Панель характеристик */
+
+.basic-stats {
+	font-size: 13px;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100vw; height: 100vh;
+	background: rgba(0,0,0,0.8);
+	display: none;
+	z-index: 4;
+}
+
+.stats {
+
+	.values {
+		border-left: 1px dotted @mid-grey;
+	}
+	.stat-ability,
+	.stat-bonus,
+	.stat-set,
+	.stat-spec,
+	.stat-bio,
+	.stat-basic,
+	.stat-adv,
+	.stat-exp,
+	.stat-desc {
+		font-family: 'Calibri';
+		font-size: 14px;
+		line-height: normal;
+		white-space: normal;
+		padding: 2px 5px;
+		overflow-y: scroll;
+	}
+	.stat-spec mark.one, .stat-set {
+		font-size: 13px;
+		font-family: 'RussoOne-Regular', sans-serif;
+	}
+	.stat-cost,
+	.stat-sale {
+		display: flex;
+		align-items: center;
+	}
+}
+
+@media screen and (orientation:portrait) {
+	.stats {
+		.basic-stats();
+		grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 12vh;
+		grid-template-columns: repeat(2, auto);
+
+		div:first-child {
+			border-bottom: 1px solid @mid-grey;
+		}
+		span {
+			line-height: 3.5vh;
+			padding: 0 5px;
+			border-bottom: 1px solid @mid-grey;
+			white-space: nowrap;
+		}
+		.full-width {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		.sideplug {
+			position: relative;
+			grid-column-start: 1;
+			grid-column-end: 3;
+			padding-left: 15px;
+			background: url(../images/back.jpg);
+
+			img {
+				height: 20vh;
+				width: auto;
+				margin-top: -1px;
+			}
+			.close {
+				position: absolute;
+				right: 5px; top: 5px;
+				display: flex;
+				align-items: center;
+
+				.cancel-icon {
+					width: 35px; height: 35px;
+					background: url(../images/icons/cancel.png) no-repeat;
+					background-size: 35px auto;
+				}
+			}
+			.compare {
+				display: block;
+				position: absolute;
+				right: 5px; bottom: 5px;
+				display: flex;
+				align-items: center;
+
+				.versus-icon {
+					width: 35px; height: 35px;
+					background: url(../images/icons/versus.png) no-repeat;
+					background-size: 35px auto;
+				}
+			}
+			.sideplug-text {
+				font-size: 13px;
+				color: @light-grey;
+				border: none;
+				text-shadow: 1px 1px 3px black;
+				filter: brightness(0.7);
+			}
+		}
+		.showset {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			text-align: center;
+			line-height: 6vh;
+			color: @mid-grey;
+		}
+	}
+
+	.artparams {
+		.basic-stats();
+		grid-template-rows: 17vh 7vh repeat(6, 3.5vh) 1fr 3.5vh 15.5vh 6vh 12vh;
+
+		span {
+			line-height: 4vh;
+		}
+		.stat-name {
+			line-height: 3.5vh;
+		}
+		.stat-set {
+			line-height: 2.5vh;
+		}
+		.sideplug img {
+			height: 17vh;
+		}
+	}
+
+	.herostats {
+		.basic-stats();
+		grid-template-rows: 17vh repeat(6, 3.5vh) 5vh 7.5vh 3.5vh 1fr 3.5vh 1fr 12vh;
+
+		.stat-secondary,
+		.stat-army {
+			line-height: 2.5vh;
+		}
+		.stat-name {
+			text-transform: capitalize;
+		}
+		.sideplug img {
+			height: 17vh;
+		}
+	}
+
+	.splparams {
+		.basic-stats();
+		grid-template-rows: 14vh repeat(8, 3.5vh) 1fr 3.5vh 1fr 3.5vh 1fr 12vh;
+
+		.sideplug {
+			padding: 1vh 15px;
+		}
+		.stat-name {
+			line-height: 4vh;
+		}
+		.sideplug img {
+			height: 12vh;
+		}
+	}
+
+	.objparams {
+		.basic-stats();
+		grid-template-rows: 20vh 7vh 3.5vh 1fr 3.5vh 130px 12vh;
+
+		span {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		.stat-scheme {
+			background-color: black;
+			background-repeat: no-repeat;
+			background-size: auto 120px;
+			background-position: center;
+		}
+		.stat-desc {
+
+			img {
+				width: 100%;
+				margin: 10px 0;
+			}
+			a {
+				font-weight: bold;
+				color: @main-gold;
+			}
+		}
+	}
+
+	@media (max-width: 350px) {
+		.stats {
+			font-size: 11px;
+
+			.stat-ability,
+			.stat-bonus,
+			.stat-set,
+			.stat-spec,
+			.stat-bio,
+			.stat-basic,
+			.stat-adv,
+			.stat-exp,
+			.stat-desc {
+				font-size: 12px;
+			}
+			.stat-set,
+			.stat-spec mark.one {
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	.stats {
+		.basic-stats();
+		grid-template-rows: repeat(15, 5.5vh) 1fr;
+		grid-template-columns: 120px repeat(2, auto) 50px;
+
+		span {
+			line-height: 5.5vh;
+			padding: 0 5px;
+			border-bottom: 1px solid @mid-grey;
+			white-space: nowrap;
+		}
+		.full-width {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+		.sideplug {
+			display: flex;
+			align-items: center;
+			grid-row-start: 1;
+			grid-row-end: 17;
+			background: url(../images/back.jpg);
+			border-right: 1px solid @mid-grey;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+			.close {
+				position: absolute;
+				right: 5px; top: 5px;
+				border: none;
+
+				.cancel-icon {
+					width: 40px; height: 40px;
+					background: url(../images/icons/cancel.png) no-repeat;
+					background-size: 40px auto;
+					border: none;
+				}
+			}
+			.compare {
+				display: block;
+				position: absolute;
+				right: 5px; bottom: 5px;
+				border: none;
+
+				.versus-icon {
+					width: 40px; height: 40px;
+					background: url(../images/icons/versus.png) no-repeat;
+					background-size: 40px auto;
+					border: none;
+				}
+			}
+			.sideplug-text {
+				display: none;
+			}
+		}
+		div:last-child {
+			grid-column-start: 4;
+			grid-column-end: 5;
+			border-right: none;
+			border-left: 1px solid @mid-grey;
+		}
+		.showset {
+			grid-column-start: 2;
+			grid-column-end: 4;
+			text-align: center;
+			line-height: 11vh;
+			color: @mid-grey;
+		}
+	}
+
+	.artparams {
+		.basic-stats();
+		grid-template-rows: 10vh repeat(6, 5.5vh) 1fr 5.5vh 1fr 11vh;
+
+		.stat-name {
+			line-height: 5vh;
+		}
+		.stat-set {
+			line-height: normal;
+		}
+	}
+
+	.herostats {
+		.basic-stats();
+		grid-template-rows: repeat(6, 5.5vh) 10vh 15vh 5.5vh 1fr 5.5vh 1fr;
+
+		.stat-secondary,
+		.stat-army {
+			line-height: 5vh;
+		}
+		.stat-name {
+			text-transform: capitalize;
+		}
+	}
+
+	.splparams {
+		.basic-stats();
+		grid-template-rows: repeat(8, 5.5vh) 1fr 5.5vh 1fr 5.5vh 1fr;
+	}
+
+	.objparams {
+		.basic-stats();
+		grid-template-rows: 10vh 5.5vh 1fr 5.5vh 110px;
+
+		span {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+		.stat-name {
+			line-height: 5vh;
+		}
+		.stat-scheme {
+			background-color: black;
+			background-repeat: no-repeat;
+			background-size: auto 100px;
+			background-position: center;
+		}
+		.stat-desc {
+
+			img {
+				width: 100%;
+				margin: 10px 0;
+			}
+			a {
+				font-weight: bold;
+				color: @main-gold;
+			}
+		}
+	}
+
+	@media (max-width: 580px) {
+		.stats {
+			font-size: 12px;
+
+			.stat-ability,
+			.stat-bonus,
+			.stat-set,
+			.stat-spec,
+			.stat-bio,
+			.stat-basic,
+			.stat-adv,
+			.stat-exp,
+			.stat-desc {
+				font-size: 13px;
+			}
+			.stat-set,
+			.stat-spec mark.one {
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+/* Страница о проекте */
+
+.about-block {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 765px;
+    padding: 10px 30px;
+    margin: 30px auto;
+    background-color: black;
+    background-image: url(../images/other/about-bg.webp);
+    background-position: right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    .about-content {
+        max-width: 640px;
+        background: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+
+        h1 {
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+            font-size: 30px;
+            margin: 0;
+            padding: 15px 0;
+            text-shadow: 2px 2px 4px black;
+
+            &::after {
+                .split-line();
+                top: auto;
+                bottom: 0;
+            }
+        }
+        p {
+            font-family: 'OpenSans', serif;
+            font-weight: bold;
+            text-align: justify;
+            font-size: 0.95em;
+            margin: 0;
+            padding: 15px 0;
+            text-shadow: 2px 2px 4px black;
+
+            mark, a {
+                color: @main-gold;
+            }
+        }
+    }
+}
+
+/* Страница сообществ */
+
+.community-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 765px;
+    padding: 10px 100px;
+    margin: 30px auto;
+    background-color: black;
+    background-image: url(../images/other/community-bg.webp);
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    .community-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 640px;
+        background: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+
+        h1, h2 {
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+            font-size: 30px;
+            margin: 0;
+            padding: 15px 0;
+            text-shadow: 2px 2px 4px black;
+
+            &::after {
+                .split-line();
+                top: auto;
+                bottom: 0;
+            }
+        }
+        a {
+            font-family: 'OpenSans', serif;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+        }
+        .subline {
+            font-family: 'OpenSans', serif;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+            color: @mid-grey;
+            font-size: 0.9em;
+            cursor: default;
+        }
+        .iframe-container {
+            position: relative;
+            margin-top: 15px;
+            width: 350px;
+            height: 200px;
+
+            iframe {
+                filter: invert(1);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                height: 200px; width: 20px;
+                right: 0; top: 0;
+                background-color: black;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1400px) {
+	.community-block {
+        padding: 10px 30px;
+    }
+}

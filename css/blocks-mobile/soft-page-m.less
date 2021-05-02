@@ -1,0 +1,67 @@
+/*	Страница софта	*/
+
+.soft-programm {
+	margin: 15px 2vw;
+	display: grid;
+	grid-template-rows: 40px 40px auto;
+	grid-template-columns: 80px 1fr;
+
+	img {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		width: 78px; height: 78px;
+		border: 1px solid @dark-grey;
+		background-color: @black;
+	}
+	h2 {
+		line-height: 40px;
+		border: 1px solid @dark-grey;
+		padding: 0 3px;
+		margin: 0;
+		white-space: nowrap;
+		font-size: 16px;
+		background-color: @black;
+	}
+	a {
+		line-height: 40px;
+		border: 1px solid @dark-grey;
+		padding: 0 3px;
+		white-space: nowrap;
+		font-size: 15px;
+		background-color: @black;
+	}
+	.desc {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		padding: 5px;
+		margin: 0;
+		min-height: 50px;
+		white-space: normal;
+		line-height: normal;
+		font-family: 'Calibri';
+		text-align: justify;
+		font-size: 14px;
+	}
+}
+
+
+@media screen and (orientation:portrait) {
+	.soft-programm .long {
+		line-height: 20px;
+		white-space: normal;
+	}
+	@media (max-width: 350px) {
+		.soft-programm {
+
+			h2 {
+				font-size: 14px;
+			}
+			a {
+				font-size: 13px;
+			}
+			.desc {
+				font-size: 13px;
+			}
+		}
+	}
+}

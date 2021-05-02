@@ -1,0 +1,133 @@
+.main-poster {
+	position: relative;
+	border-bottom: 1px solid @dark-grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(../images/main/poster-back-m-1.png) right top no-repeat,
+				url(../images/main/poster-back-m-2.png) left bottom no-repeat;
+
+	&-title {
+		margin-top: -5vh;
+        text-align: center;
+        z-index: 1;
+
+        h1 {
+            font-weight: normal;
+            font-size: 40px;
+            margin: 0;
+            line-height: 35px;
+			text-shadow: 2px 2px 4px black;
+        }
+        h2 {
+            font-weight: normal;
+            font-size: 20px;
+            color: @dark-gold;
+            margin: 0;
+            position: relative;
+			text-shadow: 2px 2px 4px black;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 1px; width: 100%;
+                top: -15px;
+                background: url(../images/other/slider-line.png) no-repeat center;
+                background-size: 100% 1px;
+            }
+        }
+        .for {
+            font-size: 20px;
+            padding: 0 5px;
+            position: relative;
+            z-index: 1;
+            background-color: black;
+        }
+    }
+	.poster-tile-1,
+	.poster-tile-2 {
+		position: absolute;
+		opacity: 0;
+		animation: show 2s ease-out 1s forwards;
+	}
+	@keyframes show {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+	.poster-tile-1 {
+		top: 0; right: 0;
+	}
+	.poster-tile-2 {
+		bottom: 0;left: 0;
+	}
+}
+
+.section-block {
+	padding: 30px 10px 20px 10px;
+
+	.section {
+		position: relative;
+		margin-bottom: 10px;
+
+		&-art {
+			width: 100%;
+			margin-bottom: -4px;
+		}
+		&-link {
+			box-sizing: border-box;
+			position: absolute;
+			bottom: 0; left: 0;
+			height: 40px;
+			width: 100%;
+			padding: 0 5px 0 10px;
+			background-color: rgba(0,0,0,0.6);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			img {
+				transform: rotate(90deg);
+				width: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (orientation:portrait) {
+	.main-poster {
+		height: 92vh;
+		background-size: 100% auto;
+
+		.poster-tile-1,
+		.poster-tile-2 {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	.main-poster {
+		height: 85vh;
+		background-size: 50% auto;
+
+		.poster-tile-1,
+		.poster-tile-2 {
+			width: 50%;
+		}
+	}
+
+	.section-block {
+		padding: 30px 20px 20px 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.section {
+			width: 48%;
+		}
+	}
+}

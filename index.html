@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 мобы, герои 3 монстры, герои 3 существа, герои 3 карты, герои 3 артефакты, heroes 3, heroes 3 mobs, heroes 3 maps, heroes 3 artifacts, HotA, HotA mobs, HotA maps, HotA artifacts, мобы, монстры, существа, карты, артефакты, механики, софт, программы">
+	<meta name="description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, софт, карты, механики игры.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/index.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-main.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База знаний Heroes III | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "index-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<!-- <span>HOMMBASE</span> -->
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>При наведении на знак "?" на каждой странице сайта будет открываться свой блок помощи, который поможет в навигации по соответствующему разделу.<br><br>
+					<mark class="tab"></mark>Рядом располагается поле глобального поиска по сайту. При вводе ключевых слов будут предложены подходящие варианты. После ввода нажмите на кнопку поиска и Вас автоматически перебросит на страницу с соответствующим контентом. При вводе случайного значения будет открыто расширенное меню сайта.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="main-poster">
+			<img src="images/main/poster-tile1.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile2.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile3.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile4.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile5.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile6.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile7.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile8.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile9.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile10.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile11.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+			<img src="images/main/poster-tile12.webp" alt="Тайл постера" class="poster-tile sepia opacity">
+
+			<div class="main-poster-title">
+				<h1>HOMMBASE</h1>
+				<span class="for">for</span>
+				<h2>Heroes of Might and Magic III</h2>
+			</div>
+		</div>
+
+		<div class="sections-block wrapper">
+			<section class="section block">
+				<img class="section-art" data-src="images/main/mobs-art.webp" alt="Арт раздела">
+				<div class="section-info">
+					<h2>СУЩЕСТВА</h2>
+					<p>В этом разделе Вы сможете посмотреть характеристики и особенности всех юнитов игры, начиная от атаки с защитой и заканчивая ценностью существ для компьютерного ИИ. Нажмите на соответсвующего моба и справа появится вся информация о нем. Если хотите отфильтровать или отсортировать существ по каким-либо параметрам, то на помощь придет панель фильтров. Нажимая на способности существ, Вы попадете в раздел механик игры, где сможете прочитать о них подробнее. Хотите сравнить двух юнитов? Зайдите в раздел "Сравнить существ" и выберите справа и слева тех, кто именно Вас интересует.</p>
+					<a class="mobs-link" href="mobs-page.html">Перейти</a>
+				</div>
+				<div class="section-link">
+					<img src="images/icons/mob.png" alt="Иконка" width="45">
+				</div>
+			</section>
+			<section class="section block">
+				<div class="section-info">
+					<h2>АРТЕФАКТЫ</h2>
+					<p>Хотите увидеть все артефакты, которые возможно найти в игре? Тогда Вам в этот раздел. Помимо всех основных параметров каждого артефакта, Вы сможете посмотреть, из каких компонентов собираются те или иные комплекты. Вы сможете отфильтровать артефакты по типу бонуса, который он дает, а также по слоту, в который его можно поместить. В описании особенностей артефактов расписаны все тонкости их применения и механики действия. Для каждого артефакта Вы найдете значение ценности, которое покажет, что предпочтительнее для компьютерного ИИ.</p>
+					<a class="artifact-link" href="artifact-page.html">Перейти</a>
+				</div>
+				<img class="section-art" data-src="images/main/artifacts-art.webp" alt="Арт раздела">
+				<div class="section-link">
+					<img src="images/icons/primary.png" alt="Иконка" width="45">
+				</div>
+			</section>
+			<section class="section block">
+				<img class="section-art" data-src="images/main/heroes-art.webp" alt="Арт раздела">
+				<div class="section-info">
+					<h2>ГЕРОИ</h2>
+					<p>Обычно перед началом игры нет желания щелкать по каждому герою и проверять его специализацию, начальную армию или стартовое заклинание. Пройдите в раздел Героев и легким движением руки, введя нужное ключевое слово в поле поиска, Вы сможете увидеть всех героев с заданными параметрами. Есть возможность искать по специализации, заклинанию, полу или просто по имени. Без труда можно отсеять всех персонажей без книги заклинаний, выставив в поле фильтра "Воин" или же наоборот. Чтобы герои не были безликими, Вы можете прочитать краткую биографию каждого из них и лучше понять, какой посыл вкладывали авторы игры.</p>
+					<a class="heroes-link" href="heroes-page.html">Перейти</a>
+				</div>
+				<div class="section-link">
+					<img src="images/icons/hero.png" alt="Иконка" width="45">
+				</div>
+			</section>
+			<section class="section block">
+				<div class="section-info">
+					<h2>ЗАКЛИНАНИЯ</h2>
+					<p>В данном разделе представлены все заклинания игры, разбитые по группам в зависимости от стихии, к которой относятся. Вы можете увидеть стоимость, продолжительность действия, описание каждого заклинания для определенного уровня прокачки навыка стихии и даже увидеть, как оценивает те или иные заклинания компьютерный ИИ. Если Вас интересует подробная информация о заклинаниях, то Вы без проблем сможете найти ее в статьях Механик игры: просто найдите интересующее заклинание и щелкните по его описанию.</p>
+					<a class="spells-link" href="spells-page.html">Перейти</a>
+				</div>
+				<img class="section-art" data-src="images/main/spells-art.webp" alt="Арт раздела">
+				<div class="section-link">
+					<img src="images/icons/spellbook.png" alt="Иконка" width="45">
+				</div>
+			</section>
+			<section class="section block">
+				<img class="section-art" data-src="images/main/objects-art.webp" alt="Арт раздела">
+				<div class="section-info">
+					<h2>ИГРОВЫЕ ОБЪЕКТЫ</h2>
+					<p>Все игровые объекты, которые Вы можете встретить на карте приключений, можно посмотреть на данной странице. Для каждого объекта собрана вся подробная информация из разных источников, описаны особенности взаимодействия героев с каждым из них, а также неочевидные бонусы для игрока. Объекты разделены на логические группы для простоты навигации. Для каждого объекта отображается клеточная схема, она показывает место входа для героя, а также количество занимаемых клеток на карте, что может быть полезно авторам карт при работе над сценариями. В описаниях объектов присутствуют ссылки на статьи, где подробнее описаны действия их бонусов.</p>
+					<a class="objects-link" href="objects-page.html">Перейти</a>
+				</div>
+				<div class="section-link">
+					<img src="images/icons/class.png" alt="Иконка" width="45">
+				</div>
+			</section>
+			<section class="section block">
+				<div class="section-info">
+					<h2>ГОРОДА</h2>
+					<p>Города являются ключевыми объектами в Heroes of Might and Magic III и эта страница полностью посвящена им. Если Вы забыли цену какой-либо постройки, хотите посмотреть, какой бонус дает храм Грааля или узнать, сколько этажей гильдии магов можно построить в том или ином городе, то заходите в данный раздел. На странице отображается фон каждого из десяти городов с возможностью переключения вида и наглядным расположением построек. Здесь же отображаются все существа и герои, которые относятся к тому или иному замку, а также карта загадки для поиска Грааля со схематичной последовательностью ее открытия. А чтобы ощутить атмосферу игры, Вы можете на этой же странице включить музыкальную тему города.</p>
+					<a class="towns-link" href="towns-page.html">Перейти</a>
+				</div>
+				<img class="section-art" data-src="images/main/towns-art.webp" alt="Арт раздела">
+				<div class="section-link">
+					<img src="images/icons/castle.png" alt="Иконка" width="45">
+				</div>
+			</section>
+		</div>
+
+		<div class="mechanics-link">
+			<a class="book-link" href="mechanics-page.html">
+				<img class="book-img" src="images/main/book.webp" alt="Книга механик">
+			</a>
+			<div class="mechanics-link-text">
+				<h2>Здесь Вы сможете<br>узнать больше про:</h2>
+				<p>	• Характеристики и способности Существ<br>
+					• Параметры и навыки Героев<br>
+					• Особенности передвижения по карте и на поле боя<br>
+					• Поведение и скрипты компьютерных игроков<br>
+					• Действие Заклинаний и варианты их применения<br>
+					• Особенности и характеристики Боевых машин<br>
+					• Города, постройки, а также их влияние на ход игры
+				</p>
+				<h2>и многое другое.</h2>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/index-script.js"></script>
+</body>
+</html>

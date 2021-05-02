@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 заклинания, герои 3 магия, heroes 3, heroes 3 spells, heroes 3 magic, HotA, HotA spells, Hota magic, заклинания, магия, спеллы">
+	<meta name="description" content="База знаний по заклинаниям Heroes of Might and Magic III (HotA). Параметры заклинания, эффективность, длительность, способы применения.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="databases/spells-db.js" as="script">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/spells-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-spells.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>База заклинаний | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "spells-page-m.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Есть две основные группы заклинаний: Походные, которые используются героями на карте приключений; И боевые, используемые на поле боя и вносящие разнообразие в способы ведения сражения. Герой, имеющий книгу магии, может изучать заклинания и применять их в той или иной ситуации. Магия позволяет усилить или ослабить существ, может наносить урон и способна в корне переворачивать ход сражения в умелых руках.<br><br>
+					<mark class="tab"></mark>Слева располагается панель фильтров. При наведении на каждое окошко появляется подсказка о назначении каждого фильтра. Кнопка отмены сбрасывает все фильтры на значение по умолчанию и отменяет выбранное заклинание, это же действие происходит при нажатии клавиши Del.<br><br>
+					<mark class="tab"></mark>Нажмите на интересующее Вас заклинание и на панели справа отобразятся все его параметры, либо Вы можете переключаться между объектами с помощью стрелок на клавиатуре.<br><br>
+					<mark class="tab"></mark>При наведении на пункты таблицы появится детальная информация о них. При нажатии на пункт "Ценность" Вы перейдете в раздел Механик игры к соответствующей статье. Эффект каждого заклинания отличается в зависимости от уровня прокачки соответствующего навыка, поэтому пункт разделен на три блока.<br><br>
+					<mark class="tab"></mark>Заклинания разделены на группы по стихиям, к которым они относятся, при нажатии на знак "-" можно свернуть лишнюю группу. Нажимая Ctrl + ЛКМ, можно свернуть сразу все группы, а развернуть обратно клавишей Del.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="#">Заклинания &#9668;</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="main-plug">
+		<main class="objects-page wrapper">
+			<div class="common-background"></div>
+
+			<div class="filter">
+				<div class="flex-row">
+					<img class="sing" src="images/icons/elements.png" alt="Иконка" width="30">
+					<select name="filter" id="spellElem" title="Фильтр по стихии заклинания">
+						<option value="all">Все</option>
+						<option value="Огонь">Огонь</option>
+						<option value="Вода">Вода</option>
+						<option value="Воздух">Воздух</option>
+						<option value="Земля">Земля</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/arrow-up.png" alt="Иконка" width="30">
+					<select name="filter" id="spellLevel" title="Фильтр по уровню заклинания">
+						<option value="all">Все</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/spell-class.png" alt="Иконка" width="30">
+					<select name="filter" id="spellClass" title="Фильтр по классу заклинания">
+						<option value="all">Все</option>
+						<option value="Атакующее">Атакующие</option>
+						<option value="Бафф">Баффы</option>
+						<option value="Дебафф">Дебаффы</option>
+						<option value="Походное">Походные</option>
+						<option value="Особое">Особые</option>
+					</select>
+				</div>
+				<div class="flex-row">
+					<img class="sing" src="images/icons/search.png" alt="Иконка" width="30">
+					<input type="text" name="filter" placeholder="Название заклинания" id="spellName" list="spellsList">
+					<datalist id="spellsList"></datalist>
+					<img class="sing cancel" src="images/icons/cancel.png" alt="Иконка" width="30" title="Сброс всех фильтров (клавиша Del)">
+				</div>
+			</div>
+
+			<div class="stats-substrate"></div>
+
+			<div class="objects-column"></div>
+
+			<div class="stats-column stats-spell">
+				<span class="title center">Параметры</span>
+				<span class="stat-name title"></span>
+				<img class="icon" src="images/icons/elements.png" alt="Иконка">		<span>Стихия</span>				<span class="stat-element"></span>
+				<img class="icon" src="images/icons/arrow-up.png" alt="Иконка">		<span>Уровень</span>			<span class="stat-level"></span>
+				<img class="icon" src="images/icons/spell-class.png" alt="Иконка">	<span>Класс</span>				<span class="stat-class"></span>
+				<img class="icon" src="images/icons/mana-cost.png" alt="Иконка">	<span title="Стоимость заклинания в единицах маны. Первое значение показывает цену, если отсутствует навык соответстующей стихии; второе значение - цена при наличии навыка соответствующей стихии любого уровня (Базовый, Продвинутый, Эксперт). Если у героя есть соответствующий заклинанию навык, то стоимость снижается на величину равную уровню этого заклинания.">Стоимость</span>	<span class="stat-sCost"></span>
+				<img class="icon" src="images/icons/time.png" alt="Иконка">			<span title="'-' означает, что заклинание разового применения; 'Параметр Сила магии' - продолжительность заклинания равна значению первичного навыка Сила магии у героя.">Продолжительность</span> <span class="stat-duration"></span>
+				<img class="icon" src="images/icons/value.png" alt="Иконка">		<span title="Ценность использования заклинания для компьютерного ИИ. Через слэш '/' указаны значения для Базового, Продвинутого и Экспертного уровней прокачки стихии, соответствующей выбранному заклинанию."><a href="mechanics-page-2.html#ai.5" target="_blank">Ценность</a></span> <span class="stat-value"></span>
+				<img class="icon" src="images/icons/ability.png" alt="Иконка">		<span style="border: none" title="Описание действия заклинания для трех уровней прокачки соответствующего навыка.">Эффект</span>
+				<span class="spl-level">Базовый уровень</span>
+				<span class="stat-basic"></span>
+				<span class="spl-level">Продвинутый уровень</span>
+				<span class="stat-adv"></span>
+				<span class="spl-level">Экспертный уровень</span>
+				<span class="stat-exp"></span>
+			</div>
+		</main>
+	</div>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="databases/spells-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/spells-script.js"></script>
+</body>
+</html>

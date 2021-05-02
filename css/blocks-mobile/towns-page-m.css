@@ -1,0 +1,8 @@
+.towns-filter {
+  display: flex;
+  margin: 15px 0;
+  padding: 0 5px 15px 5px;
+}
+.towns-filter #townSelect {
+  flex-grow: 1;
+}

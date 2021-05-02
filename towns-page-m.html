@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 города, герои 3 замки, герои 3 постройки, heroes 3, heroes 3 towns, heroes 3 castles, HotA, HotA towns, HotA castles, города, замки, замок, оплот, башня, инферно, некрополис, темница, цитадель, крепость, сопряжение, причал">
+	<meta name="description" content="База знаний по городам Heroes of Might and Magic III (HotA). Вся информация по городам, постройки и их цены, схемы последовательности отстройки, карты грааля.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="databases/towns-db.js" as="script">
+	<link rel="preload" href="databases/mobs-db.js" as="script">
+	<link rel="preload" href="databases/heroes-db.js" as="script">
+	<link rel="stylesheet" href="css/style-m.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/towns-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-towns.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>База городов | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: Calibri;
+		src: url(fonts/calibri.ttf);
+		font-display: swap;
+		}
+	</style>
+	<!-- -->
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.device.type != 'Mobile') {window.location = "towns-page.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<a class="icon" href="index-m.html"></a>
+		<a class="name" href="index-m.html">HOMMBASE</a>
+		<div></div>
+		<div class="burger"></div>
+		<div class="bar">
+			<a href="mobs-page-m.html">Существа</a>
+			<a href="comparator-page-m.html">Сравнить существ</a>
+			<a href="artifact-page-m.html">Артефакты</a>
+			<a href="heroes-page-m.html">Герои</a>
+			<a href="spells-page-m.html">Заклинания</a>
+			<a href="objects-page-m.html">Игровые объекты</a>
+			<a href="#">Города</a>
+			<a href="maps-page-m.html">Карты</a>
+			<a href="soft-page-m.html">Софт</a>
+			<a href="mechanics-page-m.html">Механики игры</a>
+			<a href="about-page-m.html">О проекте</a>
+		</div>
+	</header>
+	<main>
+		<div class="towns-filter">
+			<img id="town-icon" src="images/towns/castle/castle-icon.jpg" alt="Иконка города" height="35">
+			<select name="filter" id="townSelect">
+				<option value="castle">Замок</option>
+				<option value="rampart">Оплот</option>
+				<option value="tower">Башня</option>
+				<option value="inferno">Инферно</option>
+				<option value="necropolis">Некрополис</option>
+				<option value="dungeon">Темница</option>
+				<option value="stronghold">Цитадель</option>
+				<option value="fortress">Крепость</option>
+				<option value="conflux">Сопряжение</option>
+				<option value="cove">Причал</option>
+			</select>
+		</div>
+
+		<img id="town-background" src="images/svg-icon.svg" alt="Внешний вид города">
+
+		<audio controls id="town-audio">
+			Воспроизведение не поддерживается браузером.
+		</audio>
+
+		<div class="tabs-window">
+			<div class="town-details-tabs tab-1">
+				<span>Постройки</span>
+				<span>Дерево построек</span>
+				<span>Существа</span>
+				<span>Герои</span>
+				<span>Карта загадки</span>
+				<span>Описание</span>
+			</div>
+			<button class="tab-selector tab-selector-left"></button>
+			<button class="tab-selector tab-selector-right"></button>
+		</div>
+
+		<div class="town-details town-structures" id="town-details-1"></div>
+
+		<div class="structure-info block hidden">
+			<img class="structure-info-img" src="images/svg-icon.svg" alt="Постройка">
+			<span class="structure-info-name"></span>
+			<span class="structure-info-desc"></span>
+			<span class="structure-info-requires"></span>
+			<span class="structure-info-cost"></span>
+			<button class="close-button"></button>
+		</div>
+
+		<div class="town-details town-tree" id="town-details-2"></div>
+
+		<div class="town-details town-mobs" id="town-details-3"></div>
+
+		<div class="town-details town-heroes" id="town-details-4"></div>
+
+		<div class="town-details town-mosaic" id="town-details-5"></div>
+
+		<div class="town-details town-description" id="town-details-6"></div>
+
+		<div class="town-appearance">
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-1" alt="Вид города на карте">
+				<span>БЕЗ ФОРТА</span>
+			</div>
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-2" alt="Вид города на карте">
+				<span>С ФОРТОМ</span>
+			</div>
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-3" alt="Вид города на карте">
+				<span>С ЦИТАДЕЛЬЮ</span>
+			</div>
+			<div class="town-appearance-item">
+				<img src="images/svg-icon.svg" id="town-appearance-4" alt="Вид города на карте">
+				<span>С ЗАМКОМ</span>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<a href="mailto:hommbase@gmail.com"><img src="images/icons/message.png" alt="Иконка"></a>
+		<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a>
+		<div class="plug"></div>
+		<a href="community-page-m.html"><img src="images/icons/planet.png" alt="Иконка"></a>
+		<a class="return hidden" href="#top"></a>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/towns-db.js"></script>
+	<script src="databases/mobs-db.js"></script>
+	<script src="databases/heroes-db.js"></script>
+	<script src="scripts/common-actions-m.js"></script>
+	<script src="scripts/towns-script-m.js"></script>
+</body>
+</html>

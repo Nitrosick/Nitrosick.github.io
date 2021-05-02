@@ -1,0 +1,302 @@
+.towns-filter {
+	position: relative;
+	display: flex;
+	margin: 15px 0;
+	padding: 0 5px 15px 10px;
+
+	&::after {
+		.split-line();
+		top: auto; bottom: 0;
+	}
+	#townSelect {
+		flex-grow: 1;
+		padding-left: 10px;
+		font-size: 13px;
+		height: 35px;
+		background: linear-gradient(90deg, transparent 40%, @dark-grey);
+		border: 1px solid black;
+		border-radius: 0 5px 5px 0;
+		color: @light-grey;
+
+		option {
+			background-color: @dark-grey;
+		}
+	}
+}
+
+#town-background {
+	width: 100%;
+	margin-bottom: -5px;
+}
+
+.tabs-window {
+	position: relative;
+	width: 100vw;
+	overflow: hidden;
+	border-top: 1px solid @mid-grey;
+	background-color: @black;
+
+	.town-details-tabs {
+		position: relative;
+		height: 35px;
+		width: 600vw;
+		display: flex;
+		transition: 0.5s ease-out;
+
+		span {
+			line-height: 35px;
+			width: 100vw;
+			text-align: center;
+		}
+	}
+	.tab-1 {
+		left: 0;
+	}
+	.tab-2 {
+		left: -100vw;
+	}
+	.tab-3 {
+		left: -200vw;
+	}
+	.tab-4 {
+		left: -300vw;
+	}
+	.tab-5 {
+		left: -400vw;
+	}
+	.tab-6 {
+		left: -500vw;
+	}
+	.tab-selector {
+		position: absolute;
+		left: 10px; top: 5px;
+		width: 25px;
+		height: 25px;
+		background-image: url(../images/icons/arrow-up.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		transform: rotate(-90deg);
+	}
+	.tab-selector-right {
+		left: auto; right: 10px;
+		transform: rotate(90deg);
+	}
+}
+
+.town-details {
+	border-bottom: 1px solid @mid-grey;
+	min-height: 400px;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 15px 5px 0 5px;
+}
+
+.details-name-box {
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: @black;
+	text-align: center;
+	font-size: 14px;
+	border-bottom: 3px solid @dark-grey;
+}
+
+.town-structures {
+
+	&-item {
+		position: relative;
+		width: 160px;
+		height: 115px;
+		margin-bottom: 15px;
+
+		img {
+			width: 100%;
+			margin-bottom: -5px;
+		}
+		.structure-name {
+			.details-name-box();
+		}
+		.structure-overlay {
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+		}
+	}
+}
+
+.structure-info {
+	box-sizing: border-box;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	top: 50%; left: 50%;
+	width: 250px;
+	min-height: 300px;
+	margin-top: -150px;
+	margin-left: -125px;
+	padding-bottom: 10px;
+	background-color: rgba(0,0,0,0.8);
+	font-family: 'Calibri', sans-serif;
+	font-size: 14px;
+
+	&-img {
+		width: 100%;
+	}
+	&-name {
+		line-height: 25px;
+		display: block;
+		text-align: center;
+		font-family: 'RussoOne-Regular', sans-serif;
+	}
+	&-desc {
+		padding: 0 10px;
+		border-top: 1px solid @dark-grey;
+		border-bottom: 1px solid @dark-grey;
+	}
+	&-requires {
+		padding: 5px 10px;
+	}
+	&-cost {
+		padding: 0 10px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		span {
+			display: flex;
+			align-items: center;
+
+			.resources {
+				display: inline-block;
+			}
+		}
+	}
+	.close-button {
+		position: absolute;
+		top: 5px; right: 5px;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		background-color: rgba(0,0,0,0.5);
+		background-image: url(../images/icons/cancel.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+.town-tree {
+
+}
+
+.town-mobs {
+
+	&-item {
+		width: 100px;
+		height: 170px;
+		margin-bottom: 15px;
+
+		img {
+			width: 100%;
+			margin-bottom: -5px;
+		}
+		.mob-name {
+			.details-name-box();
+		}
+	}
+}
+
+.town-heroes {
+
+	&-item {
+		width: 100px;
+		height: 150px;
+		margin-bottom: 15px;
+
+		img {
+			width: 100%;
+			margin-bottom: -5px;
+		}
+		.hero-name {
+			.details-name-box();
+		}
+	}
+}
+
+.town-mosaic {
+
+}
+
+.town-description {
+	display: block;
+	padding: 15px;
+	font-size: 14px;
+	font-family: 'Calibri', sans-serif;
+	text-align: justify;
+
+	.total-cost {
+		position: relative;
+		margin-top: 10px;
+		padding-top: 10px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		&::after {
+			.split-line();
+		}
+		span {
+			display: flex;
+			align-items: center;
+
+			.resources {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.town-appearance {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 5px;
+
+	.town-appearance-item {
+		width: 40%;
+		margin-bottom: 10px;
+
+		img {
+			width: 100%;
+		}
+		span {
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+audio {
+	filter: invert(0.9);
+	height: 35px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+audio::-webkit-media-controls-enclosure {
+	border-radius: 0;
+}
+
+audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+	display: none;
+}

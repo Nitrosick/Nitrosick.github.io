@@ -1,0 +1,13 @@
+AddDefaultCharset UTF-8
+
+ErrorDocument 404 https://hommbase.ru/error-404.html
+
+#Кэширование на месяц
+<FilesMatch "\.(ico|ttf)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+#Кэширование на неделю
+<FilesMatch "\.(jpg|jpeg|png|webp|gif)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>

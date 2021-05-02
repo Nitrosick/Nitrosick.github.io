@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, герои 3 артефакты, heroes 3, heroes 3 artifacts, HotA, HotA artifacts, артефакты">
+	<meta name="description" content="База знаний по артефактам Heroes of Might and Magic III (HotA). Параметры артефактов, комплекты, бонусы и стоимость.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="databases/artifacts-db.js" as="script">
+	<link rel="stylesheet" href="css/style-m.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/artifact-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-artifacts.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>База артефактов | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: Calibri;
+		src: url(fonts/calibri.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.device.type != 'Mobile') {window.location = "artifact-page.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<a class="icon" href="index-m.html"></a>
+		<a class="name" href="index-m.html">HOMMBASE</a>
+		<div></div>
+		<div class="burger"></div>
+		<div class="bar">
+			<a href="mobs-page-m.html">Существа</a>
+			<a href="comparator-page-m.html">Сравнить существ</a>
+			<a>Артефакты</a>
+			<a href="heroes-page-m.html">Герои</a>
+			<a href="spells-page-m.html">Заклинания</a>
+			<a href="objects-page-m.html">Игровые объекты</a>
+			<a href="maps-page-m.html">Карты</a>
+			<a href="soft-page-m.html">Софт</a>
+			<a href="mechanics-page-m.html">Механики игры</a>
+			<a href="about-page-m.html">О проекте</a>
+		</div>
+	</header>
+	<main>
+		<div class="filter">
+
+			<div class="sing"><img src="images/icons/ability.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Фильтр по бонусу</span>
+				<select name="filter" id="artBonus">
+					<option value="all">Все</option>
+					<option value="Первичные навыки">Первичные навыки</option>
+					<option value="Вторичные навыки">Вторичные навыки</option>
+					<option value="Скорость">Скорость</option>
+					<option value="Здоровье">Здоровье</option>
+					<option value="Мораль и удача">Мораль и удача</option>
+					<option value="Заклинания">Заклинания</option>
+					<option value="Сопротивление магии">Сопротивление магии</option>
+					<option value="Ресурсы">Ресурсы</option>
+					<option value="Мореплавание">Мореплавание</option>
+					<option value="Полет">Полет</option>
+					<option value="Особый">Особый</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/class.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Фильтр по классу</span>
+				<select name="filter" id="artLevel">
+					<option value="all">Все</option>
+					<option value="Специальный">Специальный</option>
+					<option value="Сокровище">Сокровище</option>
+					<option value="Малый">Малый</option>
+					<option value="Великий">Великий</option>
+					<option value="Реликт">Реликт</option>
+					<option value="Сборный">Сборный</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/slot.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Фильтр по слоту</span>
+				<select name="filter" id="artSlot">
+					<option value="all">Все</option>
+					<option>Голова</option>
+					<option>Шея</option>
+					<option>Нагрудник</option>
+					<option>Ноги</option>
+					<option>Плащ</option>
+					<option>Правая рука</option>
+					<option>Левая рука</option>
+					<option>Кольцо</option>
+					<option>Разное</option>
+				</select>
+			</div>
+
+			<div class="sing"><img src="images/icons/search.png" alt="Иконка" height="30"></div>
+			<div class="filter-field">
+				<span class="filter-text-in">Поиск</span>
+				<input type="text" name="filter" placeholder="Название артефакта" list="artifactsList" id="artName">
+				<datalist id="artifactsList"></datalist>
+			</div>
+
+			<div class="sing"><img src="images/icons/caption.png" alt="Иконка" height="30"></div>
+			<span class="filter-text">Названия</span>
+			<button class="name-on">Отобразить</button>	<button class="name-off">Скрыть</button>
+
+			<div class="sing"><img src="images/icons/cancel.png" alt="Иконка" height="30"></div>
+			<span class="cancel-button filter-text">Сбросить все фильтры</span>
+
+		</div>
+		<div class="objects-column"></div>
+	</main>
+	<footer>
+		<a href="mailto:hommbase@gmail.com"><img src="images/icons/message.png" alt="Иконка"></a>
+		<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a>
+		<div class="plug"></div>
+		<a href="community-page-m.html"><img src="images/icons/planet.png" alt="Иконка"></a>
+		<a class="return hidden" href="#top"></a>
+	</footer>
+	<div class="stats artparams">
+		<div class="sideplug">
+			<img class="portrait" src="">
+			<div class="close">
+				<span class="sideplug-text">Закрыть</span>
+				<div class="cancel-icon"></div>
+			</div>
+		</div>
+		<span class="full-width stat-name"></span>
+		<span>Класс</span>				<span class="values stat-level"></span>
+		<span>Слот</span>				<span class="values stat-slot"></span>
+		<span>Стоимость</span>			<span class="values stat-cost"></span>
+		<span>Продажа</span>			<span class="values stat-sale"></span>
+		<span>Ценность</span>			<span class="values stat-value"></span>
+		<span class="full-width">Бонус</span>
+		<span class="full-width stat-bonus"></span>
+		<span class="full-width">Комплект</span>
+		<span class="full-width stat-set"></span>
+		<span class="showset">Показать комплект</span>
+		<div class="sideplug"></div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/artifacts-db.js"></script>
+	<script src="scripts/common-actions-m.js"></script>
+	<script src="scripts/artifacts-script-m.js"></script>
+</body>
+</html>

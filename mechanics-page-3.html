@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, механика игры герои 3, герои 3 игровые механики, герои 3 секреты, герои 3 хитрости, герои 3 база знаний, герои 3 характеристики мобов, герои 3 абилки мобов, heroes 3, heroes 3 info, HotA, HotA info, база знаний, справочник, механики">
+	<meta name="description" content="Игровые механики Heroes of Might and Magic III (HotA). Хитрости, баги, особенности и способности юнитов.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/mechanics-page-3.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-mechanics.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>Механики игры | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "mechanics-page-m-3.html";}
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help">?
+				<div class="help-bar block">
+					<span><mark class="tab"></mark>Кроме основной информации об игровых объектах есть куча хитростей, тонкостей геймплея, багов и скрытых механик, которые заслуживают отдельного раздела на сайте. Информация, которая представлена на этой странице местами может быть неточной, так как в основном построена на наблюдениях игроков, однако не теряет своей полезности для людей, которые хотят знать каждую мелочь в игре.<br><br>
+					<mark class="tab"></mark>Все статьи в этом разделе распложены блоками один под другим. Чтобы не заблудиться в них, на странице предусмотрена навигация. Чтобы открыть список статей, нажмите на кнопку со свитком в левой части экрана.<br><br>
+					<mark class="tab"></mark>Изначально в оглавлении отображаются только названия глав, но можно включить и подзаголовки, чтобы точнее переходить в интересующий раздел. Выставляя или убирая галочки внизу списка статей, Вы можете убрать со страницы ненужный контент. Чтобы убрать все галочки, нажмите Del, чтобы вернуть все в изначальное состояние, нажмите Ctrl + Del.<br><br>
+					<mark class="tab"></mark>При желании можно изменить размер текста статей или цветовую схему на темную, используя переключатели в верхней части экрана.<br><br>
+					<mark class="tab"></mark>В тексте статей содержатся таблицы, которые изначально скрыты для экономии места, чтобы их развернуть, нажмите на них с зажатой клавишей Ctrl.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="#">Механики игры &#9668;</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="common-background"></div>
+
+		<div class="storylist closed">
+
+			<div class="links"></div>
+
+			<div class="shift" title="Навигация по статьям">
+				<img class="sing" src="images/icons/list.png" alt="Иконка" width="30">
+			</div>
+			<div style="background-color: black"></div>
+			<div class="show-sublinks">Скрыть подзаголовки</div>
+			<div class="checkboxes" title="Нажмите Del, чтобы снять галочки со всех фильтров или Ctrl+Del, чтобы сбросить фильтры.">
+				<div class="checkbox">
+					<input type="checkbox" id="heroes" name="heroes" value="heroes" checked>
+					<label for="heroes">Герои</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="mobs" name="mobs" value="mobs" checked>
+					<label for="mobs">Существа</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="artifacts" name="artifacts" value="artifacts" checked>
+					<label for="artifacts">Артефакты</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="spells" name="spells" value="spells" checked>
+					<label for="spells">Заклинания</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="castles" name="castles" value="castles" checked>
+					<label for="castles">Города</label>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" id="ai" name="ai" value="ai" checked>
+					<label for="ai">ИИ</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="mechanics-page">
+
+			<div class="filter-block">
+				<div class="pointer">
+					<img class="sing" src="images/icons/arrow-up.png" alt="Иконка" width="30">
+					<span>Список статей / Фильтры</span>
+				</div>
+				<div class="text-filter">
+					<img class="sing" src="images/icons/theme.png" alt="Иконка" width="30">
+					<input type="checkbox" id="payt1"/><label for="payt1" title="Переключение цветовой схемы статей"></label>
+					<img class="sing" src="images/icons/textsize.png" alt="Иконка" width="30">
+					<input class="size" type="range" min="8" max="32" step="1" value="16" title="Изменение размера шрифта в статьях">
+					<span class="fontImg" title="Размер текста"></span>
+				</div>
+			</div>
+
+		<nav class="pagination">
+			<a href="mechanics-page-2.html" class="prev-page"></a>
+			<div class="pages-links">
+				<a href="mechanics-page.html">1</a>
+				<a href="mechanics-page-2.html">2</a>
+				<a href="#" class="pages-links-active">3</a>
+				<a href="mechanics-page-4.html">4</a>
+			</div>
+			<a href="mechanics-page-4.html" class="next-page"></a>
+		</nav>
+
+		<article class="story block">
+			<h1>Источник</h1>
+			<p>
+				<mark class="tab"></mark>Большая часть информации для данного раздела взята из справочника <a href="https://vk.com/doc-19157427_536847120"><mark>FizMiG</mark></a>.
+			</p>
+		</article>
+
+		<article class="story story-empty" id="atk_dfs_dmg" 	data-fil="heroes mobs"></article>
+		<article class="story story-empty" id="luck_morale" 	data-fil="mobs artifacts spells"></article>
+		<article class="story story-empty" id="archery" 		data-fil="mobs castles"></article>
+		<article class="story story-empty" id="health" 			data-fil="mobs artifacts"></article>
+		<article class="story story-empty" id="move_speed" 		data-fil="heroes mobs"></article>
+		<article class="story story-empty" id="ai" 				data-fil="artifacts spells ai"></article>
+
+		<!-- Активные -->
+		<article class="story block" id="growth" 				data-fil="mobs artifacts castles"></article>
+		<article class="story block" id="status" 				data-fil="mobs spells"></article>
+		<article class="story block" id="land" 					data-fil="mobs castles"></article>
+		<article class="story block" id="ctrstrike" 			data-fil="mobs"></article>
+		<article class="story block" id="hatred" 				data-fil="mobs"></article>
+		<article class="story block" id="neutralize" 			data-fil="mobs artifacts spells"></article>
+		<article class="story block" id="absorption" 			data-fil="mobs spells"></article>
+		<article class="story block" id="firebreath" 			data-fil="mobs"></article>
+		<article class="story block" id="mob_skills" 			data-fil="mobs spells"></article>
+		<article class="story block" id="combat_veh" 			data-fil="mobs castles"></article>
+		<!-------------->
+
+		<article class="story story-empty" id="spells" 			data-fil="spells"></article>
+		<article class="story story-empty" id="specialize" 		data-fil="heroes spells"></article>
+		<article class="story story-empty" id="grail" 			data-fil="artifacts castles"></article>
+		<article class="story story-empty" id="fortification"	data-fil="castles ai"></article>
+
+		<script src="databases/mechanics-db.js"></script>
+		<script>
+			const story = document.querySelectorAll('.story');
+			const generateStories = (arr) => {
+				for (let i=1; i<arr.length; i++) {
+					for (let c of mechanicsContent) {
+						if (arr[i].id == c.id && !arr[i].classList.contains('story-empty')) {
+							arr[i].insertAdjacentHTML('beforeend',
+							c.text.replaceAll('[t]', '<mark class="tab"></mark>').replaceAll('[s]', '<strong>').replaceAll('[/s]', '</strong>').replaceAll('[m]', '<mark>').replaceAll('[/m]', '</mark>'));
+						}
+					}
+				}
+			}
+			generateStories(story);
+		</script>
+
+		<nav class="pagination">
+			<a href="mechanics-page-2.html" class="prev-page"></a>
+			<div class="pages-links">
+				<a href="mechanics-page.html">1</a>
+				<a href="mechanics-page-2.html">2</a>
+				<a href="#" class="pages-links-active">3</a>
+				<a href="mechanics-page-4.html">4</a>
+			</div>
+			<a href="mechanics-page-4.html" class="next-page"></a>
+		</nav>
+
+		</div>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/mechanics-script.js"></script>
+</body>
+</html>
+
+<!-- <div class="in-progress">!</div> Пометка для статьи в разработке -->

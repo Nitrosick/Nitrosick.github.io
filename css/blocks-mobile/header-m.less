@@ -1,0 +1,99 @@
+/* Шапка сайта */
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	background: linear-gradient(@dark-grey, black);
+
+	&::after {
+		.split-line();
+		top: auto; bottom: 0;
+	}
+	.icon {
+		position: absolute;
+		left: 10px;
+		background: url(../images/icons/logo.png) no-repeat center;
+		z-index: 3;
+	}
+	.burger {
+		margin-right: 15px;
+		background: url(../images/icons/burger.png) center no-repeat;
+	}
+	.bar {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		background: linear-gradient(@dark-grey, black 10%, black 90%, @dark-grey);
+		text-align: right;
+		width: 100%;
+		z-index: 2;
+		transform-origin: 50% 0;
+		transform: scaleY(0);
+		opacity: 0;
+		transition: all 0.3s ease-out;
+
+		&-opened {
+			transform: scaleY(1);
+			opacity: 1;
+		}
+		a {
+			padding: 0 15px;
+
+			&:active {
+				background-color: @dark-gold;
+				color: white;
+			}
+		}
+	}
+}
+
+@media screen and (orientation:portrait) {
+	header {
+		height: 8vh;
+		line-height: 8vh;
+
+		.icon {
+			width: 6vh; height: 6vh;
+			background-size: 6vh 6vh;
+			top: 1vh;
+		}
+		.name {
+			margin-left: 9vh;
+		}
+		.burger {
+			width: 5vh;
+			background-size: 5vh 5vh;
+		}
+		.bar {
+			top: 7.8vh;
+			line-height: 6vh;
+		}
+	}
+}
+
+@media screen and (orientation:landscape) {
+	header {
+		height: 8vw;
+		line-height: 8vw;
+
+		.icon {
+			width: 6vw; height: 6vw;
+			background-size: 6vw 6vw;
+			top: 1vw;
+		}
+		.name {
+			margin-left: 9vw;
+		}
+		.burger {
+			width: 5vw;
+			background-size: 5vw 5vw;
+		}
+		.bar {
+			top: 7.8vw;
+			line-height: 6vw;
+		}
+	}
+}

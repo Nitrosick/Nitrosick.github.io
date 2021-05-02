@@ -1,0 +1,259 @@
+/* Страница объектов */
+
+.objects-page {
+	padding: 20px 30px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 450px;
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+}
+
+@media screen and (max-width:850px) {
+    .objects-page {
+        grid-template-columns: 1fr 0;
+    }
+}
+
+.stats-substrate {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100%;
+}
+
+/* Фильтры */
+
+.filter {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	width: 100%; height: 60px;
+	padding: 0 5px;
+	background-color: rgba(0,0,0,0.6);
+
+    .flex-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            background-color: @dark-grey;
+            padding: 5px 3px;
+            margin: 0 0 0 10px;
+        }
+        input {
+            box-sizing: border-box;
+            color: white;
+            height: 40px;
+            padding-left: 5px;
+            font-family: 'OpenSans';
+            font-weight: bold;
+            font-size: 12px;
+            background-color: @dark-grey;
+            border: none;
+            flex-grow: 1;
+
+            &::placeholder {
+                color: @light-grey;
+                font-size: 12px;
+            }
+        }
+        select {
+            box-sizing: border-box;
+            color: @light-grey;
+            height: 40px;
+            padding-left: 5px;
+            font-family: 'OpenSans';
+            font-weight: bold;
+            font-size: 12px;
+            background-color: @dark-grey;
+            border: none;
+            flex-grow: 1;
+            cursor: pointer;
+
+            option {
+                background-color: @black;
+                font-size: 12px;
+                font-family: 'OpenSans';
+                font-weight: bold;
+            }
+        }
+        .cancel {
+            background: none;
+            margin: 0 7px;
+
+            &:hover {
+                filter: brightness(1.1);
+                transform: scale(1.05);
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1223px) {
+    .filter {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 10px 10px 3px;
+
+        .flex-row {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+/* Список объектов */
+
+.object-card-basic {
+    display: grid;
+	grid-template-rows: 160px 50px;
+	margin: 10px 0;
+	height: 210px; width: 120px;
+    border-bottom: 3px solid @dark-grey;
+	cursor: pointer;
+}
+.object-card-hover {
+    border-bottom: 3px solid @main-gold;
+	box-shadow: 0 8px 15px -10px @main-gold;
+	transition: all 0.2s ease-out;
+}
+
+.objects-column {
+    display: grid;
+    justify-content: space-between;
+
+    .name-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 20px;
+        background-color: @black;
+    }
+    .mob {
+	    .object-card-basic();
+
+        img {
+            height: 160px; width: 120px;
+        }
+        &:hover {
+            .object-card-hover();
+        }
+    }
+    .artifact {
+        .object-card-basic();
+        grid-template-rows: 120px 70px;
+        height: 190px;
+
+        img {
+            height: 120px; width: 120px;
+        }
+        &:hover {
+            .object-card-hover();
+        }
+    }
+    .hero {
+        .object-card-basic();
+        grid-template-rows: 130px 50px;
+        height: 180px;
+
+        img {
+            height: 130px; width: 120px;
+        }
+        &:hover {
+            .object-card-hover();
+        }
+        .name-box {
+            text-transform: capitalize;
+        }
+    }
+    .spell {
+        .object-card-basic();
+        grid-template-rows: 90px 50px;
+        height: 140px;
+        background: none;
+        border: none;
+
+        img {
+            height: 90px; width: 120px;
+        }
+        .name-box {
+            border-bottom: 3px solid @dark-grey;
+        }
+        &:hover .name-box {
+            border-bottom: 3px solid @main-gold;
+	        box-shadow: 0 8px 15px -10px @main-gold;
+            transition: all 0.2s ease-out;
+        }
+    }
+    .object {
+        .object-card-basic();
+        grid-template-rows: 120px 70px;
+        height: 190px;
+
+        img {
+            height: 120px; width: 120px;
+        }
+        &:hover {
+            .object-card-hover();
+        }
+    }
+    .compress10per {
+        font-size: 0.9em;
+    }
+    .compress20per {
+        font-size: 0.8em;
+    }
+    .group {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: -1;
+        background-color: transparent;
+        background-image: url(../images/other/slider-line.png);
+        background-repeat: no-repeat;
+        background-size: 600px 1px;
+        background-position: -200px 100%;
+        width: 100%; height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+            transition: all 0.2s ease-out;
+        }
+    }
+    .group-opened::before {
+        content: '- ';
+        font-size: 1.7em;
+        position: relative;
+        top: 3px;
+    }
+    .group-closed::before {
+        content: '+ ';
+        font-size: 1.55em;
+        position: relative;
+        top: 3px;
+    }
+    .hidden {
+        display: none;
+    }
+    .selected {
+        border-bottom: 3px solid @dark-gold;
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        transition: all 0.2s ease-out;
+    }
+    .spell.selected{
+        border: none;
+        box-shadow: none;
+
+        .name-box {
+            border-bottom: 3px solid @dark-gold;
+        }
+    }
+}

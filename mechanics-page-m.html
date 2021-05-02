@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, механика игры герои 3, герои 3 игровые механики, герои 3 секреты, герои 3 хитрости, герои 3 база знаний, герои 3 характеристики мобов, герои 3 абилки мобов, heroes 3, heroes 3 info, HotA, HotA info, база знаний, справочник, механики">
+	<meta name="description" content="Игровые механики Heroes of Might and Magic III (HotA). Хитрости, баги, особенности и способности юнитов.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/style-m.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/mechanics-page-m.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-mechanics.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<title>Механики игры | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: Calibri;
+		src: url(fonts/calibri.ttf);
+		font-display: swap;
+		}
+	</style>
+	<!-- -->
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.device.type != 'Mobile') {window.location = "mechanics-page.html";}
+	</script>
+</head>
+<body>
+	<header id="0">
+		<a class="icon" href="index-m.html"></a>
+		<a class="name" href="index-m.html">HOMMBASE</a>
+		<div></div>
+		<div class="burger"></div>
+		<div class="bar">
+			<a href="mobs-page-m.html">Существа</a>
+			<a href="comparator-page-m.html">Сравнить существ</a>
+			<a href="artifact-page-m.html">Артефакты</a>
+			<a href="heroes-page-m.html">Герои</a>
+			<a href="spells-page-m.html">Заклинания</a>
+			<a href="objects-page-m.html">Игровые объекты</a>
+			<a href="maps-page-m.html">Карты</a>
+			<a href="soft-page-m.html">Софт</a>
+			<a>Механики игры</a>
+			<a href="about-page-m.html">О проекте</a>
+		</div>
+	</header>
+	<main>
+		<nav class="story-list">
+			<div class="story-list-close"></div>
+			<div class="story-list-scroll"></div>
+		</nav>
+
+		<div class="filter">
+			<div class="sing"><img src="images/icons/theme.png" alt="Иконка" height="30"></div>
+			<span class="filter-text">Цвет фона</span>
+			<button class="light">Светлый</button>	<button class="dark">Темный</button>
+
+			<div class="sing"><img src="images/icons/textsize.png" alt="Иконка" height="30"></div>
+			<span class="filter-text">Размер шрифта</span>
+			<input class="size" type="range" min="6" max="22" step="1" value="14">
+
+			<div class="sing"><img src="images/icons/list.png" alt="Иконка" height="30"></div>
+			<span class="story-list-button filter-text">Список статей</span>
+		</div>
+
+		<nav class="pagination">
+			<a href="#" class="prev-page disable-button"></a>
+			<div class="pages-links">
+				<a href="#" class="pages-links-active">1</a>
+				<a href="mechanics-page-m-2.html">2</a>
+				<a href="mechanics-page-m-3.html">3</a>
+				<a href="mechanics-page-m-4.html">4</a>
+			</div>
+			<a href="mechanics-page-m-2.html" class="next-page"></a>
+		</nav>
+
+		<article class="story block">
+			<h1>Источник</h1>
+			<p>
+				<mark class="tab"></mark>Большая часть информации для данного раздела взята из справочника <a href="https://vk.com/doc-19157427_536847120"><mark>FizMiG</mark></a>.
+			</p>
+		</article>
+		<article class="story block" id="atk_dfs_dmg"></article>
+		<article class="story block" id="luck_morale"></article>
+		<article class="story block" id="archery"></article>
+		<article class="story block" id="health"></article>
+		<article class="story block" id="move_speed"></article>
+
+		<script src="databases/mechanics-db.js"></script>
+		<script>
+			const story = document.querySelectorAll('.story');
+			const generateStories = () => {
+				for (let i=1; i<story.length; i++) {
+					for (let c of mechanicsContent) {
+						if (story[i].id == c.id) {
+							story[i].insertAdjacentHTML('beforeend',
+							c.text.replace(/\[t\]/g, '<mark class="tab"></mark>').replace(/\[s\]/g, '<strong>').replace(/\[\/s\]/g, '</strong>').replace(/\[m\]/g, '<mark>').replace(/\[\/m\]/g, '</mark>'));
+						}
+					}
+				}
+			}
+			generateStories();
+		</script>
+
+		<nav class="pagination end-of-page">
+			<a href="#" class="prev-page disable-button"></a>
+			<div class="pages-links">
+				<a href="#" class="pages-links-active">1</a>
+				<a href="mechanics-page-m-2.html">2</a>
+				<a href="mechanics-page-m-3.html">3</a>
+				<a href="mechanics-page-m-4.html">4</a>
+			</div>
+			<a href="mechanics-page-m-2.html" class="next-page"></a>
+		</nav>
+	</main>
+	<footer>
+		<a href="mailto:hommbase@gmail.com"><img src="images/icons/message.png" alt="Иконка"></a>
+		<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a>
+		<div class="plug"></div>
+		<a href="community-page-m.html"><img src="images/icons/planet.png" alt="Иконка"></a>
+		<a class="return hidden" href="#top"></a>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="scripts/common-actions-m.js"></script>
+	<script src="scripts/mechanics-script-m.js"></script>
+</body>
+</html>
