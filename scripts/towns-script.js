@@ -55,6 +55,7 @@ const changeTownAudio = (town) => {
 const changeTownBack = (town) => {
     document.querySelector('#full-town').src = `images/towns/${town}/${town}-back-full.jpg`;
     document.querySelector('#empty-town').src = `images/towns/${town}/${town}-back-empty.jpg`;
+    document.querySelector('#siege-town').src = `images/towns/${town}/${town}-back-siege.jpg`;
     document.querySelector('#marks-town').src = `images/towns/${town}/${town}-back-marks.jpg`;
 };
 
@@ -259,11 +260,13 @@ const switchInfo = (open) => {
 const viewButtons = [
     document.querySelector('#switcher-full'),
     document.querySelector('#switcher-empty'),
+    document.querySelector('#switcher-siege'),
     document.querySelector('#switcher-marks')
 ];
 const townBackgrounds = [
     document.querySelector('#full-town'),
     document.querySelector('#empty-town'),
+    document.querySelector('#siege-town'),
     document.querySelector('#marks-town')
 ];
 
@@ -279,9 +282,13 @@ const switchTownPic = (view) => {
             townBackgrounds[1].style.opacity = 1;
             viewButtons[1].classList.add('active');
             break;
-        case 'switcher-marks':
+        case 'switcher-siege':
             townBackgrounds[2].style.opacity = 1;
             viewButtons[2].classList.add('active');
+            break;
+        case 'switcher-marks':
+            townBackgrounds[3].style.opacity = 1;
+            viewButtons[3].classList.add('active');
             break;
     }
     localStorage.setItem('townView', view);

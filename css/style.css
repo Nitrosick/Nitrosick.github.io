@@ -2222,7 +2222,7 @@ div.closed {
   top: 20px;
   right: 20px;
   width: 45px;
-  height: 135px;
+  height: 180px;
   background-color: rgba(0, 0, 0, 0.6);
 }
 .town-background .view-switcher button {
@@ -2247,8 +2247,11 @@ div.closed {
 .town-background .view-switcher #switcher-empty {
   background-image: url(../images/icons/house.png);
 }
+.town-background .view-switcher #switcher-siege {
+  background-image: url(../images/icons/wall.png);
+}
 .town-background .view-switcher #switcher-marks {
-  background-image: url(../images/icons/castle-marks.png);
+  background-image: url(../images/icons/town-marks.png);
 }
 .town-background .town-info-button {
   position: absolute;
@@ -2425,6 +2428,7 @@ div.closed {
 }
 .town-structures-item img {
   width: 100%;
+  margin-bottom: -3px;
 }
 .town-structures-item .name-box {
   height: 40px;
@@ -2453,7 +2457,7 @@ div.closed {
   flex-direction: column;
   position: absolute;
   left: 0;
-  top: 145px;
+  top: 142px;
   width: 220px;
   background-color: #303030;
   font-family: 'OpenSans';
