@@ -190,27 +190,34 @@
 .town-tree {
 	padding: 15px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: nowrap;
 
 	.require-items {
 		width: 120px;
-		height: 400px;
+		height: 730px;
 		background-image: url(../images/other/town-tree-plug.png);
 		background-size: 120px auto;
 	}
 	.require-list {
 		width: 120px;
-		height: 400px;
+		height: 730px;
 		overflow-y: scroll;
+	}
+	.require-arrow {
+		width: 100px;
+		background-image: url(../images/other/town-tree-arrow.png);
+		background-repeat: no-repeat;
+		background-size: 100px 100%;
 	}
 	.require-item {
 		width: 120px;
-		height: 56px;
+		height: 58px;
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 10px;
+		margin-bottom: 8.5px;
 
 		img {
 			width: 100%;

@@ -1304,27 +1304,34 @@ footer .return {
 .town-tree {
   padding: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 .town-tree .require-items {
   width: 120px;
-  height: 400px;
+  height: 730px;
   background-image: url(../images/other/town-tree-plug.png);
   background-size: 120px auto;
 }
 .town-tree .require-list {
   width: 120px;
-  height: 400px;
+  height: 730px;
   overflow-y: scroll;
+}
+.town-tree .require-arrow {
+  width: 100px;
+  background-image: url(../images/other/town-tree-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100px 100%;
 }
 .town-tree .require-item {
   width: 120px;
-  height: 56px;
+  height: 58px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 8.5px;
 }
 .town-tree .require-item img {
   width: 100%;
@@ -2042,7 +2049,7 @@ audio::-webkit-media-controls-time-remaining-display {
     width: 100vw;
     background: black;
     display: grid;
-    grid-template-rows: 8vh 150px 1fr 12vh 1fr 150px 8vh;
+    grid-template-rows: 8vh 150px 1fr 12vh 4vh 1fr 150px 8vh;
     z-index: 3;
   }
   .lockscreen .lockposter {
@@ -2063,5 +2070,11 @@ audio::-webkit-media-controls-time-remaining-display {
   }
   .lockscreen .locktext a {
     color: #5b5b5b;
+  }
+  .lockscreen .phone-icon {
+    background-image: url(../images/icons/phone.png);
+    background-repeat: no-repeat;
+    background-size: 50px auto;
+    background-position: center;
   }
 }
