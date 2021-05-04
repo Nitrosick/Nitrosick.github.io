@@ -3,9 +3,8 @@
 .basic-stats {
 	font-size: 13px;
 	position: fixed;
-	top: 0; left: 0;
-	width: 100vw; height: 100vh;
-	background: rgba(0,0,0,0.8);
+	top: 10px; bottom: 10px; left: 10px; right: 10px;
+	background: rgba(0,0,0,0.9);
 	display: none;
 	z-index: 4;
 }
@@ -45,7 +44,7 @@
 @media screen and (orientation:portrait) {
 	.stats {
 		.basic-stats();
-		grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 12vh;
+		grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 1fr;
 		grid-template-columns: repeat(2, auto);
 
 		div:first-child {
@@ -66,7 +65,8 @@
 			grid-column-start: 1;
 			grid-column-end: 3;
 			padding-left: 15px;
-			background: url(../images/back.jpg);
+			background-image: url(../images/back.jpg);
+			background-size: auto 140px;
 
 			img {
 				height: 20vh;

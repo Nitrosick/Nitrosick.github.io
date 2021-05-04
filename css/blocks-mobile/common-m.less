@@ -17,6 +17,36 @@ button {
 	padding: 0;
 }
 
+.page-art {
+	height: 150px;
+	display: flex;
+	align-items: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.7s;
+
+	&-title {
+		font-size: 25px;
+		margin: 0 auto;
+		text-shadow: 1px 1px 3px black;
+		transition: 0.7s;
+	}
+}
+
+.page-art-folded {
+	height: 75px;
+	padding-left: 15px;
+	filter: brightness(0.7);
+
+	.page-art-title {
+		font-size: 14px;
+		font-weight: normal;
+		color: white;
+		margin: 0;
+	}
+}
+
 /* Фильтры */
 
 .filter {

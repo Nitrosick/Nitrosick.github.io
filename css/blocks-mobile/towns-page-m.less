@@ -188,7 +188,42 @@
 }
 
 .town-tree {
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
 
+	.require-items {
+		width: 120px;
+		height: 400px;
+		background-image: url(../images/other/town-tree-plug.png);
+		background-size: 120px auto;
+	}
+	.require-list {
+		width: 120px;
+		height: 400px;
+		overflow-y: scroll;
+	}
+	.require-item {
+		width: 120px;
+		height: 56px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 10px;
+
+		img {
+			width: 100%;
+			position: absolute;
+			top: 0; left: 0;
+			filter: brightness(0.6);
+		}
+		span {
+			z-index: 1;
+			text-align: center;
+			font-size: 14px;
+		}
+	}
 }
 
 .town-mobs {
@@ -226,7 +261,31 @@
 }
 
 .town-mosaic {
+	padding: 15px;
 
+	&-box {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		img {
+			width: 100%;
+		}
+	}
+	.about-mosaic {
+		margin-top: 15px;
+		font-size: 14px;
+		font-family: 'Calibri', sans-serif;
+	}
+	@media screen and (orientation:landscape) {
+		.town-mosaic-box {
+			flex-wrap: nowrap;
+
+			img {
+				width: 50%;
+			}
+		}
+	}
 }
 
 .town-description {

@@ -123,12 +123,20 @@
 		height: 100vh; width: 100vw;
 		background: black;
 		display: grid;
-		grid-template-rows: 8vh 75px 1fr 12vh 1fr 75px 12vh;
+		grid-template-rows: 8vh 150px 1fr 12vh 1fr 150px 8vh;
 		z-index: 3;
 
+		.lockposter {
+			background-image: url(../images/main/mobs-art-m.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			background-position: center;
+			filter: brightness(0.8);
+		}
 		.lockback {
 			border: 1px solid @dark-grey;
 			background-image: url(../images/back.jpg);
+			background-size: auto 140px;
 		}
 		.locktext {
 			text-align: center;

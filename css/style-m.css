@@ -78,6 +78,32 @@ button {
   border: none;
   padding: 0;
 }
+.page-art {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.7s;
+}
+.page-art-title {
+  font-size: 25px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px black;
+  transition: 0.7s;
+}
+.page-art-folded {
+  height: 75px;
+  padding-left: 15px;
+  filter: brightness(0.7);
+}
+.page-art-folded .page-art-title {
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+}
 /* Фильтры */
 .filter {
   position: relative;
@@ -664,11 +690,11 @@ footer .return {
 .basic-stats {
   font-size: 13px;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   z-index: 4;
 }
@@ -705,14 +731,14 @@ footer .return {
   .stats {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 12vh;
+    grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 1fr;
     grid-template-columns: repeat(2, auto);
   }
   .stats div:first-child {
@@ -733,7 +759,8 @@ footer .return {
     grid-column-start: 1;
     grid-column-end: 3;
     padding-left: 15px;
-    background: url(../images/back.jpg);
+    background-image: url(../images/back.jpg);
+    background-size: auto 140px;
   }
   .stats .sideplug img {
     height: 20vh;
@@ -784,11 +811,11 @@ footer .return {
   .artparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 17vh 7vh repeat(6, 3.5vh) 1fr 3.5vh 15.5vh 6vh 12vh;
@@ -808,11 +835,11 @@ footer .return {
   .herostats {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 17vh repeat(6, 3.5vh) 5vh 7.5vh 3.5vh 1fr 3.5vh 1fr 12vh;
@@ -830,11 +857,11 @@ footer .return {
   .splparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 14vh repeat(8, 3.5vh) 1fr 3.5vh 1fr 3.5vh 1fr 12vh;
@@ -851,11 +878,11 @@ footer .return {
   .objparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 20vh 7vh 3.5vh 1fr 3.5vh 130px 12vh;
@@ -903,11 +930,11 @@ footer .return {
   .stats {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: repeat(15, 5.5vh) 1fr;
@@ -981,11 +1008,11 @@ footer .return {
   .artparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 10vh repeat(6, 5.5vh) 1fr 5.5vh 1fr 11vh;
@@ -999,11 +1026,11 @@ footer .return {
   .herostats {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: repeat(6, 5.5vh) 10vh 15vh 5.5vh 1fr 5.5vh 1fr;
@@ -1018,11 +1045,11 @@ footer .return {
   .splparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: repeat(8, 5.5vh) 1fr 5.5vh 1fr 5.5vh 1fr;
@@ -1030,11 +1057,11 @@ footer .return {
   .objparams {
     font-size: 13px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
     grid-template-rows: 10vh 5.5vh 1fr 5.5vh 110px;
@@ -1274,6 +1301,43 @@ footer .return {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.town-tree {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.town-tree .require-items {
+  width: 120px;
+  height: 400px;
+  background-image: url(../images/other/town-tree-plug.png);
+  background-size: 120px auto;
+}
+.town-tree .require-list {
+  width: 120px;
+  height: 400px;
+  overflow-y: scroll;
+}
+.town-tree .require-item {
+  width: 120px;
+  height: 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.town-tree .require-item img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.6);
+}
+.town-tree .require-item span {
+  z-index: 1;
+  text-align: center;
+  font-size: 14px;
+}
 .town-mobs-item {
   width: 100px;
   height: 170px;
@@ -1311,6 +1375,30 @@ footer .return {
   text-align: center;
   font-size: 14px;
   border-bottom: 3px solid #303030;
+}
+.town-mosaic {
+  padding: 15px;
+}
+.town-mosaic-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.town-mosaic-box img {
+  width: 100%;
+}
+.town-mosaic .about-mosaic {
+  margin-top: 15px;
+  font-size: 14px;
+  font-family: 'Calibri', sans-serif;
+}
+@media screen and (orientation: landscape) {
+  .town-mosaic .town-mosaic-box {
+    flex-wrap: nowrap;
+  }
+  .town-mosaic .town-mosaic-box img {
+    width: 50%;
+  }
 }
 .town-description {
   display: block;
@@ -1954,12 +2042,20 @@ audio::-webkit-media-controls-time-remaining-display {
     width: 100vw;
     background: black;
     display: grid;
-    grid-template-rows: 8vh 75px 1fr 12vh 1fr 75px 12vh;
+    grid-template-rows: 8vh 150px 1fr 12vh 1fr 150px 8vh;
     z-index: 3;
+  }
+  .lockscreen .lockposter {
+    background-image: url(../images/main/mobs-art-m.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    filter: brightness(0.8);
   }
   .lockscreen .lockback {
     border: 1px solid #303030;
     background-image: url(../images/back.jpg);
+    background-size: auto 140px;
   }
   .lockscreen .locktext {
     text-align: center;

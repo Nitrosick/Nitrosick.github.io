@@ -1,10 +1,9 @@
 "use strict";
 
 // Всплывающее меню
-const burger = document.querySelector('.burger');
 const bar = document.querySelector('.bar');
 
-burger.addEventListener('click', () => {
+document.querySelector('.burger').addEventListener('click', () => {
 	bar.classList.toggle('bar-opened');
 });
 
@@ -14,7 +13,7 @@ const closeStats = (arr) => {
 	stats.style.display = 'none';
 }
 
-// Кнопка возврата в начало страницы
+// Кнопка возврата в начало страницы и сворачивание постера
 const ret = document.querySelector('.return');
 
 window.addEventListener('scroll', () => {
@@ -23,6 +22,10 @@ window.addEventListener('scroll', () => {
 		bar.classList.remove('bar-opened');
 	}
 	else {ret.classList.add('hidden');}
+
+	try {
+		document.querySelector('.page-art').classList.add('page-art-folded');
+	} catch (e) {}
 });
 
 // Отслеживание поворота экрана
