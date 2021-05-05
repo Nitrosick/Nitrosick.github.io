@@ -11,7 +11,8 @@ const changeTown = (town) => {
 	generateMobs(town);
 	generateHeroes(town);
 	changeMosaic(town);
-	pushRequireList(town);
+	makeTreeSelector(town);
+	changeTreeIcon(treeSelector.value, townSelector.value);
 	changeDescription(town);
 	changeTownViews(town);
 	hideStructInfo();
@@ -23,8 +24,10 @@ const refresh = () => {
     document.querySelector('footer').style.boxShadow = 'none';
 	document.querySelector('#town-background').src = `images/svg-icon.svg`;
 	document.querySelector('.town-structures').innerHTML = '';
-	document.querySelector('.require-items').innerHTML = '';
-	document.querySelector('.require-list').innerHTML = '';
+	document.querySelector('#treeSelector').innerHTML = '';
+	document.querySelector('#tree-selector-icon').src = `images/svg-icon.svg`;
+	document.querySelector('.town-tree-items').innerHTML = '';
+	document.querySelector('.no-requires').classList.add('hidden');
 	document.querySelector('.town-mobs').innerHTML = '';
 	document.querySelector('.town-heroes').innerHTML = '';
 	document.querySelector('#town-mosaic-1').src = `images/svg-icon.svg`;
@@ -201,24 +204,18 @@ const changeMosaic = (town) => {
 	document.querySelector('#town-mosaic-2').src = `images/towns/${town}/${town}-mosaic-2.jpg`;
 };
 
-const pushRequireList = (town) => {
+const makeTreeSelector = (town) => {
 	commonStructures.forEach(el => {
-		document.querySelector('.require-list').insertAdjacentHTML('beforeend', `
-			<div class="require-item" data-id="${el.id}" data-chain="${el.chain}">
-				<img src="images/towns/${town}/${el.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
-				<span>${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</span>
-			</div>
+		document.querySelector('#treeSelector').insertAdjacentHTML('beforeend', `
+			<option value="${el.engname}" data-chain="${el.chain}">${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</option>
 		`);
 	});
 
 	townsArray.forEach(el => {
 		if (el.engname == town) {
 			el.structures.forEach(struct => {
-				document.querySelector('.require-list').insertAdjacentHTML('beforeend', `
-					<div class="require-item" data-id="${struct.id}" data-chain="${struct.chain}">
-						<img src="images/towns/${town}/${struct.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
-						<span>${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</span>
-					</div>
+				document.querySelector('#treeSelector').insertAdjacentHTML('beforeend', `
+					<option value="${struct.engname}" data-chain="${struct.chain}">${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</option>
 				`);
 			});
 		}
@@ -226,35 +223,47 @@ const pushRequireList = (town) => {
 	});
 };
 
-const pushRequireItems = (elem, town) => {
-	document.querySelector('.require-items').innerHTML = '';
-	const chain = elem.dataset.chain.split('/').slice(0, -1);
-	for (let c of chain) {
-		commonStructures.forEach(el => {
-			if (el.id == c) {
-				document.querySelector('.require-items').insertAdjacentHTML('beforeend', `
-					<div class="require-item" data-id="${el.id}" data-chain="${el.chain}">
-						<img src="images/towns/${town}/${el.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
-						<span>${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</span>
-					</div>
-				`);
-			}
-		});
-		townsArray.forEach(el => {
-			if (el.engname == town) {
-				el.structures.forEach(struct => {
-					if (struct.id == c) {
-						document.querySelector('.require-items').insertAdjacentHTML('beforeend', `
-							<div class="require-item" data-id="${struct.id}" data-chain="${struct.chain}">
-								<img src="images/towns/${town}/${struct.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
-								<span>${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</span>
-							</div>
-						`);
-					}
-				});
-			}
-			return;
-		});
+const changeTreeIcon = (structure, town) => {
+	document.querySelector('#tree-selector-icon').src = `images/towns/${town}/${structure.replace(/[^a-z1-5()]+/g, '')}.jpg`;
+};
+
+const pullTreeStructures = (chain, town) => {
+	document.querySelector('.town-tree-items').innerHTML = '';
+	document.querySelector('.no-requires').classList.add('hidden');
+	if (chain.includes('/')) {
+		const chainArr = chain.split('/').slice(0, -1);
+		chainArr.sort(function(a,b){return a-b});
+		for (let c of chainArr) {
+			commonStructures.forEach(el => {
+				if (el.id == c) {
+					document.querySelector('.town-tree-items').insertAdjacentHTML('beforeend', `
+						<div class="town-tree-item">
+							<img src="images/towns/${town}/${el.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
+							<span>${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</span>
+						</div>
+					`);
+				}
+				return;
+			});
+			townsArray.forEach(el => {
+				if (el.engname == town) {
+					el.structures.forEach(struct => {
+						if (struct.id == c) {
+							document.querySelector('.town-tree-items').insertAdjacentHTML('beforeend', `
+								<div class="town-tree-item">
+									<img src="images/towns/${town}/${struct.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
+									<span>${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</span>
+								</div>
+							`);
+						}
+						return;
+					});
+				}
+				return;
+			});
+		}
+	} else {
+		document.querySelector('.no-requires').classList.remove('hidden');
 	}
 };
 
@@ -282,6 +291,7 @@ const changeTownViews = (town) => {
 
 // Элементы и переменные
 const townSelector = document.querySelector('#townSelect');
+const treeSelector = document.querySelector('#treeSelector');
 const tabLeft = document.querySelector('.tab-selector-left');
 const tabRight = document.querySelector('.tab-selector-right');
 const closeButton = document.querySelector('.close-button');
@@ -298,7 +308,7 @@ document.addEventListener('click', event => {
 		showDetails();
 	} else if (event.target == closeButton) {
 		hideStructInfo();
-	} else if (event.target.classList.contains('structure-overlay')) {
+	} else if (event.target.className == 'structure-overlay') {
 		selectStructure(event.target);
 		showStructInfo();
 	} else if (event.target.parentNode.className == 'require-item') {
@@ -309,6 +319,10 @@ document.addEventListener('click', event => {
 townSelector.addEventListener('change', () => {
 	changeTown(townSelector.value);
 });
+$('#treeSelector').change(function(){
+	changeTreeIcon(treeSelector.value, townSelector.value);
+	pullTreeStructures($(this).find(':selected').data('chain').toString(), townSelector.value);
+})
 
 window.addEventListener('load', () => {
 	if (localStorage.getItem('selectedTab-m') != null) currentTab = +localStorage.getItem('selectedTab-m');
@@ -319,4 +333,5 @@ window.addEventListener('load', () => {
     } else {
         changeTown('castle');
     }
+	changeTreeIcon(treeSelector.value, townSelector.value);
 });

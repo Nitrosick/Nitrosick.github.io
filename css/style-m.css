@@ -738,7 +738,7 @@ footer .return {
     background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 20vh repeat(15, 3.5vh) 15.5vh 1fr;
+    grid-template-rows: 20vh repeat(15, 3.5vh) 1fr;
     grid-template-columns: repeat(2, auto);
   }
   .stats div:first-child {
@@ -818,7 +818,7 @@ footer .return {
     background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 17vh 7vh repeat(6, 3.5vh) 1fr 3.5vh 15.5vh 6vh 12vh;
+    grid-template-rows: 17vh 7vh repeat(6, 3.5vh) 1fr 3.5vh 17.5vh 6vh;
   }
   .artparams span {
     line-height: 4vh;
@@ -842,7 +842,7 @@ footer .return {
     background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 17vh repeat(6, 3.5vh) 5vh 7.5vh 3.5vh 1fr 3.5vh 1fr 12vh;
+    grid-template-rows: 17vh repeat(6, 3.5vh) 5vh 7.5vh 3.5vh 1fr 3.5vh 1fr;
   }
   .herostats .stat-secondary,
   .herostats .stat-army {
@@ -864,7 +864,7 @@ footer .return {
     background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 14vh repeat(8, 3.5vh) 1fr 3.5vh 1fr 3.5vh 1fr 12vh;
+    grid-template-rows: 14vh repeat(8, 3.5vh) 1fr 3.5vh 1fr 3.5vh 1fr;
   }
   .splparams .sideplug {
     padding: 1vh 15px;
@@ -885,7 +885,7 @@ footer .return {
     background: rgba(0, 0, 0, 0.9);
     display: none;
     z-index: 4;
-    grid-template-rows: 20vh 7vh 3.5vh 1fr 3.5vh 130px 12vh;
+    grid-template-rows: 20vh 7vh 3.5vh 1fr 3.5vh 130px;
   }
   .objparams span {
     grid-column-start: 1;
@@ -1198,7 +1198,7 @@ footer .return {
 }
 .town-details {
   border-bottom: 1px solid #5b5b5b;
-  min-height: 400px;
+  min-height: 300px;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-around;
@@ -1223,6 +1223,7 @@ footer .return {
 }
 .town-structures-item img {
   width: 100%;
+  height: 75px;
   margin-bottom: -5px;
 }
 .town-structures-item .structure-name {
@@ -1302,48 +1303,82 @@ footer .return {
   background-size: contain;
 }
 .town-tree {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-.town-tree .require-items {
-  width: 120px;
-  height: 730px;
-  background-image: url(../images/other/town-tree-plug.png);
-  background-size: 120px auto;
-}
-.town-tree .require-list {
-  width: 120px;
-  height: 730px;
-  overflow-y: scroll;
-}
-.town-tree .require-arrow {
-  width: 100px;
-  background-image: url(../images/other/town-tree-arrow.png);
-  background-repeat: no-repeat;
-  background-size: 100px 100%;
-}
-.town-tree .require-item {
-  width: 120px;
-  height: 58px;
   position: relative;
+  padding: 15px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.town-tree-selector {
+  display: flex;
+  margin-bottom: 15px;
+}
+.town-tree-selector .tree-selector {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: 13px;
+  height: 35px;
+  background: linear-gradient(90deg, transparent 40%, #303030);
+  border: 1px solid black;
+  border-radius: 0 5px 5px 0;
+  color: #cfcfcf;
+}
+.town-tree-selector .tree-selector option {
+  background-color: #303030;
+}
+.town-tree-items {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  height: 240px;
+  padding-top: 10px;
+}
+.town-tree-items .town-tree-item {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8.5px;
+  position: relative;
+  width: 100px;
+  height: 47px;
+  padding: 5px;
+  margin: 0 auto;
 }
-.town-tree .require-item img {
+.town-tree-items .town-tree-item img {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  filter: brightness(0.6);
+  filter: brightness(0.7);
 }
-.town-tree .require-item span {
+.town-tree-items .town-tree-item span {
   z-index: 1;
   text-align: center;
+  font-size: 12px;
+}
+.town-tree .no-requires {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  text-align: center;
+  width: 150px;
+  margin-left: -75px;
   font-size: 14px;
+  color: #5b5b5b;
+}
+@media (max-width: 350px) {
+  .town-tree .town-tree-items {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    height: 360px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .town-tree .town-tree-items {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    height: 180px;
+  }
 }
 .town-mobs-item {
   width: 100px;
@@ -1389,7 +1424,6 @@ footer .return {
 .town-mosaic-box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .town-mosaic-box img {
   width: 100%;
@@ -1462,18 +1496,10 @@ footer .return {
   display: none;
 }
 audio {
-  filter: invert(0.9);
   height: 35px;
   width: 100%;
   margin-bottom: 15px;
-}
-audio::-webkit-media-controls-enclosure {
-  border-radius: 0;
-}
-audio::-webkit-media-controls-timeline-container,
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-  display: none;
+  margin-top: 5px;
 }
 /*	Страница карт	*/
 .maps-help {
