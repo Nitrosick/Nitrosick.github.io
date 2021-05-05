@@ -308,11 +308,15 @@ document.addEventListener('click', event => {
 		showDetails();
 	} else if (event.target == closeButton) {
 		hideStructInfo();
-	} else if (event.target.className == 'structure-overlay') {
-		selectStructure(event.target);
-		showStructInfo();
 	} else if (event.target.parentNode.className == 'require-item') {
 		pushRequireItems(event.target.parentNode, townSelector.value);
+	}
+});
+
+document.addEventListener('touchstart', event => {
+	if (event.target.className == 'structure-overlay') {
+		selectStructure(event.target);
+		showStructInfo();
 	}
 });
 
