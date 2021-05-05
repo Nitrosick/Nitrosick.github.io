@@ -300,23 +300,26 @@ let currentTab = 1;
 // Обработчики событий
 document.addEventListener('click', event => {
 	currentTab = document.querySelector('.town-details-tabs').className.slice(-1);
+
+	if (event.target.className == 'structure-overlay') {
+		selectStructure(event.target);
+		showStructInfo();
+	}
+
 	if (event.target == tabLeft) {
 		tabsChange('left', currentTab);
 		showDetails();
 	} else if (event.target == tabRight) {
 		tabsChange('right', currentTab);
 		showDetails();
-	} else if (event.target == closeButton) {
-		hideStructInfo();
-	} else if (event.target.parentNode.className == 'require-item') {
-		pushRequireItems(event.target.parentNode, townSelector.value);
 	}
-});
 
-document.addEventListener('touchstart', event => {
-	if (event.target.className == 'structure-overlay') {
-		selectStructure(event.target);
-		showStructInfo();
+	if (event.target == closeButton) {
+		hideStructInfo();
+	}
+
+	if (event.target.parentNode.className == 'require-item') {
+		pushRequireItems(event.target.parentNode, townSelector.value);
 	}
 });
 
