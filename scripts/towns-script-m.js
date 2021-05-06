@@ -1,5 +1,6 @@
 "use strict";
 
+// Выбор города
 const changeTown = (town) => {
 	refresh();
 	changeBacklight(town);
@@ -8,6 +9,7 @@ const changeTown = (town) => {
 	changeTownAudio(town);
 	showDetails();
 	generateStructures(town);
+	structuresArray = document.querySelectorAll('.require-item');
 	generateMobs(town);
 	generateHeroes(town);
 	changeMosaic(town);
@@ -20,6 +22,7 @@ const changeTown = (town) => {
 	localStorage.setItem('selectedTown-m', town);
 };
 
+// Очистка всех полей и изображений
 const refresh = () => {
     document.querySelector('footer').style.boxShadow = 'none';
 	document.querySelector('#town-background').src = `images/svg-icon.svg`;
@@ -39,6 +42,7 @@ const refresh = () => {
 	document.querySelector('#town-appearance-4').src = `images/svg-icon.svg`;
 };
 
+// Подсветка подвала
 const changeBacklight = (town) => {
 	townsArray.forEach(el => {
 		if (el.engname == town) {
@@ -48,18 +52,22 @@ const changeBacklight = (town) => {
 	});
 };
 
+// Иконка выбранного города
 const changeTownIcon = (town) => {
 	document.querySelector('#town-icon').src = `images/towns/${town}/${town}-icon.jpg`;
 };
 
+// Фоновая картинка выбранного города
 const changeTownBackground = (town) => {
 	document.querySelector('#town-background').src = `images/towns/${town}/${town}-back-full-m.jpg`;
 };
 
+// Аудиодорожка выбранного города
 const changeTownAudio = (town) => {
     document.querySelector('#town-audio').src = `images/towns/${town}/${town}-theme.mp3`;
 };
 
+// Переключение вкладок детализации
 const tabsChange = (direction, current) => {
 	const tabsLine = document.querySelector('.town-details-tabs');
 	switch(direction) {
@@ -87,6 +95,7 @@ const tabsChange = (direction, current) => {
 	hideStructInfo();
 };
 
+// Отображение выбранной вкладки
 const showDetails = () => {
 	const detailsTabs = document.querySelectorAll('.town-details');
 	detailsTabs.forEach(el => {
@@ -99,6 +108,7 @@ const showDetails = () => {
 	});
 };
 
+// Генерация списка построек
 const generateStructures = (town) => {
 	commonStructures.forEach(el => {
 		document.querySelector('.town-structures').insertAdjacentHTML('beforeend', `
@@ -130,6 +140,7 @@ const generateStructures = (town) => {
 	});
 };
 
+// Генерация строки для цены постройки
 const getCostStr = (str) => {
     if (str == 'Нельзя купить') return str;
     const costArray = str.split('_');
@@ -142,14 +153,7 @@ const getCostStr = (str) => {
     return result;
 };
 
-const selectStructure = (elem) => {
-	document.querySelector('.structure-info-img').src = `images/towns/${townSelector.value}/${elem.dataset.engname.replace(/[^a-z1-5()]+/g, '')}.jpg`;
-	document.querySelector('.structure-info-name').innerHTML = elem.dataset.rusname.charAt(0).toUpperCase() + elem.dataset.rusname.substr(1);
-	document.querySelector('.structure-info-desc').innerHTML = elem.dataset.desc;
-	document.querySelector('.structure-info-requires').innerHTML = `Требования:${elem.dataset.req}`;
-	document.querySelector('.structure-info-cost').innerHTML = `Цена: ${getCostStr(elem.dataset.cost)}`;
-};
-
+// Отображение и скрытие доп. информации по постройке
 const showStructInfo = () => {
 	const infoWindow = document.querySelector('.structure-info');
 	infoWindow.classList.remove('hidden');
@@ -159,51 +163,16 @@ const hideStructInfo = () => {
 	document.querySelector('.structure-info').classList.add('hidden');
 };
 
-const generateMobs = (town) => {
-	townsArray.forEach(el => {
-		if (el.engname == town) {
-			mobsArray.forEach(elem => {
-				if (el.rusname == elem.castle.toLowerCase()) {
-					document.querySelector('.town-mobs').insertAdjacentHTML('beforeend', `
-						<div class="town-mobs-item">
-							<img src="images/mobs/${elem.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Изображение существа">
-							<div class="mob-name">
-								<span>${elem.rusname.charAt(0).toUpperCase() + elem.rusname.substr(1)}</span>
-							</div>
-						</div>
-					`);
-				}
-			});
-		}
-		return;
-	});
+// Заполнение доп. информации по постройке
+const selectStructure = (elem) => {
+	document.querySelector('.structure-info-img').src = `images/towns/${townSelector.value}/${elem.dataset.engname.replace(/[^a-z1-5()]+/g, '')}.jpg`;
+	document.querySelector('.structure-info-name').innerHTML = elem.dataset.rusname.charAt(0).toUpperCase() + elem.dataset.rusname.substr(1);
+	document.querySelector('.structure-info-desc').innerHTML = elem.dataset.desc;
+	document.querySelector('.structure-info-requires').innerHTML = `Требования:${elem.dataset.req}`;
+	document.querySelector('.structure-info-cost').innerHTML = `Цена: ${getCostStr(elem.dataset.cost)}`;
 };
 
-const generateHeroes = (town) => {
-	townsArray.forEach(el => {
-		if (el.engname == town) {
-			heroesArray.forEach(elem => {
-				if (el.rusname == elem.castle.toLowerCase()) {
-					document.querySelector('.town-heroes').insertAdjacentHTML('beforeend', `
-						<div class="town-heroes-item">
-							<img src="images/heroes/${elem.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Изображение героя">
-							<div class="hero-name">
-								<span>${elem.rusname.charAt(0).toUpperCase() + elem.rusname.substr(1)}</span>
-							</div>
-						</div>
-					`);
-				}
-			});
-		}
-		return;
-	});
-};
-
-const changeMosaic = (town) => {
-	document.querySelector('#town-mosaic-1').src = `images/towns/${town}/${town}-mosaic-1.jpg`;
-	document.querySelector('#town-mosaic-2').src = `images/towns/${town}/${town}-mosaic-2.jpg`;
-};
-
+// Генерация списка для выбора постройки в дереве
 const makeTreeSelector = (town) => {
 	commonStructures.forEach(el => {
 		document.querySelector('#treeSelector').insertAdjacentHTML('beforeend', `
@@ -223,10 +192,12 @@ const makeTreeSelector = (town) => {
 	});
 };
 
+// Смена иконки постройки в строке выбора
 const changeTreeIcon = (structure, town) => {
 	document.querySelector('#tree-selector-icon').src = `images/towns/${town}/${structure.replace(/[^a-z1-5()]+/g, '')}.jpg`;
 };
 
+// Заполнение списка построек в окне требований
 const pullTreeStructures = (chain, town) => {
 	document.querySelector('.town-tree-items').innerHTML = '';
 	document.querySelector('.no-requires').classList.add('hidden');
@@ -267,6 +238,55 @@ const pullTreeStructures = (chain, town) => {
 	}
 };
 
+// Генерация списка существ
+const generateMobs = (town) => {
+	townsArray.forEach(el => {
+		if (el.engname == town) {
+			mobsArray.forEach(elem => {
+				if (el.rusname == elem.castle.toLowerCase()) {
+					document.querySelector('.town-mobs').insertAdjacentHTML('beforeend', `
+						<div class="town-mobs-item">
+							<img src="images/mobs/${elem.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Изображение существа">
+							<div class="mob-name">
+								<span>${elem.rusname.charAt(0).toUpperCase() + elem.rusname.substr(1)}</span>
+							</div>
+						</div>
+					`);
+				}
+			});
+		}
+		return;
+	});
+};
+
+// Генерация списка героев
+const generateHeroes = (town) => {
+	townsArray.forEach(el => {
+		if (el.engname == town) {
+			heroesArray.forEach(elem => {
+				if (el.rusname == elem.castle.toLowerCase()) {
+					document.querySelector('.town-heroes').insertAdjacentHTML('beforeend', `
+						<div class="town-heroes-item">
+							<img src="images/heroes/${elem.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Изображение героя">
+							<div class="hero-name">
+								<span>${elem.rusname.charAt(0).toUpperCase() + elem.rusname.substr(1)}</span>
+							</div>
+						</div>
+					`);
+				}
+			});
+		}
+		return;
+	});
+};
+
+// Смена картинки мозаики
+const changeMosaic = (town) => {
+	document.querySelector('#town-mosaic-1').src = `images/towns/${town}/${town}-mosaic-1.jpg`;
+	document.querySelector('#town-mosaic-2').src = `images/towns/${town}/${town}-mosaic-2.jpg`;
+};
+
+// Смена описания города
 const changeDescription = (town) => {
 	townsArray.forEach(el => {
 		if (el.engname == town) {
@@ -282,6 +302,7 @@ const changeDescription = (town) => {
 	});
 };
 
+// Смена картинок вида города на карте
 const changeTownViews = (town) => {
 	document.querySelector('#town-appearance-1').src = `images/towns/${town}/${town}-view-1.png`;
 	document.querySelector('#town-appearance-2').src = `images/towns/${town}/${town}-view-2.png`;
@@ -295,6 +316,7 @@ const treeSelector = document.querySelector('#treeSelector');
 const tabLeft = document.querySelector('.tab-selector-left');
 const tabRight = document.querySelector('.tab-selector-right');
 const closeButton = document.querySelector('.close-button');
+let structuresArray;
 let currentTab = 1;
 
 // Обработчики событий
@@ -318,8 +340,10 @@ document.addEventListener('click', event => {
 		hideStructInfo();
 	}
 
-	if (event.target.parentNode.className == 'require-item') {
-		pushRequireItems(event.target.parentNode, townSelector.value);
+	for (let s of structuresArray) {
+		if (event.target == s || event.target.parentNode == s) {
+			pushRequireItems(s, townSelector.value);
+		}
 	}
 });
 
