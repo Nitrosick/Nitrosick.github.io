@@ -9,7 +9,7 @@ const changeTown = (town) => {
 	changeTownAudio(town);
 	showDetails();
 	generateStructures(town);
-	structuresArray = document.querySelectorAll('.require-item');
+	structuresArray = document.querySelectorAll('.structure-overlay');
 	generateMobs(town);
 	generateHeroes(town);
 	changeMosaic(town);
@@ -323,9 +323,11 @@ let currentTab = 1;
 document.addEventListener('click', event => {
 	currentTab = document.querySelector('.town-details-tabs').className.slice(-1);
 
-	if (event.target.className == 'structure-overlay') {
-		selectStructure(event.target);
-		showStructInfo();
+	for (let s of structuresArray) {
+		if (event.target == s || event.target.parentNode == s) {
+			selectStructure(s);
+			showStructInfo();
+		}
 	}
 
 	if (event.target == tabLeft) {
@@ -340,10 +342,8 @@ document.addEventListener('click', event => {
 		hideStructInfo();
 	}
 
-	for (let s of structuresArray) {
-		if (event.target == s || event.target.parentNode == s) {
-			pushRequireItems(s, townSelector.value);
-		}
+	if (event.target.parentNode.className == 'require-item') {
+		pushRequireItems(event.target.parentNode, townSelector.value);
 	}
 });
 
