@@ -9,7 +9,7 @@ const changeTown = (town) => {
 	changeTownAudio(town);
 	showDetails();
 	generateStructures(town);
-	structuresArray = document.querySelectorAll('.structure-overlay');
+	structuresArray = document.querySelectorAll('.town-structures-item');
 	generateMobs(town);
 	generateHeroes(town);
 	changeMosaic(town);
@@ -112,12 +112,11 @@ const showDetails = () => {
 const generateStructures = (town) => {
 	commonStructures.forEach(el => {
 		document.querySelector('.town-structures').insertAdjacentHTML('beforeend', `
-			<div class="town-structures-item">
+			<div class="town-structures-item" data-engname="${el.engname}" data-rusname="${el.rusname}" data-req="${el.req}" data-cost="${el.cost}" data-desc="${el.desc}">
 				<img src="images/towns/${town}/${el.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
 				<div class="structure-name">
 					<span>${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</span>
 				</div>
-				<div class="structure-overlay" data-engname="${el.engname}" data-rusname="${el.rusname}" data-req="${el.req}" data-cost="${el.cost}" data-desc="${el.desc}"></div>
 			</div>
 		`);
 	});
@@ -126,12 +125,11 @@ const generateStructures = (town) => {
 		if (el.engname == town) {
 			el.structures.forEach(struct => {
 				document.querySelector('.town-structures').insertAdjacentHTML('beforeend', `
-					<div class="town-structures-item">
+					<div class="town-structures-item" data-engname="${struct.engname}" data-rusname="${struct.rusname}" data-req="${struct.req}" data-cost="${struct.cost}" data-desc="${struct.desc}">
 						<img src="images/towns/${town}/${struct.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
 						<div class="structure-name">
 							<span>${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</span>
 						</div>
-						<div class="structure-overlay" data-engname="${struct.engname}" data-rusname="${struct.rusname}" data-req="${struct.req}" data-cost="${struct.cost}" data-desc="${struct.desc}"></div>
 					</div>
 				`);
 			});
@@ -330,21 +328,21 @@ document.addEventListener('click', event => {
 		}
 	}
 
-	if (event.target == tabLeft) {
-		tabsChange('left', currentTab);
-		showDetails();
-	} else if (event.target == tabRight) {
-		tabsChange('right', currentTab);
-		showDetails();
-	}
-
-	if (event.target == closeButton) {
-		hideStructInfo();
-	}
-
 	if (event.target.parentNode.className == 'require-item') {
 		pushRequireItems(event.target.parentNode, townSelector.value);
 	}
+});
+
+tabLeft.addEventListener('click', () => {
+	tabsChange('left', currentTab);
+	showDetails();
+});
+tabRight.addEventListener('click', () => {
+	tabsChange('right', currentTab);
+	showDetails();
+});
+closeButton.addEventListener('click', () => {
+	hideStructInfo();
 });
 
 townSelector.addEventListener('change', () => {

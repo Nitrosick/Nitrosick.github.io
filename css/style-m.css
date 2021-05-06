@@ -1216,7 +1216,6 @@ footer .return {
   border-bottom: 3px solid #303030;
 }
 .town-structures-item {
-  position: relative;
   width: 160px;
   height: 115px;
   margin-bottom: 15px;
@@ -1235,13 +1234,6 @@ footer .return {
   text-align: center;
   font-size: 14px;
   border-bottom: 3px solid #303030;
-}
-.town-structures-item .structure-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 .structure-info {
   box-sizing: border-box;
