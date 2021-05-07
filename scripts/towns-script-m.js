@@ -112,7 +112,7 @@ const showDetails = () => {
 const generateStructures = (town) => {
 	commonStructures.forEach(el => {
 		document.querySelector('.town-structures').insertAdjacentHTML('beforeend', `
-			<div class="town-structures-item" data-engname="${el.engname}" data-rusname="${el.rusname}" data-req="${el.req}" data-cost="${el.cost}" data-desc="${el.desc}">
+			<div class="town-structures-item" data-engname="${el.engname}" data-rusname="${el.rusname}" data-req="${el.req}" data-cost="${el.cost}" data-desc="${el.desc.replace(/-page/g, '-page-m')}">
 				<img src="images/towns/${town}/${el.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
 				<div class="structure-name">
 					<span>${el.rusname.charAt(0).toUpperCase() + el.rusname.substr(1)}</span>
@@ -125,7 +125,7 @@ const generateStructures = (town) => {
 		if (el.engname == town) {
 			el.structures.forEach(struct => {
 				document.querySelector('.town-structures').insertAdjacentHTML('beforeend', `
-					<div class="town-structures-item" data-engname="${struct.engname}" data-rusname="${struct.rusname}" data-req="${struct.req}" data-cost="${struct.cost}" data-desc="${struct.desc}">
+					<div class="town-structures-item" data-engname="${struct.engname}" data-rusname="${struct.rusname}" data-req="${struct.req}" data-cost="${struct.cost}" data-desc="${struct.desc.replace(/-page/g, '-page-m')}">
 						<img src="images/towns/${town}/${struct.engname.replace(/[^a-z1-5()]+/g, '')}.jpg" alt="Постройка">
 						<div class="structure-name">
 							<span>${struct.rusname.charAt(0).toUpperCase() + struct.rusname.substr(1)}</span>

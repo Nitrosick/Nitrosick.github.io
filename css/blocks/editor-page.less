@@ -1,0 +1,114 @@
+/* Страница Редактора карт */
+
+.editor-page {
+
+    .filter-block {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        height: 60px;
+        margin: 30px auto;
+        background: linear-gradient(90deg, transparent, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, transparent);
+
+        .page-name {
+            font-size: 25px;
+        }
+        .homm-3 {
+            color: @mid-grey;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        input.size {
+            max-width: 400px;
+        }
+        .fontImg {
+            margin-left: 10px;
+        }
+        &::before {
+            .split-line();
+        }
+        &::after {
+            .split-line();
+            top: auto;
+            bottom: 0;
+        }
+        @media screen and (max-width:1100px) {
+            .homm-3 {
+                display: none;
+            }
+        }
+    }
+}
+
+.editor-info {
+
+    .navigation {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        float: right;
+        margin: 5px 5px 0 10px;
+        padding: 10px;
+        max-width: 500px;
+        z-index: 1;
+        font-family: 'Calibri';
+        font-size: 18px;
+
+        span {
+            text-align: center;
+            font-weight: bold;
+            color: @dark-grey;
+        }
+        &-link {
+            margin: 5px 0;
+            font-weight: normal;
+            color: @dark-grey;
+        }
+    }
+    h2 {
+        font-family: 'Calibri';
+        font-size: 18px;
+        background: @dark-grey;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+    }
+    p {
+        font-size: 16px;
+        font-family: 'Calibri';
+        border: 1px solid @dark-grey;
+        margin: 5px;
+        padding: 10px 20px;
+        background: @light-grey;
+        color: @dark-grey;
+        text-align: justify;
+    }
+    a {
+        color: @dark-gold;
+        font-weight: bold;
+    }
+    .full-screen-img {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .editor-img {
+        display: inline-block;
+        margin: 5px 8px;
+        box-shadow: 1px 1px 4px 0.5px black;
+        border-radius: 2px;
+    }
+    .editor-png-img {
+        display: inline-block;
+        margin: 5px 8px;
+        filter: drop-shadow(1px 1px 1px black);
+    }
+    .img-in-text-l {
+        float: left;
+    }
+    .img-in-text-r {
+        float: right;
+    }
+}

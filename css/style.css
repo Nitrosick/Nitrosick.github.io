@@ -104,13 +104,14 @@ a:hover {
 }
 /* Заголовки страниц */
 .page-title {
+  position: relative;
   box-sizing: border-box;
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px 10px 15px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, transparent);
 }
 .page-title h1 {
   margin: 0;
@@ -121,6 +122,28 @@ a:hover {
   color: #5b5b5b;
   font-size: 20px;
   margin-left: 15px;
+}
+.page-title::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+}
+.page-title::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+  top: auto;
+  bottom: 0;
 }
 @media screen and (max-width: 600px) {
   .page-title .homm-3 {
@@ -1577,37 +1600,55 @@ footer .hidden {
   margin: 0 auto;
 }
 .mechanics-page .filter-block {
-  display: flex;
-  justify-content: space-between;
-}
-.mechanics-page .filter-block .pointer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-  font-size: 0.8em;
-  padding: 5px 15px 5px 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-.mechanics-page .filter-block .pointer .sing {
-  transform: rotate(-90deg);
-}
-.mechanics-page .filter-block .text-filter {
+  position: relative;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.6);
-  max-width: 650px;
-  flex-grow: 1;
+  padding: 5px 15px;
+  height: 60px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, transparent);
 }
-.mechanics-page .filter-block .text-filter .fontImg {
-  margin: 0 10px;
+.mechanics-page .filter-block .page-name {
+  font-size: 25px;
 }
-.mechanics-page .filter-block .text-filter input[type=range] {
-  border-bottom: none;
-  flex-grow: 1;
+.mechanics-page .filter-block .homm-3 {
+  color: #5b5b5b;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.mechanics-page .filter-block input.size {
+  max-width: 400px;
+}
+.mechanics-page .filter-block .fontImg {
+  margin-left: 10px;
+}
+.mechanics-page .filter-block::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+}
+.mechanics-page .filter-block::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+  top: auto;
+  bottom: 0;
+}
+@media screen and (max-width: 1100px) {
+  .mechanics-page .filter-block .homm-3 {
+    display: none;
+  }
 }
 .mechanics-page .pagination {
   display: flex;
@@ -1814,6 +1855,7 @@ footer .hidden {
   z-index: 2;
   transform: translateX(0);
   transition: all 0.4s ease-out;
+  animation: show 2s ease-out;
 }
 .storylist .links {
   overflow-y: auto;
@@ -1867,8 +1909,144 @@ footer .hidden {
   transform-origin: 100% 0;
   transform: rotate(-90deg);
 }
+@keyframes show {
+  0% {
+    transform: translateX(-501px);
+    box-shadow: none;
+  }
+  40% {
+    transform: translateX(-495px);
+    box-shadow: 10px 0 15px -10px #eeca24;
+  }
+  80% {
+    transform: translateX(-495px);
+    box-shadow: 10px 0 15px -10px #eeca24;
+  }
+  100% {
+    transform: translateX(-501px);
+    box-shadow: none;
+  }
+}
 div.closed {
   transform: translateX(-501px);
+}
+/* Страница Редактора карт */
+.editor-page .filter-block {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  height: 60px;
+  margin: 30px auto;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, transparent);
+}
+.editor-page .filter-block .page-name {
+  font-size: 25px;
+}
+.editor-page .filter-block .homm-3 {
+  color: #5b5b5b;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.editor-page .filter-block input.size {
+  max-width: 400px;
+}
+.editor-page .filter-block .fontImg {
+  margin-left: 10px;
+}
+.editor-page .filter-block::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+}
+.editor-page .filter-block::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  background: url(../images/other/slider-line.png) no-repeat center;
+  background-size: 100% auto;
+  top: auto;
+  bottom: 0;
+}
+@media screen and (max-width: 1100px) {
+  .editor-page .filter-block .homm-3 {
+    display: none;
+  }
+}
+.editor-info .navigation {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  float: right;
+  margin: 5px 5px 0 10px;
+  padding: 10px;
+  max-width: 500px;
+  z-index: 1;
+  font-family: 'Calibri';
+  font-size: 18px;
+}
+.editor-info .navigation span {
+  text-align: center;
+  font-weight: bold;
+  color: #303030;
+}
+.editor-info .navigation-link {
+  margin: 5px 0;
+  font-weight: normal;
+  color: #303030;
+}
+.editor-info h2 {
+  font-family: 'Calibri';
+  font-size: 18px;
+  background: #303030;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+}
+.editor-info p {
+  font-size: 16px;
+  font-family: 'Calibri';
+  border: 1px solid #303030;
+  margin: 5px;
+  padding: 10px 20px;
+  background: #cfcfcf;
+  color: #303030;
+  text-align: justify;
+}
+.editor-info a {
+  color: #af9001;
+  font-weight: bold;
+}
+.editor-info .full-screen-img {
+  width: 100%;
+  margin: 5px 0;
+}
+.editor-info .editor-img {
+  display: inline-block;
+  margin: 5px 8px;
+  box-shadow: 1px 1px 4px 0.5px black;
+  border-radius: 2px;
+}
+.editor-info .editor-png-img {
+  display: inline-block;
+  margin: 5px 8px;
+  filter: drop-shadow(1px 1px 1px black);
+}
+.editor-info .img-in-text-l {
+  float: left;
+}
+.editor-info .img-in-text-r {
+  float: right;
 }
 /* Страница о проекте */
 .about-block {

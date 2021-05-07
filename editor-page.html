@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="герои 3, редактор карт герои 3, герои 3 редактор, герои 3 создание карт, heroes 3, heroes 3 map editor, HotA, HotA map editor, редактор карт, создание карт, картостроение, гайд по редактору">
+	<meta name="description" content="Гайд по Редактору карт Heroes of Might and Magic III (HotA). Кнопки и панели редактора, последовательность создания карты, идеи для авторов сценариев.">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Hommbase">
+	<meta property="og:url" content="https://hommbase.ru/editor-page.html">
+	<meta property="og:locale" content="ru">
+	<meta name="twitter:creator" content="Nitrosick">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:title" content="База знаний Heroes of Might and Magic III">
+	<meta property="og:description" content="База знаний Heroes of Might and Magic III (HotA). Существа, герои, артефакты, заклинания, механики игры.">
+	<meta property="og:image" content="https://hommbase.ru/images/other/opengraph-maps.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170473313-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-170473313-1');
+	</script>
+
+	<!-- Yandex.Metrika counter -->
+	<script>
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(66408397, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true
+		});
+	</script>
+
+	<title>Гайд по редактору карт | Hommbase</title>
+	<style>
+		@font-face {
+		font-family: RussoOne-Regular;
+		src: url(fonts/RussoOne-Regular.ttf);
+		font-display: swap;
+		}
+		@font-face {
+		font-family: OpenSans;
+		src: url(fonts/OpenSans-Light.ttf), url(fonts/OpenSans-Regular.ttf), url(fonts/OpenSans-Bold.ttf);
+		font-display: swap;
+		}
+	</style>
+	<script src="scripts/detect.js"></script>
+	<script>
+		var ua = detect.parse(navigator.userAgent);
+		if (ua.browser.family == 'IE') {window.location = "error-404.html";}
+		if (ua.device.type == 'Mobile') {window.location = "error-404.html";} /* Исправить */
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<a class="logo" href="index.html">
+				<img src="images/icons/logo.png" alt="Логотип" width="45">
+				<span>HOMMBASE</span>
+			</a>
+			<div class="plug"></div>
+			<input type="text" id="global-search" list="searchList" placeholder="Поиск по сайту...">
+			<datalist id="searchList"></datalist>
+			<button class="search-button" title="Введите ключевое слово в строке поиска и нажмите на кнопку"></button>
+			<div class="help no-help">?
+				<div class="help-bar block">
+					<span>Для этого раздела нет дополнительной информации.</span>
+				</div>
+			</div>
+			<div class="burger">
+				<button class="full-menu-open"></button>
+				<div class="burger-bar block">
+					<a class="bar-menu" href="mobs-page.html">Существа</a>
+					<a class="bar-menu" href="comparator-page.html">Сравнить существ</a>
+					<a class="bar-menu" href="artifact-page.html">Артефакты</a>
+					<a class="bar-menu" href="heroes-page.html">Герои</a>
+					<a class="bar-menu" href="spells-page.html">Заклинания</a>
+					<a class="bar-menu" href="objects-page.html">Игровые объекты</a>
+					<a class="bar-menu" href="towns-page.html">Города</a>
+					<a class="bar-menu" href="mechanics-page.html">Механики игры</a>
+					<a class="bar-menu" href="maps-page.html">Карты</a>
+					<a class="bar-menu" href="#">Гайд по редактору &#9668;</a>
+					<a class="bar-menu" href="soft-page.html">Софт</a>
+					<a class="bar-menu" href="about-page.html">О проекте</a>
+				</div>
+			</div>
+
+			<div class="full-menu full-menu-closed">
+				<nav class="full-menu-bar block">
+					<a class="full-menu-link" href="index.html">
+						<img src="images/icons/logo-mono.png" alt="Иконка" width="40">
+						<span>ГЛАВНАЯ<br>СТРАНИЦА</span>
+					</a>
+					<a class="full-menu-link" href="mobs-page.html">
+						<img src="images/icons/mob.png" alt="Иконка" width="50">
+						<span>СУЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="comparator-page.html">
+						<img src="images/icons/versus.png" alt="Иконка" width="40">
+						<span>СРАВНИТЬ<br>СУЩЕСТВ</span>
+					</a>
+					<a class="full-menu-link" href="artifact-page.html">
+						<img src="images/icons/primary.png" alt="Иконка" width="40">
+						<span>АРТЕФАКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="heroes-page.html">
+						<img src="images/icons/hero.png" alt="Иконка" width="40">
+						<span>ГЕРОИ</span>
+					</a>
+					<a class="full-menu-link" href="spells-page.html">
+						<img src="images/icons/spellbook.png" alt="Иконка" width="40">
+						<span>ЗАКЛИНАНИЯ</span>
+					</a>
+					<a class="full-menu-link" href="objects-page.html">
+						<img src="images/icons/class.png" alt="Иконка" width="40">
+						<span>ИГРОВЫЕ<br>ОБЪЕКТЫ</span>
+					</a>
+					<a class="full-menu-link" href="towns-page.html">
+						<img src="images/icons/castle.png" alt="Иконка" width="40">
+						<span>ГОРОДА</span>
+					</a>
+					<a class="full-menu-link" href="mechanics-page.html">
+						<img src="images/icons/specialty.png" alt="Иконка" width="40">
+						<span>МЕХАНИКИ<br>ИГРЫ</span>
+					</a>
+					<a class="full-menu-link" href="maps-page.html">
+						<img src="images/icons/map.png" alt="Иконка" width="40">
+						<span>КАРТЫ</span>
+					</a>
+					<a class="full-menu-link disabled" href="#">
+						<img src="images/icons/map.png" alt="Иконка" width="40"> <!-- Поменять иконку -->
+						<span>ГАЙД ПО<br>РЕДАКТОРУ</span>
+					</a>
+					<a class="full-menu-link" href="soft-page.html">
+						<img src="images/icons/soft.png" alt="Иконка" width="40">
+						<span>СОФТ</span>
+					</a>
+					<a class="full-menu-link" href="community-page.html">
+						<img src="images/icons/planet.png" alt="Иконка" width="40">
+						<span>СООБЩЕСТВА</span>
+					</a>
+					<a class="full-menu-link" href="about-page.html">
+						<img src="images/icons/question.png" alt="Иконка" width="40">
+						<span>О ПРОЕКТЕ</span>
+					</a>
+					<a class="full-menu-link" href="https://h3hota.com/ru/download" target="_blank">
+						<img src="images/icons/download.png" alt="Иконка" width="40">
+						<span>СКАЧАТЬ<br>HEROES III HOTA</span>
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main class="editor-page">
+		<div class="common-background"></div>
+
+		<div class="filter-block wrapper">
+			<span class="page-name">ГАЙД ПО РЕДАКТОРУ</span>
+			<span class="homm-3">Heroes of Might and Magic III</span>
+			<div class="plug"></div>
+			<img class="sing" src="images/icons/theme.png" alt="Иконка" width="30">
+			<input type="checkbox" id="payt1"/><label for="payt1" title="Переключение цветовой схемы"></label>
+			<img class="sing" src="images/icons/textsize.png" alt="Иконка" width="30">
+			<input class="size" type="range" min="8" max="32" step="1" value="16" title="Изменение размера шрифта">
+			<span class="fontImg" title="Размер текста"></span>
+		</div>
+
+		<article class="editor-info block wrapper">
+			<h2>О редакторе</h2>
+			<nav class="navigation">
+				<span>Оглавление</span>
+				<a class="navigation-link" href="#1">• Кнопки и панели редактора</a>
+				<a class="navigation-link" href="#2">• Работа с почвой и рельефом</a>
+				<a class="navigation-link" href="#3">• Размещение объектов</a>
+				<a class="navigation-link" href="#4">• Настройки карты</a>
+				<a class="navigation-link" href="#5">• Идеи для создания карт</a>
+			</nav>
+			<p style="min-height: 120px;">
+				<img class="editor-png-img img-in-text-l" data-src="images/icons/editor.png" alt="Иконка редактора" height="100">
+				[t]Редактор карт позволяет создавать полноценные сценарии для игры на любой вкус и цвет, или редактировать уже созданные, включая все стандартные карты, доступные игрокам. Редактор поставляется вместе с игрой и не требует отдельного скачивания и установки.<br><br>
+				[t]Редактор предоставляет много возможностей для создания карт, однако эти возможности могут быть расширены за счет дополнительного софта. Его можно найти в соответствующем <a href="soft-page.html">разделе</a> сайта. Кроме того, Вы можете скачать готовые карты, созданные нами, в следующем <a href="maps-page.html">разделе</a>.<br><br>
+				[t]В этом разделе сайта Вы найдете информацию обо всех кнопках и панелях редактора, их предназначении, приемы создания карт с нуля и до финальных настроек, а также полезные идеи для своих творений. Оглавление страницы расположено справа. Ниже представлено окно редактора при первом открытии:
+			</p>
+			<img class="full-screen-img" src="#" alt="Окно редактора">
+			<h2 id="1">Кнопки и панели редактора</h2>
+			<p>
+
+			</p>
+			<h2 id="2">Работа с почвой и рельефом</h2>
+			<p>
+
+			</p>
+			<h2 id="3">Размещение объектов</h2>
+			<p>
+
+			</p>
+			<h2 id="4">Настройки карты</h2>
+			<p>
+
+			</p>
+			<h2 id="5">Идеи для создания карт</h2>
+			<p>
+
+			</p>
+		</article>
+
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footer-icons">
+				<div class="mail"></div>
+				<div class="community"></div>
+			</div>
+			<div class="footer-left">
+				<a href="mailto:hommbase@gmail.com">hommbase@gmail.com</a><br>
+				<a href="community-page.html">Игровые сообщества</a>
+			</div>
+			<div class="plug"></div>
+			<div class="footer-right">
+				<span>Авторы:<br>Nitrosick и Karisol</span>
+			</div>
+			<a class="return hidden" href="#top"></a>
+		</div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="scripts/lazy.js"></script>
+	<script src="databases/search-db.js"></script>
+	<script src="scripts/common-actions.js"></script>
+	<script src="scripts/editor-script.js"></script>
+</body>
+</html>

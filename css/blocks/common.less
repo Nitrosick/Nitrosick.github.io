@@ -49,13 +49,14 @@ a {
 /* Заголовки страниц */
 
 .page-title {
+	position: relative;
 	box-sizing: border-box;
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px 10px 15px;
-    background-color: rgba(0,0,0,0.6);
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, transparent);
 
     h1 {
 		margin: 0;
@@ -67,6 +68,14 @@ a {
 		font-size: 20px;
 		margin-left: 15px;
     }
+	&::before {
+		.split-line();
+	}
+	&::after {
+		.split-line();
+		top: auto;
+		bottom: 0;
+	}
 }
 
 @media screen and (max-width:600px) {
