@@ -2023,6 +2023,11 @@ div.closed {
   color: #303030;
   text-align: justify;
 }
+.editor-info p .icon-in-text {
+  display: inline;
+  margin-bottom: -5px;
+  box-shadow: 1px 1px 4px -2px black;
+}
 .editor-info a {
   color: #af9001;
   font-weight: bold;

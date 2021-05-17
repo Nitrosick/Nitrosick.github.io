@@ -7,6 +7,9 @@ const setFontSize = (px) => {
 	for (let tit of titleH2) {tit.style.fontSize = (+px + 2) + 'px';}
     fontImg.textContent = px + 'px';
     localStorage.setItem('fontSize', px);
+	document.querySelectorAll('.icon-in-text').forEach(el => {
+		el.style.height = +px + 3 + 'px';
+	});
 	setTOC();
 }
 
