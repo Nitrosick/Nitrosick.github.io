@@ -1855,7 +1855,6 @@ footer .hidden {
   z-index: 2;
   transform: translateX(0);
   transition: all 0.4s ease-out;
-  animation: show 2s ease-out;
 }
 .storylist .links {
   overflow-y: auto;
@@ -1908,24 +1907,6 @@ footer .hidden {
   background-size: 100% auto;
   transform-origin: 100% 0;
   transform: rotate(-90deg);
-}
-@keyframes show {
-  0% {
-    transform: translateX(-501px);
-    box-shadow: none;
-  }
-  40% {
-    transform: translateX(-495px);
-    box-shadow: 10px 0 15px -10px #eeca24;
-  }
-  80% {
-    transform: translateX(-495px);
-    box-shadow: 10px 0 15px -10px #eeca24;
-  }
-  100% {
-    transform: translateX(-501px);
-    box-shadow: none;
-  }
 }
 div.closed {
   transform: translateX(-501px);
