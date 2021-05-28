@@ -1964,6 +1964,9 @@ div.closed {
     display: none;
   }
 }
+.editor-info {
+  margin-bottom: 30px;
+}
 .editor-info .navigation {
   display: flex;
   justify-content: space-around;
