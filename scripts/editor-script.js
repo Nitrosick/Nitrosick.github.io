@@ -24,6 +24,7 @@ const themeChange = (dark) => {
 		for (let par of paragraph) {themeColor(par, '#cfcfcf', '#303030');}
 		for (let nav of navLinks) {themeColor(nav, '#cfcfcf', 'transparent');}
 		for (let t of titleH2) {themeColor(t, '#cfcfcf', '#0d0d0d');}
+		for (let s of splitters) {themeColor(s, 'transparent', '#cfcfcf');}
 		for (let b of bold) {b.style.color = 'white';}
 		document.querySelector('.navigation span').style.color = 'white';
         localStorage.setItem('theme', 'dark');
@@ -31,6 +32,7 @@ const themeChange = (dark) => {
 		for (let par of paragraph) {themeColor(par, '#303030', '#cfcfcf');}
 		for (let nav of navLinks) {themeColor(nav, '#303030', 'transparent');}
 		for (let t of titleH2) {themeColor(t, '#cfcfcf', '#303030');}
+		for (let s of splitters) {themeColor(s, 'transparent', '#303030');}
 		for (let b of bold) {b.style.color = 'black';}
 		document.querySelector('.navigation span').style.color = '#303030';
         localStorage.setItem('theme', 'light');
@@ -51,7 +53,7 @@ const changeSymbols = () => {
 
 // Элементы и переменные
 const paragraph = document.querySelectorAll('p');
-let titleH2, size, bold, fontImg, theme, navLinks;
+let titleH2, size, bold, fontImg, theme, navLinks, splitters;
 
 const initElements = () => {
 	titleH2 = document.querySelectorAll('h2');
@@ -60,6 +62,7 @@ const initElements = () => {
 	fontImg = document.querySelector('.fontImg');
 	theme = document.getElementById('payt1');
 	navLinks = document.querySelectorAll('.navigation-link');
+	splitters = document.querySelectorAll('.p-splitter');
 };
 
 // Обработчики событий

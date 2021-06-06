@@ -2012,6 +2012,13 @@ div.closed {
   margin-bottom: -5px;
   box-shadow: 1px 1px 4px -2px black;
 }
+.editor-info .p-splitter {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #303030;
+}
 .editor-info a {
   color: #af9001;
   font-weight: bold;
