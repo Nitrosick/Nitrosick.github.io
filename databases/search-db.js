@@ -9,6 +9,7 @@ const associations = [
 	{link: 'maps-page.html', 						keywords: ['Карты', 'Мапы', 'Пользовательские карты', 'Кастомные карты', 'Скачать карты']},
 	{link: 'soft-page.html', 						keywords: ['Софт', 'Программы', 'Утилиты', 'Патчи', 'Проги', 'Дополнения', 'HotA скачать', 'Герои 3 скачать']},
 	{link: 'towns-page.html', 						keywords: ['Города', 'Замки', 'Постройки', 'Цепочка построек', 'Карта загадки']},
+	{link: 'editor-page.html', 						keywords: ['Редактор карт', 'Гайд по редактору', 'Создание карт']},
 	{link: 'mechanics-page.html', 					keywords: ['Механики игры', 'Секреты', 'Хитрости', 'Информация по игре']},
 	{link: 'mechanics-page.html#atk_dfs_dmg', 		keywords: ['Урон', 'Атака', 'Защита', 'Рассчет урона']},
 	{link: 'mechanics-page.html#atk_dfs_dmg.3', 	keywords: ['Модификаторы урона']},
