@@ -140,6 +140,9 @@
                     text-align: left;
                     width: 75%;
                 }
+                &.vertical {
+                    writing-mode: vertical-lr;
+                }
             }
             &.compress td {
                 padding: 2px 5px;
@@ -153,7 +156,8 @@
                     border-left: 1px solid @mid-grey;
                 }
             }
-            &.left-align {
+            &.left-align,
+            .left-align-cell {
                 text-align: left;
 
                 th {
@@ -161,7 +165,7 @@
                 }
             }
             .td-picture, .td-picture {
-                padding: 0;
+                padding: 5px 0 0 0;
                 background-image: url(../images/back.jpg);
             }
         }
@@ -253,7 +257,6 @@
 	z-index: 2;
 	transform: translateX(0);
 	transition: all 0.4s ease-out;
-    // animation: show 2s ease-out;
 
     .links {
         overflow-y: auto;
@@ -308,25 +311,6 @@
         }
     }
 }
-
-// @keyframes show {
-//     0% {
-//         transform: translateX(-501px);
-//         box-shadow: none;
-//     }
-//     40% {
-//         transform: translateX(-495px);
-//         box-shadow: 10px 0 15px -10px @main-gold;
-//     }
-//     80% {
-//         transform: translateX(-495px);
-//         box-shadow: 10px 0 15px -10px @main-gold;
-//     }
-//     100% {
-//         transform: translateX(-501px);
-//         box-shadow: none;
-//     }
-// }
 
 div.closed {
 	transform: translateX(-501px);

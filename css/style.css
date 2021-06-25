@@ -1747,6 +1747,10 @@ footer .hidden {
   text-align: left;
   width: 75%;
 }
+.mechanics-page .story table th.vertical,
+.mechanics-page .story table td.vertical {
+  writing-mode: vertical-lr;
+}
 .mechanics-page .story table.compress td {
   padding: 2px 5px;
   line-height: normal;
@@ -1758,15 +1762,17 @@ footer .hidden {
   border: none;
   border-left: 1px solid #5b5b5b;
 }
-.mechanics-page .story table.left-align {
+.mechanics-page .story table.left-align,
+.mechanics-page .story table .left-align-cell {
   text-align: left;
 }
-.mechanics-page .story table.left-align th {
+.mechanics-page .story table.left-align th,
+.mechanics-page .story table .left-align-cell th {
   text-align: center;
 }
 .mechanics-page .story table .td-picture,
 .mechanics-page .story table .td-picture {
-  padding: 0;
+  padding: 5px 0 0 0;
   background-image: url(../images/back.jpg);
 }
 .mechanics-page .story .minimized {
