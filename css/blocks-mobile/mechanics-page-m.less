@@ -123,6 +123,9 @@
 		border: 1px solid @dark-grey;
 		color: @dark-grey;
 	}
+	.table-slider {
+		overflow-x: scroll;
+	}
 	table {
 		font-size: 14px;
 		font-family: 'Calibri', sans-serif;
@@ -133,9 +136,6 @@
 		border: 1px solid @dark-grey;
 		color: @dark-grey;
 
-		&.left {
-			text-align: left;
-		}
 		&.left-align {
 			text-align: left;
 
@@ -154,6 +154,12 @@
 				border: none;
 				border-left: 1px solid @mid-grey;
 			}
+		}
+		.vertical {
+			writing-mode: vertical-lr;
+		}
+		.left {
+			text-align: left;
 		}
 	}
 	.minimized {

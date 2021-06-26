@@ -1769,6 +1769,9 @@ audio {
   border: 1px solid #303030;
   color: #303030;
 }
+.story .table-slider {
+  overflow-x: scroll;
+}
 .story table {
   font-size: 14px;
   font-family: 'Calibri', sans-serif;
@@ -1778,9 +1781,6 @@ audio {
   line-height: normal;
   border: 1px solid #303030;
   color: #303030;
-}
-.story table.left {
-  text-align: left;
 }
 .story table.left-align {
   text-align: left;
@@ -1798,6 +1798,12 @@ audio {
 .story table.split td {
   border: none;
   border-left: 1px solid #5b5b5b;
+}
+.story table .vertical {
+  writing-mode: vertical-lr;
+}
+.story table .left {
+  text-align: left;
 }
 .story .minimized {
   overflow-y: hidden;
