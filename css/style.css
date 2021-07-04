@@ -1902,20 +1902,11 @@ footer .hidden {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.6);
 }
-.storylist .shift::after {
-  content: '';
-  position: absolute;
-  height: 1px;
-  width: 80vh;
-  right: 0;
-  top: 2.5vh;
-  background: url(../images/other/slider-line.png) no-repeat center;
-  background-size: 100% auto;
-  transform-origin: 100% 0;
-  transform: rotate(-90deg);
-}
 div.closed {
   transform: translateX(-501px);
+}
+div.closed .shift {
+  border-right: 3px solid #303030;
 }
 /* Страница Редактора карт */
 .editor-page .filter-block {
