@@ -84,7 +84,7 @@ a:hover {
   right: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(#303030, transparent 18%, transparent), url(../images/other/left-side.png) top left no-repeat, url(../images/other/right-side.png) top right no-repeat;
+  background: linear-gradient(#303030, transparent 18%, transparent 90%, #303030), url(../images/other/left-side.png) top left no-repeat, url(../images/other/right-side.png) top right no-repeat;
   background-size: auto 100%;
   z-index: -1;
 }
