@@ -258,11 +258,13 @@ window.addEventListener('load', () => {
 	initElements();
 	statsPosition(statsCol);
 	gridRebuild(mobsColumn);
+	backCorrect();
 });
 
 window.addEventListener('resize', () => {
 	statsPosition(statsCol);
 	gridRebuild(mobsColumn);
+	backCorrect();
 });
 
 window.addEventListener('scroll', () => {

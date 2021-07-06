@@ -78,11 +78,13 @@ document.addEventListener('change', event => {
 
 window.addEventListener('resize', () => {
 	setTOC();
+	backCorrect();
 });
 
 window.addEventListener('load', () => {
 	changeSymbols();
 	initElements();
+	backCorrect();
 	size.value = localStorage.getItem('fontSize') == null ? 16 : localStorage.getItem('fontSize');
 	setFontSize(localStorage.getItem('fontSize') == null ? 16 : localStorage.getItem('fontSize'));
 	if (localStorage.getItem('theme') == 'dark') {

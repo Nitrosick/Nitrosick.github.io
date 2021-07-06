@@ -200,6 +200,7 @@ document.addEventListener('keydown', event => {
 window.addEventListener('load', () => {
 	generateTOC(linksBlock);
 	initElements();
+	backCorrect();
 	size.value = localStorage.getItem('fontSize') == null ? 16 : localStorage.getItem('fontSize');
 	setFontSize(localStorage.getItem('fontSize') == null ? 16 : localStorage.getItem('fontSize'));
 	if (localStorage.getItem('theme') == 'dark') {
@@ -209,4 +210,8 @@ window.addEventListener('load', () => {
 	if (localStorage.getItem('sublinks') == 0) {
 		showingSublinks(false);
 	}
+});
+
+window.addEventListener('resize', () => {
+	backCorrect();
 });

@@ -260,22 +260,6 @@ document.addEventListener('change', event => {
 	}
 });
 
-document.addEventListener('click', event => {
-	lMobColumn.forEach((el, index) => {
-		if (event.target == el) {
-			selectMob('l', lMobColumn, index, lParamFields, portrait[0]);
-		}
-	});
-	rMobColumn.forEach((el, index) => {
-		if (event.target == el) {
-			selectMob('r', rMobColumn, index, rParamFields, portrait[1]);
-		}
-	});
-	if (event.target == refresh) {
-		cooldown();
-	}
-});
-
 document.addEventListener('keydown', event => {
 	if (event.key == 'Delete') {
 		cooldown();
@@ -289,4 +273,25 @@ window.addEventListener('load', () => {
 	mobsRender(mobsArray, lColumn);
 	mobsRender(mobsArray, rColumn);
 	initElements();
+	backCorrect();
+});
+
+window.addEventListener('resize', () => {
+	backCorrect();
+});
+
+document.addEventListener('click', event => {
+	lMobColumn.forEach((el, index) => {
+		if (event.target == el) {
+			selectMob('l', lMobColumn, index, lParamFields, portrait[0]);
+		}
+	});
+	rMobColumn.forEach((el, index) => {
+		if (event.target == el) {
+			selectMob('r', rMobColumn, index, rParamFields, portrait[1]);
+		}
+	});
+	if (event.target == refresh || event.target.parentNode == refresh) {
+		cooldown();
+	}
 });

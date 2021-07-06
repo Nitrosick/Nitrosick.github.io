@@ -22,10 +22,11 @@ a {
 	position: fixed;
 	top: 0;	right: 0;
 	width: 100vw; height: 100vh;
-	background: linear-gradient(@dark-grey, transparent 18%, transparent 90%, @dark-grey),
-				url(../images/other/left-side.png) top left no-repeat,
-				url(../images/other/right-side.png) top right no-repeat;
-	background-size: auto 100%;
+	background-image: url(../images/other/background.webp);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+	filter: brightness(0.5);
 	z-index: -1;
 }
 

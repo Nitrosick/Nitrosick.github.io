@@ -179,11 +179,13 @@ window.addEventListener('load', () => {
 	initElements();
 	statsPosition(statsCol);
 	gridRebuild(objectsColumn);
+	backCorrect();
 });
 
 window.addEventListener('resize', () => {
 	statsPosition(statsCol);
 	gridRebuild(objectsColumn);
+	backCorrect();
 });
 
 window.addEventListener('scroll', () => {

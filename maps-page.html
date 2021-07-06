@@ -348,7 +348,12 @@
 			}
 		}
 		mapsResizing();
-		window.addEventListener('resize', () => {mapsResizing();});
+		backCorrect();
+
+		window.addEventListener('resize', () => {
+			mapsResizing();
+			backCorrect();
+		});
 
 		for (let m of maps) {
 			m.addEventListener('click', () => {

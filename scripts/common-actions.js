@@ -182,6 +182,18 @@ const getCost = (string) => {
 	}
 };
 
+// Выравнивание фона на страницах
+const backCorrect = () => {
+	const backCoef = 1920 / 1080;
+	const windowCoef = window.innerWidth / window.innerHeight;
+	const background = document.querySelector('.common-background');
+	if (windowCoef < backCoef) {
+		background.style.backgroundSize = 'auto 100%';
+	} else {
+		background.style.backgroundSize = '100% auto';
+	}
+};
+
 // Обработчики событий
 const burger = document.querySelector('.full-menu-open');
 const fullMenu = document.querySelector('.full-menu');

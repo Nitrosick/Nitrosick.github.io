@@ -210,11 +210,13 @@ window.addEventListener('load', () => {
 	initElements();
 	statsPosition(statsCol);
 	gridRebuild(heroesColumn);
+	backCorrect();
 });
 
 window.addEventListener('resize', () => {
 	statsPosition(statsCol);
 	gridRebuild(heroesColumn);
+	backCorrect();
 });
 
 window.addEventListener('scroll', () => {

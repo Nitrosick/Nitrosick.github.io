@@ -84,8 +84,11 @@ a:hover {
   right: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(#303030, transparent 18%, transparent 90%, #303030), url(../images/other/left-side.png) top left no-repeat, url(../images/other/right-side.png) top right no-repeat;
-  background-size: auto 100%;
+  background-image: url(../images/other/background.webp);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  filter: brightness(0.5);
   z-index: -1;
 }
 .sing {
@@ -3040,7 +3043,7 @@ div.closed .shift {
 .town-appearance-item #town-appearance-3,
 .town-appearance-item #town-appearance-4 {
   width: 100%;
-  background: radial-gradient(#303030, transparent 70%, transparent);
+  background: radial-gradient(black, transparent 65%, transparent);
 }
 .town-appearance-item span {
   display: block;

@@ -62,13 +62,9 @@ const changeTownBack = (town) => {
 const changeColor = (town) => {
     townsArray.forEach(el => {
         if (el.engname == town) {
-            document.querySelector('.common-background').style.background = `
-                linear-gradient(#303030, transparent 18%, transparent 90%, #303030),
-                url(images/towns/${town}/${town}-color-1.png) top left no-repeat,
-                url(images/towns/${town}/${town}-color-2.png) top right no-repeat
-            `;
             document.querySelector('header .wrapper').style.boxShadow = `0 15px 25px -20px #${el.color}`;
             document.querySelector('footer .wrapper').style.boxShadow = `0 -15px 25px -20px #${el.color}`;
+            document.querySelector('.common-background').style.filter = 'brightness(0.3)';
         }
         return;
     });
@@ -383,11 +379,13 @@ window.addEventListener('load', () => {
 
     document.querySelector('.town-background').style.height = window.innerWidth < 1560 ? window.innerWidth / 2.1333 + 'px' : '703px';
     document.querySelector('.town-info').style.overflowY = window.innerWidth < 1560 ? 'auto' : 'hidden';
+    backCorrect();
 });
 
 window.addEventListener('resize', () => {
     document.querySelector('.town-background').style.height = document.querySelector('#full-town').getBoundingClientRect().height + 'px';
     document.querySelector('.town-info').style.overflowY = window.innerWidth < 1560 ? 'auto' : 'hidden';
+    backCorrect();
 });
 
 document.addEventListener('keydown', event => {

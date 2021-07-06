@@ -227,11 +227,13 @@ window.addEventListener('load', () => {
 	initElements();
 	statsPosition(statsCol);
 	gridRebuild(spellsColumn);
+	backCorrect();
 });
 
 window.addEventListener('resize', () => {
 	statsPosition(statsCol);
 	gridRebuild(spellsColumn);
+	backCorrect();
 });
 
 window.addEventListener('scroll', () => {
