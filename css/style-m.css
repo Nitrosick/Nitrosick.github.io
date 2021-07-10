@@ -91,6 +91,7 @@ button {
   font-size: 25px;
   margin: 0 auto;
   text-shadow: 1px 1px 3px black;
+  text-align: center;
   transition: 0.7s;
 }
 .page-art-folded {

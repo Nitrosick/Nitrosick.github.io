@@ -53,7 +53,7 @@ const changeSymbols = () => {
 
 // Элементы и переменные
 let size, paragraph, ref, title, subtitle, storyListOpen,
-	storyList, storyListClose, separateLinks, bold, light, dark;
+	storyList, storyListClose, storyLinks, separateLinks, bold, light, dark;
 
 const initElements = () => {
 	size = document.querySelector('.size');
@@ -64,6 +64,7 @@ const initElements = () => {
 	storyListOpen = document.querySelector('.story-list-button');
 	storyList = document.querySelector('.story-list');
 	storyListClose = document.querySelector('.story-list-close');
+	storyLinks = document.querySelectorAll('.story-link');
 	separateLinks = document.querySelectorAll('.separate-link');
 	bold = document.querySelectorAll('strong');
 	light = document.querySelector('.light');
@@ -72,6 +73,11 @@ const initElements = () => {
 
 // Обработчики событий
 document.addEventListener('click', event => {
+	for (let l of storyLinks) {
+		if (event.target == l || event.target.parentNode == l) {
+			closeList();
+		}
+	}
 	for (let l of separateLinks) {
 		if (event.target == l || event.target.parentNode == l) {
 			closeList();
