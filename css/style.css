@@ -897,7 +897,7 @@ footer .hidden {
   align-items: center;
   text-align: center;
   line-height: 20px;
-  background-color: #0d0d0d;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .objects-column .mob {
   display: grid;
